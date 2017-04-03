@@ -3,8 +3,9 @@
 class User
 {
     /**
+     * Метод для проверки паролей
      * @param $password, $password_second
-     * @return bool true if passwords are same, else false
+     * @return bool
      */
     public static function checkSame($password, $password2)
     {
@@ -13,7 +14,11 @@ class User
         }
         return false;
     }
-
+    /**
+     * Метод проверки пароля на длину
+     * @param $password
+     * @return bool
+     */
     public static function checkPassword($password)
     {
         if(strlen($password) >= 5) {
@@ -22,6 +27,11 @@ class User
         return false;
     }
 
+    /**
+     * Метод для проверки емейла на существование в БД
+     * @param $email
+     * @return bool
+     */
     public static function checkEmailExists($email)
     {
         $db = Db::getConnection();
@@ -34,6 +44,11 @@ class User
         return false;
     }
 
+    /**
+     * Метод для хэширования пароля и записи (регистрации) пользователя
+     * @param $name, $surname, $email, $password
+     * @return bool
+     */
     public static function register($name, $surname, $email, $password)
     {
         $db = Db::getConnection();

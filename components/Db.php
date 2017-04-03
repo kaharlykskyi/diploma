@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * Класс который возвращает экземпляр класс PDO (строку подключения к БД)
+ * @return object
+ */
 class Db
 {
     public static function getConnection()

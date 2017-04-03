@@ -2,12 +2,19 @@
 
 class UserController
 {
+    /**
+     * Метод для проведения процесса авторизации на сайте
+     */
     public function actionLogin()
     {
         require_once(ROOT.'/views/user/login.php');
         return true;
     }
 
+
+    /**
+     * Метод для проведения процесса регистрации на сайте
+     */
     public function actionRegister()
     {
         $name = '';
