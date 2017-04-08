@@ -40,18 +40,16 @@
             </form> -->
             <div id="navbar-menu">
                 <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="/login"><i class="fa fa-lock" aria-hidden="true"></i><span> Войти</span></a>
-                    </li>
-                    <li>
-                        <a href="/register"><i class="fa fa-sign-in" aria-hidden="true"></i><span> Регистрация</span></a>
-                    </li>
+                    <?php if (User::isGuest()): ?>
+                        <li><a href="/login"><i class="fa fa-lock" aria-hidden="true"></i><span> Войти</span></a></li>
+                        <li><a href="/register"><i class="fa fa-sign-in" aria-hidden="true"></i><span> Регистрация</span></a></li>
+                    <?php else: ?>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/template/assets/img/user.png" class="img-circle" alt="Avatar"> <span>Миша</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/template/assets/img/user.png" class="img-circle" alt="Avatar"> <span><?php echo $user['name']; ?></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="/profile/"><i class="lnr lnr-user"></i> <span>Профиль</span></a></li>
-                            <li><a href="#"><i class="lnr lnr-cog"></i> <span>Настройки</span></a></li>
-                            <li><a href="#"><i class="lnr lnr-exit"></i> <span>Выйти</span></a></li>
+                            <li><a href="/profile/edit"><i class="lnr lnr-cog"></i> <span>Настройки</span></a></li>
+                            <li><a href="/logout"><i class="lnr lnr-exit"></i> <span>Выйти</span></a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -68,6 +66,7 @@
                             <li><a href="#" class="more">See all notifications</a></li>
                         </ul>
                     </li>
+                    <?php endif; ?>
                     <!-- <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-question-circle"></i> <span>Help</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                         <ul class="dropdown-menu">
@@ -90,7 +89,8 @@
         <div class="sidebar-scroll">
             <nav>
                 <ul class="nav">
-                    <li><a href="#" class="active"><i class="lnr lnr-home"></i><span>Главная</span></a></li>
+
+                    <li><a href="/" class="active"><i class="lnr lnr-home"></i><span>Главная</span></a></li>
                     <li>
                         <a href="#subEvents" data-toggle="collapse" class="collapsed"><i class="fa fa-futbol-o" aria-hidden="true"></i><span>События</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                         <div id="subEvents" class="collapse ">
@@ -109,16 +109,18 @@
                             </ul>
                         </div>
                     </li>
+                    <?php if (!User::isGuest()): ?>
                     <li>
                         <a href="#subCabinet" data-toggle="collapse" class="collapsed"><i class="fa fa-user-circle" aria-hidden="true"></i><span>Личный кабинет</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                         <div id="subCabinet" class="collapse ">
                             <ul class="nav">
                                 <li><a href="/profile/" class="">Профиль</a></li>
-                                <li><a href="#" class="">Настройки</a></li>
+                                <li><a href="/profile/edit" class="">Настройки</a></li>
                                 <li><a href="#" class="">Выйти</a></li>
                             </ul>
                         </div>
                     </li>
+                    <?php endif; ?>
                     <li><a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i><span>О сервисе</span></a></li>
 
                     <!-- <li><a href="panels.html" class=""><i class="lnr lnr-cog"></i> <span>Panels</span></a></li>

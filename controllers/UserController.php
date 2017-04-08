@@ -7,6 +7,23 @@ class UserController
      */
     public function actionLogin()
     {
+        $email = '';
+        $password = '';
+
+        if (isset($_POST['submit'])) {
+            $email = $_POST['email'];
+            $password = $_POST['password'];
+            $errors = false;
+            $userId = User::checkUserData($email, $password);
+
+            //Проверяем на существование пользователя
+            if ($userId == false) {
+                $errors[] = 'Неправильные данные для входа!';
+            } else {
+                User::auth($userId);
+                header("Location: /profile/");
+            }
+        }
         require_once(ROOT.'/views/user/login.php');
         return true;
     }
@@ -56,5 +73,15 @@ class UserController
 
         require_once(ROOT.'/views/user/register.php');
         return true;
+    }
+
+    /**
+     * Удаление инфо о пользователе с сессии (выход с профиля)
+     */
+    public function actionLogout()
+    {
+        session_start();
+        unset($_SESSION['user']);
+        header('Location: /');
     }
 }

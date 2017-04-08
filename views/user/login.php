@@ -32,15 +32,23 @@
 							<div class="header">
 								<div class="logo text-center"><img src="/template/assets/img/logo-dark.png" alt="Logo"></div>
 								<p class="lead">Вход</p>
+                                <?php
+                                if (isset($errors) && is_array($errors)):
+                                    foreach($errors as $error):?>
+                                        <p style="color: red;"><?php echo $error; ?></p>
+                                    <?php endforeach;
+                                endif;
+                                ?>
 							</div>
-							<form class="form-auth-small" action="/" method="POST">
+
+							<form class="form-auth-small" action="#" method="POST">
 								<div class="form-group">
 									<label for="signin-email" class="control-label sr-only">Email</label>
-									<input type="email" class="form-control" id="signin-email" value="" placeholder="Email" name="email">
+									<input type="email" class="form-control" id="signin-email" value="" placeholder="Email" name="email" required>
 								</div>
 								<div class="form-group">
 									<label for="signin-password" class="control-label sr-only">Password</label>
-									<input type="password" class="form-control" id="signin-password" value="" placeholder="Пароль" name="password">
+									<input type="password" class="form-control" id="signin-password" value="" placeholder="Пароль" name="password" required>
 								</div>
 								<div class="form-group clearfix">
 									<label class="fancy-checkbox element-left">
@@ -50,9 +58,10 @@
 								</div>
 								<button type="submit" class="btn btn-primary btn-lg btn-block" name="submit">ВОЙТИ</button>
 								<div class="bottom">
-									<span class="helper-text"><i class="fa fa-lock"></i> <a href="#">Забыли пароль?</a></span>
+									<span class="helper-text"><i class="fa fa-lock"></i> <a href="/register">Зарегистрироваться?</a></span>
 								</div>
 							</form>
+
 						</div>
 					</div>
 					<div class="clearfix"></div>

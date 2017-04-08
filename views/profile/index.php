@@ -1,4 +1,5 @@
 <?php include_once(ROOT.'/views/layouts/header.php'); ?>
+
 		<div class="main">
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
@@ -12,19 +13,16 @@
 									<div class="overlay"></div>
 									<div class="profile-main">
 										<img src="../../template/assets/img/user-medium.png" class="img-circle" alt="Avatar">
-										<h3 class="name">Samuel Gold</h3>
-										<span class="online-status status-available">Available</span>
+										<h3 class="name"><?php echo $user['name'].'&nbsp;'.$user['surname'];?></h3>
+										<span class="online-status status-available">Online</span>
 									</div>
 									<div class="profile-stat">
 										<div class="row">
-											<div class="col-md-4 stat-item">
-												45 <span>Projects</span>
+											<div class="col-md-6 stat-item">
+												<b>12</b> <span>Комментариев</span>
 											</div>
-											<div class="col-md-4 stat-item">
-												15 <span>Awards</span>
-											</div>
-											<div class="col-md-4 stat-item">
-												2174 <span>Points</span>
+											<div class="col-md-6 stat-item">
+												<b>8</b> <span>Прогнозов</span>
 											</div>
 										</div>
 									</div>
@@ -33,16 +31,15 @@
 								<!-- PROFILE DETAIL -->
 								<div class="profile-detail">
 									<div class="profile-info">
-										<h4 class="heading">Basic Info</h4>
+										<h4 class="heading">Информация</h4>
 										<ul class="list-unstyled list-justify">
-											<li>Birthdate <span>24 Aug, 2016</span></li>
-											<li>Mobile <span>(124) 823409234</span></li>
-											<li>Email <span>samuel@mydomain.com</span></li>
-											<li>Website <span><a href="https://www.themeineed.com">www.themeineed.com</a></span></li>
+											<li>Дата рождения <span>24 Авг, 2016</span></li>
+											<li>Телефон <span>(124) 823409234</span></li>
+											<li>Email <span><?=$user['email'];?></span></li>
 										</ul>
 									</div>
 									<div class="profile-info">
-										<h4 class="heading">Social</h4>
+										<h4 class="heading">Социальные сети</h4>
 										<ul class="list-inline social-icons">
 											<li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
 											<li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
@@ -51,17 +48,17 @@
 										</ul>
 									</div>
 									<div class="profile-info">
-										<h4 class="heading">About</h4>
-										<p>Interactively fashion excellent information after distinctive outsourcing.</p>
+										<h4 class="heading">Обо мне</h4>
+										<p>Расскажите о себе. Редактируйте информацию профиля в настройках.</p>
 									</div>
-									<div class="text-center"><a href="#" class="btn btn-primary">Edit Profile</a></div>
+									<div class="text-center"><a href="#" class="btn btn-primary">Изменить</a></div>
 								</div>
 								<!-- END PROFILE DETAIL -->
 							</div>
 							<!-- END LEFT COLUMN -->
 							<!-- RIGHT COLUMN -->
 							<div class="profile-right">
-								<h4 class="heading">Samuel's Awards</h4>
+								<h4 class="heading"><?=$user['name'];?>'s Awards</h4>
 								<!-- AWARDS -->
 								<div class="awards">
 									<div class="row">

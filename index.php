@@ -1,11 +1,13 @@
 <?php
 
-ini_set('display_errors',1);
-error_reporting(E_ALL);
+    ini_set('display_errors',1);
+    error_reporting(E_ALL);
 
-define('ROOT', dirname(__FILE__));
-include_once(ROOT.'/components/Router.php');
-require_once(ROOT.'/components/Autoload.php');
+    define('ROOT', dirname(__FILE__));
+    session_start();
 
-$router = new Router();
-$router->run();
+    include_once(ROOT.'/components/Router.php');
+    require_once(ROOT.'/components/Autoload.php');
+
+    $router = new Router();
+    $router->run();

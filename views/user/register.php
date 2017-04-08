@@ -62,7 +62,10 @@
 							        <?php endforeach;
 							    endif;
 							?>
+                            <div class="bottom">
 
+                            	<span class="helper-text"><i class="fa fa-lock"></i>&nbsp;Есть аккаунт?<a href="/login">&nbsp;Войти</a></span>
+                            </div>
 						</div>
 					</div>
 					<div class="clearfix"></div>
