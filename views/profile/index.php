@@ -133,15 +133,15 @@
                                     <div class="profile-info">
                                         <h4 class="heading">Интересы</h4>
                                         <p><?php
-                                                if ($user_info['interests'] == '') {
-                                                    echo "<i class=\"fa fa-plus\" aria-hidden=\"true\"></i>&nbsp;<a href='/profile/edit'>Добавить интересы</a>";
-                                                }
                                                 $interests = unserialize($user_info['interests']);
-                                                foreach ($interests as $interes){
-                                                    if ($interes == end($interests)) {echo $interes;}
-                                                    else {echo $interes.', ';}
+                                                if (empty($interests)) {
+                                                    echo "<i class=\"fa fa-plus\" aria-hidden=\"true\"></i>&nbsp;<a href='/profile/edit'>Добавить интересы</a>";
+                                                } else {
+                                                    foreach ($interests as $interes){
+                                                        if ($interes == end($interests)) {echo $interes;}
+                                                        else {echo $interes.', ';}
+                                                    }
                                                 }
-
                                             ?>
                                         </p>
                                     </div>
@@ -160,22 +160,26 @@
 								<!-- TABBED CONTENT -->
 								<div class="custom-tabs-line tabs-line-bottom left-aligned">
 									<ul class="nav news" role="tablist">
-                                        <?=in_array("Футбол", $interests) ? "<li class=\"active\"><a href=\"#tab-bottom-left1\" role=\"tab\" data-toggle=\"tab\">Футбол</a></li>" : ""?>
-                                        <?=in_array("Теннис", $interests) ? "<li><a href=\"#tab-bottom-left2\" role=\"tab\" data-toggle=\"tab\">Теннис</a></li>" : ""?>
-                                        <?=in_array("Хоккей", $interests) ? "<li><a href=\"#tab-bottom-left3\" role=\"tab\" data-toggle=\"tab\">Хоккей</a></li>" : ""?>
-                                        <?=in_array("Баскетбол", $interests) ? "<li><a href=\"#tab-bottom-left4\" role=\"tab\" data-toggle=\"tab\">Баскетбол</a></li>" : ""?>
-                                        <?=in_array("Бокс", $interests) ? "<li><a href=\"#tab-bottom-left5\" role=\"tab\" data-toggle=\"tab\">Бокс</a></li>" : ""?>
+                                        <?php if (!empty($interests)): ?>
+                                            <?=in_array("Футбол", $interests) ? "<li class=\"active\"><a href=\"#tab-bottom-left1\" role=\"tab\" data-toggle=\"tab\">Футбол</a></li>" : ""?>
+                                            <?=in_array("Теннис", $interests) ? "<li><a href=\"#tab-bottom-left2\" role=\"tab\" data-toggle=\"tab\">Теннис</a></li>" : ""?>
+                                            <?=in_array("Хоккей", $interests) ? "<li><a href=\"#tab-bottom-left3\" role=\"tab\" data-toggle=\"tab\">Хоккей</a></li>" : ""?>
+                                            <?=in_array("Баскетбол", $interests) ? "<li><a href=\"#tab-bottom-left4\" role=\"tab\" data-toggle=\"tab\">Баскетбол</a></li>" : ""?>
+                                            <?=in_array("Бокс", $interests) ? "<li><a href=\"#tab-bottom-left5\" role=\"tab\" data-toggle=\"tab\">Бокс</a></li>" : ""?>
+                                        <?php endif; ?>
                                         <li><a href="#tab-bottom-left6" role="tab" data-toggle="tab">Аналитика</a></li>
 									</ul>
 								</div>
 								<div class="tab-content">
-                                    <?=in_array("Футбол", $interests) ? "<div class=\"tab-pane fade in active\" id=\"tab-bottom-left1\">$football_news</div>" : ""?>
-                                    <?=in_array("Теннис", $interests) ? "<div class=\"tab-pane fade in active\" id=\"tab-bottom-left2\">$tennis_news</div>" : ""?>
-                                    <?=in_array("Хоккей", $interests) ? "<div class=\"tab-pane fade in active\" id=\"tab-bottom-left3\">$hockey_news</div>" : ""?>
-                                    <?=in_array("Баскетбол", $interests) ? "<div class=\"tab-pane fade in active\" id=\"tab-bottom-left4\">$basketball_news</div>" : ""?>
-                                    <?=in_array("Бокс", $interests) ? "<div class=\"tab-pane fade in active\" id=\"tab-bottom-left5\">$boxing_news</div>" : ""?>
-                                    <div class="tab-pane fade" id="tab-bottom-left6">
-
+                                    <?php if (!empty($interests)): ?>
+                                        <?=in_array("Футбол", $interests) ? "<div class=\"tab-pane fade in active\" id=\"tab-bottom-left1\">$football_news</div>" : ""?>
+                                        <?=in_array("Теннис", $interests) ? "<div class=\"tab-pane fade in active\" id=\"tab-bottom-left2\">$tennis_news</div>" : ""?>
+                                        <?=in_array("Хоккей", $interests) ? "<div class=\"tab-pane fade in active\" id=\"tab-bottom-left3\">$hockey_news</div>" : ""?>
+                                        <?=in_array("Баскетбол", $interests) ? "<div class=\"tab-pane fade in active\" id=\"tab-bottom-left4\">$basketball_news</div>" : ""?>
+                                        <?=in_array("Бокс", $interests) ? "<div class=\"tab-pane fade in active\" id=\"tab-bottom-left5\">$boxing_news</div>" : ""?>
+                                    <?php endif; ?>
+                                    <div class="tab-pane fade in active" id="tab-bottom-left6">
+                                            <p>В разработке :)</p>
                                     </div>
 								</div>
 								<!-- END TABBED CONTENT -->
@@ -218,6 +222,7 @@
             });
 
             $('ul.news li:first').addClass('active');
+
         });
     </script>
 </body>

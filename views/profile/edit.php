@@ -69,13 +69,13 @@
                             </div>
                             <div class="form-group">
                                 <p>Интересы</p>
-                                <?php $arr = unserialize($user_info['interests']); ?>
+                                <?php $arr = unserialize($user_info['interests']);  ?>
                                 <select class="selectpicker" name="interests[]" multiple>
-                                    <option <?=in_array("Футбол", $arr) ? 'selected' : ''?> value="Футбол">Футбол</option>
-                                    <option <?=in_array("Теннис", $arr) ? 'selected' : ''?> value="Теннис">Теннис</option>
-                                    <option <?=in_array("Баскетбол", $arr) ? 'selected' : ''?> value="Баскетбол">Баскетбол</option>
-                                    <option <?=in_array("Хоккей", $arr) ? 'selected' : ''?> value="Хоккей">Хоккей</option>
-                                    <option <?=in_array("Бокс", $arr) ? 'selected' : ''?> value="Бокс">Бокс</option>
+                                    <option <?php if (!empty($arr) && in_array("Футбол", $arr)) { echo 'selected';}?> value="Футбол">Футбол</option>
+                                    <option <?php if (!empty($arr) && in_array("Теннис", $arr)) { echo 'selected';}?> value="Теннис">Теннис</option>
+                                    <option <?php if (!empty($arr) && in_array("Баскетбол", $arr)) { echo 'selected';}?> value="Баскетбол">Баскетбол</option>
+                                    <option <?php if (!empty($arr) && in_array("Хоккей", $arr)) { echo 'selected';}?> value="Хоккей">Хоккей</option>
+                                    <option <?php if (!empty($arr) && in_array("Бокс", $arr)) { echo 'selected';}?> value="Бокс">Бокс</option>
                                 </select>
                             </div>
                             <div class="form-group">
