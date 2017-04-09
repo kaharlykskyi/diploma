@@ -25,7 +25,7 @@
                             </div>
                             <div class="form-group">
                                 <p>Cтрана</p>
-                                <select name="country" tabindex="4" class="form-control">
+                                <select name="country" tabindex="4" class="selectpicker" data-live-search="true">
                                     <?php
                                         foreach ($countries as $items) {
                                             foreach ($items as $country){
@@ -69,7 +69,14 @@
                             </div>
                             <div class="form-group">
                                 <p>Интересы</p>
-                                <input type="text" tabindex="12" class="form-control" name="interests" value="<?=$user_info['interests'];?>" placeholder="Футбол, баскетбол">
+                                <?php $arr = unserialize($user_info['interests']); ?>
+                                <select class="selectpicker" name="interests[]" multiple>
+                                    <option <?=in_array("Футбол", $arr) ? 'selected' : ''?> value="Футбол">Футбол</option>
+                                    <option <?=in_array("Теннис", $arr) ? 'selected' : ''?> value="Теннис">Теннис</option>
+                                    <option <?=in_array("Баскетбол", $arr) ? 'selected' : ''?> value="Баскетбол">Баскетбол</option>
+                                    <option <?=in_array("Хоккей", $arr) ? 'selected' : ''?> value="Хоккей">Хоккей</option>
+                                    <option <?=in_array("Бокс", $arr) ? 'selected' : ''?> value="Бокс">Бокс</option>
+                                </select>
                             </div>
                             <div class="form-group">
                                 <p><a name="about"></a>О себе</p>
@@ -98,6 +105,15 @@
 <script src="/template/assets/scripts/klorofil-common.js"></script>
 <script src="http://code.jquery.com/jquery-latest.min.js"></script>
 <script src="/template/assets/scripts/js/dropdown.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/bootstrap-select.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/js/i18n/defaults-*.min.js"></script>
+<script>
+    $('.selectpicker').selectpicker({
+        noneSelectedText: "Ваши интересы",
+        size: 10
+    });
+</script>
+
 </body>
 
 </html>

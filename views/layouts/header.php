@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="/template/assets/vendor/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/template/assets/vendor/linearicons/style.css">
     <link rel="stylesheet" href="/template/assets/vendor/chartist/css/chartist-custom.css">
+    <link rel="stylesheet" href="/template/assets/css/bootstrap-select.css">
+<!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">-->
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="/template/assets/css/main.css">
     <!--NEWS CSS-->

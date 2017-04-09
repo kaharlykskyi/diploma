@@ -1154,7 +1154,7 @@ img .flags {
   width: 45%;
   height: 100%;
   position: absolute;
-  background-color: #F8F8F8; }
+  background-color: rgba(248, 248, 248, 0.54); }
 
 .profile-right {
   float: right;
@@ -1216,7 +1216,7 @@ img .flags {
     position: relative;
     background-color: #00AAFF; }
     .profile-header .profile-stat .stat-item {
-      padding: 20px;
+      padding: 8px;
       position: relative; }
       .profile-header .profile-stat .stat-item:after {
         content: "";
