@@ -50,7 +50,7 @@ class User
      * @param $name, $surname, $email, $password
      * @return bool
      */
-    public static function register($name, $surname, $email, $password)
+    public static function register($name, $surname, $email, $password, $bdate)
     {
         $db = Db::getConnection();
         $password = password_hash($password, PASSWORD_BCRYPT);
@@ -63,13 +63,14 @@ class User
         $result->execute();
         $res = $db->query("SELECT max(id) as id FROM user");
         $id = $res->fetch(PDO::FETCH_ASSOC)['id'];
-        $sql = "INSERT INTO user_info(user_id, about) VALUES (:id, 'Расскажите о себе. Редактируйте информацию профиля в настройках.')";
+        $sql = "INSERT INTO user_info(user_id, bdate) VALUES (:id, :bdate)";
         $result = $db->prepare($sql);
         $result->bindParam(':id', $id, PDO::PARAM_INT);
+        $result->bindParam(':bdate', $bdate, PDO::PARAM_STR);
         return $result->execute();
     }
 
-    public static function edit($userId, $name, $surname, $bdate, $country, $city, $phone, $skype, $vk, $fb, $google, $twitter, $about)
+    public static function edit($userId, $name, $surname, $bdate, $country, $city, $phone, $skype, $vk, $fb, $google, $twitter, $about, $interests)
     {
         $db = Db::getConnection();
         $sql = "UPDATE user SET name = :name, surname = :surname WHERE id = :id";
@@ -80,7 +81,7 @@ class User
         $result->execute();
 
         $sql = "UPDATE user_info SET mobile = :mobile, country = :country, city = :city, vk = :vk, fb = :fb, google = :google, twitter = :twitter, "
-            ."bdate = :bdate, skype = :skype, about = :about WHERE user_id = :user_id";
+            ."bdate = :bdate, skype = :skype, about = :about, interests = :interests WHERE user_id = :user_id";
         $result = $db->prepare($sql);
         $result->bindParam(':user_id', $userId, PDO::PARAM_INT);
         $result->bindParam(':mobile', $phone, PDO::PARAM_STR);
@@ -93,6 +94,7 @@ class User
         $result->bindParam(':bdate', $bdate, PDO::PARAM_STR);
         $result->bindParam(':skype', $skype, PDO::PARAM_STR);
         $result->bindParam(':about', $about, PDO::PARAM_STR);
+        $result->bindParam(':interests', $interests, PDO::PARAM_STR);
 
         return $result->execute();
     }

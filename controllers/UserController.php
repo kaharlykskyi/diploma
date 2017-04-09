@@ -39,6 +39,7 @@ class UserController
         $email = '';
         $password = '';
         $password_second = '';
+        $bdate = '2017-01-01';
         $result = false;
 
         if (isset($_POST['submit'])) {
@@ -47,6 +48,7 @@ class UserController
             $email = $_POST['email'];
             $password = $_POST['password'];
             $password_second = $_POST['password_second'];
+            $bdate = $_POST['bdate'];
 
             $errors = false;
 
@@ -64,14 +66,14 @@ class UserController
 
 
             if ($errors == false) {
-                $result = User::register($name, $surname, $email, $password);
+                $result = User::register($name, $surname, $email, $password, $bdate);
                 if ($result == true) {
                     header('Location: /');
                 }
             }
         }
 
-        require_once(ROOT.'/views/user/register.php');
+        require_once(ROOT . '/views/user/register.php');
         return true;
     }
 

@@ -12,7 +12,7 @@
 								<div class="profile-header">
 									<div class="overlay"></div>
 									<div class="profile-main">
-										<img src="../../template/assets/img/user-medium.png" class="img-circle" alt="Avatar">
+										<img src="../../template/assets/img/push.jpg" class="img-circle" alt="Avatar">
 										<h3 class="name"><?php echo $user['name'].'&nbsp;'.$user['surname'];?></h3>
 										<span class="online-status status-available">Online</span>
 									</div>
@@ -33,6 +33,13 @@
 									<div class="profile-info">
 										<h4 class="heading">Основная информация</h4>
 										<ul class="list-unstyled list-justify">
+                                            <li>Статус
+                                                <span>
+                                                    <?php
+                                                        if ($user['role'] == 'admin') echo "Администратор"; else echo "Пользователь";
+                                                    ?>
+                                                </span>
+                                            </li>
                                             <li>Email <span><?=$user['email'];?></span></li>
 											<li>Дата рождения
                                                 <span>
@@ -64,6 +71,11 @@
                                                     if ($user_info['country'] == '') {
                                                         echo 'Не указан';
                                                     } else {
+                                                        if ($user_info['country'] == 'Украина') $href = 'UA';
+                                                        if ($user_info['country'] == 'Россия') $href = 'RU';
+                                                        if ($user_info['country'] == 'США') $href = 'US';
+                                                        echo "<img class=\"flags\" src=\"/data/flags/24/$href.png\" alt=\"flag\">&nbsp;";
+
                                                         echo $user_info['country'];
                                                     }
 
@@ -112,17 +124,27 @@
                                                 if (!$user_info['google'] == '') {
                                                     echo "<li><a href=".$user_info['google']." target='_blank' class=\"google-plus-bg\"><i class=\"fa fa-google-plus\"></i></a></li>";
                                                 }
-                                                if ($user_info['vk'] == '' && $user_info['fb'] == '' && $user_info['twitter'] == '' && $user_info['google'] == '') {
-                                                    echo "<p><a href='/profile/edit'>  Добавить соц. сеть</a></p>";
-                                                }
+                                            if ($user_info['vk'] == '' && $user_info['fb'] == '' && $user_info['twitter'] == '' && $user_info['google'] == '') {
+                                                echo "&nbsp;<i class=\"fa fa-plus\" aria-hidden=\"true\"></i>&nbsp;<a href='/profile/edit/#about'>Добавить социальные сети</a>";
+                                            }
                                             ?>
 										</ul>
 									</div>
+                                    <div class="profile-info">
+                                        <h4 class="heading">Интересы</h4>
+                                        <p><?php
+                                                if ($user_info['interests'] == '') {
+                                                    echo "<i class=\"fa fa-plus\" aria-hidden=\"true\"></i>&nbsp;<a href='/profile/edit'>Добавить интересы</a>";
+                                                }
+                                                echo $user_info['interests'];
+                                            ?>
+                                        </p>
+                                    </div>
 									<div class="profile-info">
 										<h4 class="heading">Обо мне</h4>
 										<p><?=$user_info['about']?></p>
 									</div>
-									<div class="text-center"><a href="/profile/edit" class="btn btn-primary">Изменить</a></div>
+
 								</div>
 								<!-- END PROFILE DETAIL -->
 							</div>
@@ -142,95 +164,9 @@
 								</div>
 								<div class="tab-content">
 									<div class="tab-pane fade in active" id="tab-bottom-left1">
-
+                                        <?=$news;?>
 									</div>
 									<div class="tab-pane fade" id="tab-bottom-left2">
-										<div class="table-responsive">
-											<table class="table project-table">
-												<thead>
-													<tr>
-														<th>Title</th>
-														<th>Progress</th>
-														<th>Leader</th>
-														<th>Status</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td><a href="#">Spot Media</a></td>
-														<td>
-															<div class="progress">
-																<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">
-																	<span>60% Complete</span>
-																</div>
-															</div>
-														</td>
-														<td><img src="../../template/assets/img/user2.png" alt="Avatar" class="avatar img-circle"> <a href="#">Michael</a></td>
-														<td><span class="label label-success">ACTIVE</span></td>
-													</tr>
-													<tr>
-														<td><a href="#">E-Commerce Site</a></td>
-														<td>
-															<div class="progress">
-																<div class="progress-bar" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%;">
-																	<span>33% Complete</span>
-																</div>
-															</div>
-														</td>
-														<td><img src="../../template/assets/img/user1.png" alt="Avatar" class="avatar img-circle"> <a href="#">Antonius</a></td>
-														<td><span class="label label-warning">PENDING</span></td>
-													</tr>
-													<tr>
-														<td><a href="#">Project 123GO</a></td>
-														<td>
-															<div class="progress">
-																<div class="progress-bar" role="progressbar" aria-valuenow="68" aria-valuemin="0" aria-valuemax="100" style="width: 68%;">
-																	<span>68% Complete</span>
-																</div>
-															</div>
-														</td>
-														<td><img src="../../template/assets/img/user1.png" alt="Avatar" class="avatar img-circle"> <a href="#">Antonius</a></td>
-														<td><span class="label label-success">ACTIVE</span></td>
-													</tr>
-													<tr>
-														<td><a href="#">Wordpress Theme</a></td>
-														<td>
-															<div class="progress">
-																<div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%;">
-																	<span>75%</span>
-																</div>
-															</div>
-														</td>
-														<td><img src="../../template/assets/img/user2.png" alt="Avatar" class="avatar img-circle"> <a href="#">Michael</a></td>
-														<td><span class="label label-success">ACTIVE</span></td>
-													</tr>
-													<tr>
-														<td><a href="#">Project 123GO</a></td>
-														<td>
-															<div class="progress">
-																<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-																	<span>100%</span>
-																</div>
-															</div>
-														</td>
-														<td><img src="../../template/assets/img/user1.png" alt="Avatar" class="avatar img-circle" /> <a href="#">Antonius</a></td>
-														<td><span class="label label-default">CLOSED</span></td>
-													</tr>
-													<tr>
-														<td><a href="#">Redesign Landing Page</a></td>
-														<td>
-															<div class="progress">
-																<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%;">
-																	<span>100%</span>
-																</div>
-															</div>
-														</td>
-														<td><img src="../../template/assets/img/user5.png" alt="Avatar" class="avatar img-circle" /> <a href="#">Jason</a></td>
-														<td><span class="label label-default">CLOSED</span></td>
-													</tr>
-												</tbody>
-											</table>
-										</div>
 									</div>
 								</div>
 								<!-- END TABBED CONTENT -->
@@ -250,6 +186,19 @@
 	<script src="../../template/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="../../template/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 	<script src="../../template/assets/scripts/klorofil-common.js"></script>
+    <script>
+        $(document).ready(function(){
+
+
+            $('div.rn_full img').each(function () {
+                var href = 'https://www.livesport.ru';
+                href += $( this ).attr("src");
+                $( this ).attr("src", href);
+            });
+
+
+        });
+    </script>
 </body>
 
 </html>

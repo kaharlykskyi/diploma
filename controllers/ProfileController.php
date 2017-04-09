@@ -11,6 +11,8 @@ class ProfileController
         $userId = User::checkLogged();
         $user = User::getUserById($userId);
         $user_info = User::getUserInfoById($userId); //получаем доп. инфу о пользователе
+        $news = Profile::getNews();
+
         require_once(ROOT . '/views/profile/index.php');
         return true;
     }
@@ -37,9 +39,10 @@ class ProfileController
             $fb = $_POST['fb'];
             $google = $_POST['google'];
             $twitter = $_POST['twitter'];
+            $interests = $_POST['interests'];
             $about = $_POST['about'];
 
-            $result = User::edit($userId, $name, $surname, $bdate, $country, $city, $phone, $skype, $vk, $fb, $google, $twitter, $about);
+            $result = User::edit($userId, $name, $surname, $bdate, $country, $city, $phone, $skype, $vk, $fb, $google, $twitter, $about, $interests);
             if ($result == true) {
                 header('Location: /profile');
             }

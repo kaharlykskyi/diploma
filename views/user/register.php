@@ -44,6 +44,9 @@
 									<label for="signin-email" class="control-label sr-only">Email</label>
 									<input type="email" class="form-control" id="signin-email" value="<?=$email?>" placeholder="Email" name="email" required>
 								</div>
+                                <div class="form-group">
+                                    <input type="date" class="form-control" placeholder="Дата рождения" name="bdate" value="2017-01-01" name="bdate" required>
+                                </div>
 								<div class="form-group">
 									<label for="signin-password" class="control-label sr-only">Пароль</label>
 									<input type="password" class="form-control" id="signin-password" value="" placeholder="Пароль" name="password" required>

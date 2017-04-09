@@ -635,7 +635,7 @@ fieldset[disabled] .btn {
   -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   background-color: #fff;
-  margin-bottom: 30px; }
+  margin-bottom: 0px; }
   .panel .panel-heading,
   .panel .panel-body,
   .panel .panel-footer {
@@ -975,6 +975,9 @@ ul.activity-list > li {
     .easy-pie-chart#system-load .percent {
       line-height: 128px; }
 
+img .flags {
+  margin-top: -5px;
+}
 /********************************
  * AUTHENTICATION FORMS, PAGE
  ********************************/
@@ -986,7 +989,7 @@ ul.activity-list > li {
   -moz-border-radius: 5px;
   border-radius: 5px;
   width: 30%;
-  height: 450px;
+  height: 500px;
   margin: 0 auto;
   background-color: #fff; }
   .auth-box:before {
@@ -1148,14 +1151,14 @@ ul.activity-list > li {
 .profile-left {
   padding-left: 0;
   float: left;
-  width: 40%;
+  width: 45%;
   height: 100%;
   position: absolute;
   background-color: #F8F8F8; }
 
 .profile-right {
   float: right;
-  width: 60%;
+  width: 55%;
   padding: 20px 25px; }
   .profile-right .heading {
     margin-top: 0; }
@@ -1233,7 +1236,7 @@ ul.activity-list > li {
       display: none; } }
 
 .profile-detail {
-  padding-bottom: 30px; }
+  padding-bottom: 0px; }
 
 .profile-info {
   padding: 0 20px;
@@ -1664,7 +1667,7 @@ ul.activity-list > li {
   .youtube-bg:hover, .youtube-bg:focus {
     background-color: #b71d1c !important; }
 .profile-right {
-  min-height: 810px;
+  min-height: 880px;
 }
 
 .profile-right .heading {

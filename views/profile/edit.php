@@ -68,8 +68,12 @@
                                 <input type="url" tabindex="11" class="form-control" name="twitter" value="<?=$user_info['twitter'];?>">
                             </div>
                             <div class="form-group">
-                                <p>О себе</p>
-                                <textarea tabindex="12" class="form-control text-area" maxlength="500" name="about"><?=$user_info['about'];?></textarea>
+                                <p>Интересы</p>
+                                <input type="text" tabindex="12" class="form-control" name="interests" value="<?=$user_info['interests'];?>" placeholder="Футбол, баскетбол">
+                            </div>
+                            <div class="form-group">
+                                <p><a name="about"></a>О себе</p>
+                                <textarea tabindex="13" class="form-control text-area" maxlength="500" name="about"><?=$user_info['about'];?></textarea>
                             </div>
 
                     </div>
