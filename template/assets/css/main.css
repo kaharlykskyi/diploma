@@ -1148,14 +1148,14 @@ ul.activity-list > li {
 .profile-left {
   padding-left: 0;
   float: left;
-  width: 35%;
+  width: 40%;
   height: 100%;
   position: absolute;
   background-color: #F8F8F8; }
 
 .profile-right {
   float: right;
-  width: 65%;
+  width: 60%;
   padding: 20px 25px; }
   .profile-right .heading {
     margin-top: 0; }
@@ -1663,10 +1663,13 @@ ul.activity-list > li {
   background-color: #cd201f !important; }
   .youtube-bg:hover, .youtube-bg:focus {
     background-color: #b71d1c !important; }
+.profile-right {
+  min-height: 810px;
+}
 
 .profile-right .heading {
   padding-bottom: 10px;
-  margin-bottom: 20px;
+
   border-bottom: 1px solid #eaeaea; }
 
 .awards {
@@ -1772,10 +1775,8 @@ ul.activity-timeline > li {
   margin-bottom: 15px;
 }
 
-#text_area{
+.text-area{
   resize: none;
-  width: 100%;
-  height: 120px;
 }
 
 div.form p{

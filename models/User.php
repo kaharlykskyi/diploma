@@ -60,6 +60,40 @@ class User
         $result->bindParam(':name', $name, PDO::PARAM_STR);
         $result->bindParam(':surname', $surname, PDO::PARAM_STR);
         $result->bindParam(':password', $password, PDO::PARAM_STR);
+        $result->execute();
+        $res = $db->query("SELECT max(id) as id FROM user");
+        $id = $res->fetch(PDO::FETCH_ASSOC)['id'];
+        $sql = "INSERT INTO user_info(user_id, about) VALUES (:id, 'Расскажите о себе. Редактируйте информацию профиля в настройках.')";
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $id, PDO::PARAM_INT);
+        return $result->execute();
+    }
+
+    public static function edit($userId, $name, $surname, $bdate, $country, $city, $phone, $skype, $vk, $fb, $google, $twitter, $about)
+    {
+        $db = Db::getConnection();
+        $sql = "UPDATE user SET name = :name, surname = :surname WHERE id = :id";
+        $result = $db->prepare($sql);
+        $result->bindParam(':id', $userId, PDO::PARAM_INT);
+        $result->bindParam(':name', $name, PDO::PARAM_STR);
+        $result->bindParam(':surname', $surname, PDO::PARAM_STR);
+        $result->execute();
+
+        $sql = "UPDATE user_info SET mobile = :mobile, country = :country, city = :city, vk = :vk, fb = :fb, google = :google, twitter = :twitter, "
+            ."bdate = :bdate, skype = :skype, about = :about WHERE user_id = :user_id";
+        $result = $db->prepare($sql);
+        $result->bindParam(':user_id', $userId, PDO::PARAM_INT);
+        $result->bindParam(':mobile', $phone, PDO::PARAM_STR);
+        $result->bindParam(':country', $country, PDO::PARAM_STR);
+        $result->bindParam(':city', $city, PDO::PARAM_STR);
+        $result->bindParam(':vk', $vk, PDO::PARAM_STR);
+        $result->bindParam(':fb', $fb, PDO::PARAM_STR);
+        $result->bindParam(':google', $google, PDO::PARAM_STR);
+        $result->bindParam(':twitter', $twitter, PDO::PARAM_STR);
+        $result->bindParam(':bdate', $bdate, PDO::PARAM_STR);
+        $result->bindParam(':skype', $skype, PDO::PARAM_STR);
+        $result->bindParam(':about', $about, PDO::PARAM_STR);
+
         return $result->execute();
     }
 
@@ -131,9 +165,9 @@ class User
     }
 
     /**
-     * Возвращает инфо о пользователе по его id
+     * Возвращает основную информацию о пользователе по его id с таблицы user
      * @param $userId
-     * @return mixed
+     * @return array
      */
     public static function getUserById($userId)
     {
@@ -141,6 +175,25 @@ class User
         if($userId) {
             $db = Db::getConnection();
             $sql = "SELECT * FROM user WHERE id = :id";
+            $result = $db->prepare($sql);
+            $result->bindParam(':id', $userId, PDO::PARAM_INT);
+            $result->setFetchMode(PDO::FETCH_ASSOC);
+            $result->execute();
+            return $result->fetch();
+        }
+    }
+
+    /**
+     * Возвращает дополнительную информацию о пользователе по его id с таблицы user_info
+     * @param $userId
+     * @return array
+     */
+    public static function getUserInfoById($userId)
+    {
+        $userId = intval($userId);
+        if($userId) {
+            $db = Db::getConnection();
+            $sql = "SELECT * FROM user_info WHERE user_id = :id";
             $result = $db->prepare($sql);
             $result->bindParam(':id', $userId, PDO::PARAM_INT);
             $result->setFetchMode(PDO::FETCH_ASSOC);

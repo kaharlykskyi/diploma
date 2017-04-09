@@ -10,26 +10,30 @@
                 </div>
                 <div class="panel-body">
                     <div class="col-md-4">
-                        <form method="post" action="#">
+                        <form method="POST" action="#">
                             <div class="form-group">
                                 <p>Имя</p>
-                                <input type="text" class="form-control" value="<?=$user['name'];?>" name="name">
+                                <input type="text" tabindex="1" class="form-control" value="<?=$user['name'];?>" name="name" required>
                             </div>
                             <div class="form-group">
                                 <p>Фамилия</p>
-                                <input type="text" class="form-control" value="<?=$user['surname'];?>" name="surname">
+                                <input type="text" tabindex="2" class="form-control" value="<?=$user['surname'];?>" name="surname" required>
                             </div>
                             <div class="form-group">
                                 <p>Дата рождения</p>
-                                <input type="date" class="form-control" value="" name="bdate">
+                                <input type="date" tabindex="3" class="form-control" value="<?=$user_info['bdate'];?>" name="bdate">
                             </div>
                             <div class="form-group">
                                 <p>Cтрана</p>
-                                <select name="country" class="form-control">
+                                <select name="country" tabindex="4" class="form-control">
                                     <?php
                                         foreach ($countries as $items) {
                                             foreach ($items as $country){
-                                                echo "<option value='".$country->title."'>".$country->title."</option>";
+                                                if ($country->title == $user_info['country']) {
+                                                    echo "<option selected value='".$country->title."'>".$country->title."</option>";
+                                                } else {
+                                                    echo "<option value='".$country->title."'>".$country->title."</option>";
+                                                }
                                             }
                                         }
                                     ?>
@@ -37,39 +41,42 @@
                             </div>
                             <div class="form-group">
                                 <p>Город</p>
-                                <input type="text" class="form-control" name="city" value="" >
+                                <input type="text" tabindex="5" class="form-control" name="city" value="<?=$user_info['city'];?>" >
                             </div>
                             <div class="form-group">
-                                <p>Ваш номер телефона</p>
-                                <input type="tel" class="form-control" name="phone" value="">
+                                <p>Моб. телефон</p>
+                                <input type="tel" tabindex="6" class="form-control" name="phone" value="<?=$user_info['mobile'];?>">
+                            </div>
+                            <div class="form-group">
+                                <p>Skype</p>
+                                <input type="tel" tabindex="7" class="form-control" name="skype" value="<?=$user_info['skype'];?>">
                             </div>
                             <div class="form-group">
                                 <p>Ссылка на Вконтакте</p>
-                                <input type="url" class="form-control" name="vk" value="">
+                                <input type="url" tabindex="8" class="form-control" name="vk" value="<?=$user_info['vk'];?>">
                             </div>
                             <div class="form-group">
                                 <p>Ссылка на Facebook</p>
-                                <input type="url" class="form-control" name="fb" value="">
+                                <input type="url" tabindex="9" class="form-control" name="fb" value="<?=$user_info['fb'];?>">
                             </div>
                             <div class="form-group">
-                                <p>Ссылка Google+</p>
-                                <label for="google" class="control-label sr-only"></label>
-                                <input type="url" class="form-control" id="google" value="" placeholder="">
+                                <p>Ссылка на Google+</p>
+                                <input type="url" tabindex="10" class="form-control" name="google" value="<?=$user_info['google'];?>">
                             </div>
                             <div class="form-group">
-                                <p>Ссылка Twitter</p>
-                                <label for="twitter" class="control-label sr-only"></label>
-                                <input type="url" class="form-control" id="twitter" value="" placeholder="">
+                                <p>Ссылка на Twitter</p>
+                                <input type="url" tabindex="11" class="form-control" name="twitter" value="<?=$user_info['twitter'];?>">
                             </div>
                             <div class="form-group">
                                 <p>О себе</p>
-                                <textarea id="text_area" class="form-control"></textarea>
+                                <textarea tabindex="12" class="form-control text-area" maxlength="500" name="about"><?=$user_info['about'];?></textarea>
                             </div>
-                        </form>
+
                     </div>
                 </div>
                 <div class="panel-footer">
-                        <button type="submit" class="btn btn-primary btn-md">Сохранить</button>
+                        <button type="submit" tabindex="12" class="btn btn-primary btn-md" name="submit">Сохранить</button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -85,9 +92,8 @@
 <script src="/template/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 <script src="/template/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <script src="/template/assets/scripts/klorofil-common.js"></script>
-<script src="/template/assets/vendor/jquery/jquery.min.js"></script>
-<script src="/template/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-<script src="/template/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script src="/template/assets/scripts/js/dropdown.js"></script>
 </body>
 
 </html>
