@@ -170,15 +170,15 @@
                                         <li><a href="#tab-bottom-left6" role="tab" data-toggle="tab">Аналитика</a></li>
 									</ul>
 								</div>
-								<div class="tab-content">
-                                    <?php var_dump($interests); if (!empty($interests)): ?>
-                                        <?=in_array("Футбол", $interests) ? "<div class=\"tab-pane fade in active\" id=\"tab-bottom-left1\">$football_news</div>" : ""?>
-                                        <?=in_array("Теннис", $interests) ? "<div class=\"tab-pane fade in active\" id=\"tab-bottom-left2\">$tennis_news</div>" : ""?>
-                                        <?=in_array("Хоккей", $interests) ? "<div class=\"tab-pane fade in active\" id=\"tab-bottom-left3\">$hockey_news</div>" : ""?>
-                                        <?=in_array("Баскетбол", $interests) ? "<div class=\"tab-pane fade in active\" id=\"tab-bottom-left4\">$basketball_news</div>" : ""?>
-                                        <?=in_array("Бокс", $interests) ? "<div class=\"tab-pane fade in active\" id=\"tab-bottom-left5\">$boxing_news</div>" : ""?>
+								<div class="tab-content news">
+                                    <?php if (!empty($interests)): ?>
+                                        <?=in_array("Футбол", $interests) ? "<div class=\"tab-pane fade\" id=\"tab-bottom-left1\">$football_news</div>" : ""?>
+                                        <?=in_array("Теннис", $interests) ? "<div class=\"tab-pane fade\" id=\"tab-bottom-left2\">$tennis_news</div>" : ""?>
+                                        <?=in_array("Хоккей", $interests) ? "<div class=\"tab-pane fade\" id=\"tab-bottom-left3\">$hockey_news</div>" : ""?>
+                                        <?=in_array("Баскетбол", $interests) ? "<div class=\"tab-pane fade\" id=\"tab-bottom-left4\">$basketball_news</div>" : ""?>
+                                        <?=in_array("Бокс", $interests) ? "<div class=\"tab-pane fade\" id=\"tab-bottom-left5\">$boxing_news</div>" : ""?>
                                     <?php endif; ?>
-                                    <div class="tab-pane fade in active" id="tab-bottom-left6">
+                                    <div class="tab-pane fade" id="tab-bottom-left6">
                                             <p>В разработке :)</p>
                                     </div>
 								</div>
@@ -222,6 +222,8 @@
             });
 
             $('ul.news li:first').addClass('active');
+            $('div.news div:first').addClass('in active');
+
 
         });
     </script>
