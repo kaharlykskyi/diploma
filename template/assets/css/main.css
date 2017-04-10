@@ -1788,6 +1788,41 @@ div.form p{
 
 }
 
+@media screen and (max-width: 640px){
+  .navbar-btn {
+    padding-left: 0px !important;
+    padding-top: 3px !important;
+  }
+}
+
+@media screen and (max-width: 640px){
+  .navbar-default #navbar-menu {
+    float: none !important;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .navbar-btn {
+    padding: 0;
+  }
+}
+@media screen and (max-width: 767px){
+  #wrapper #sidebar-nav, #wrapper .main {
+    padding-top: 50px;
+  }
+}
+
+.small_font {
+  font: 14px/22px 'PTD', sans-serif !important;
+}
+
+.medium_font {
+  font: 16px/22px 'PTD', sans-serif !important;
+}
+
+
+
+
 
 
 .project-table > tbody > tr > td {

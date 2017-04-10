@@ -224,6 +224,17 @@
             $('ul.news li:first').addClass('active');
             $('div.news div:first').addClass('in active');
 
+            if ($(window).width() < 640) {
+                $('div.rn_full, a.lista, a.list, a.list_r, div.pro30').addClass('hidden');
+            }
+
+
+            if ($(window).width() < 380) {
+                $('div.rn_lenta a').addClass('small_font');
+            } else {
+                $('div.rn_lenta a').removeClass('small_font');
+            }
+
 
         });
     </script>
