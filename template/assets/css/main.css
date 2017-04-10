@@ -1816,8 +1816,8 @@ div.form p{
   font: 14px/22px 'PTD', sans-serif !important;
 }
 
-.medium_font {
-  font: 16px/22px 'PTD', sans-serif !important;
+.fixedmr {
+  margin: 0 -11px !important;
 }
 
 

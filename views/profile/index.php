@@ -231,8 +231,10 @@
 
             if ($(window).width() < 380) {
                 $('div.rn_lenta a').addClass('small_font');
+                $('div.panel-profile').addClass('fixedmr');
             } else {
                 $('div.rn_lenta a').removeClass('small_font');
+                $('div.panel-profile').removeClass('fixedmr');
             }
 
 
