@@ -161,7 +161,7 @@
 								<div class="custom-tabs-line tabs-line-bottom left-aligned">
 									<ul class="nav news" role="tablist">
                                         <?php if (!empty($interests)): ?>
-                                            <?=in_array("Футбол", $interests) ? "<li class=\"active\"><a href=\"#tab-bottom-left1\" role=\"tab\" data-toggle=\"tab\">Футбол</a></li>" : ""?>
+                                            <?=in_array("Футбол", $interests) ? "<li><a href=\"#tab-bottom-left1\" role=\"tab\" data-toggle=\"tab\">Футбол</a></li>" : ""?>
                                             <?=in_array("Теннис", $interests) ? "<li><a href=\"#tab-bottom-left2\" role=\"tab\" data-toggle=\"tab\">Теннис</a></li>" : ""?>
                                             <?=in_array("Хоккей", $interests) ? "<li><a href=\"#tab-bottom-left3\" role=\"tab\" data-toggle=\"tab\">Хоккей</a></li>" : ""?>
                                             <?=in_array("Баскетбол", $interests) ? "<li><a href=\"#tab-bottom-left4\" role=\"tab\" data-toggle=\"tab\">Баскетбол</a></li>" : ""?>
@@ -171,7 +171,7 @@
 									</ul>
 								</div>
 								<div class="tab-content">
-                                    <?php if (!empty($interests)): ?>
+                                    <?php var_dump($interests); if (!empty($interests)): ?>
                                         <?=in_array("Футбол", $interests) ? "<div class=\"tab-pane fade in active\" id=\"tab-bottom-left1\">$football_news</div>" : ""?>
                                         <?=in_array("Теннис", $interests) ? "<div class=\"tab-pane fade in active\" id=\"tab-bottom-left2\">$tennis_news</div>" : ""?>
                                         <?=in_array("Хоккей", $interests) ? "<div class=\"tab-pane fade in active\" id=\"tab-bottom-left3\">$hockey_news</div>" : ""?>
