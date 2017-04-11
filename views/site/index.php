@@ -28,6 +28,13 @@
 <script src="/template/assets/vendor/chartist/js/chartist.min.js"></script>
 <script src="/template/assets/scripts/klorofil-common.js"></script>
 <script>
+    $(window).on('load', function () {
+        var $preloader = $('#page-preloader'),
+            $spinner   = $preloader.find('.spinner');
+        $spinner.fadeOut();
+        $preloader.delay(350).fadeOut('slow');
+    });
+
     $(function() {
         var data, options;
 

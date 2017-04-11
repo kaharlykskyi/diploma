@@ -1846,6 +1846,7 @@ div.form p{
   .nav > li > a {
     padding: 7px;
   }
+
 }
 
 .helper-text {
@@ -1860,6 +1861,7 @@ div.panel-footer button {
 div.bottom {
   margin-top: 5px;
 }
+
 
 .project-table > tbody > tr > td {
   padding: 12px 8px; }

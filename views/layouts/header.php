@@ -1,11 +1,29 @@
 <!doctype html>
 <html lang="en">
-
 <head>
     <title>Sport info</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <style type="text/css">
+        #page-preloader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: #FFF;
+            z-index: 100500;
+        }
+        #page-preloader .spinner {
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background: url('/template/assets/img/ring.gif') no-repeat 50% 50%;
+            margin: -60px 0 0 -60px;
+    </style>
     <!-- VENDOR CSS -->
     <link rel="stylesheet" href="/template/assets/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/template/assets/vendor/font-awesome/css/font-awesome.min.css">
@@ -22,9 +40,21 @@
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="/template/assets/img/apple-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/template/assets/img/favicon.png">
+
+    <script src="/template/assets/vendor/jquery/jquery.min.js"></script>
+    <script>
+        $(window).on('load', function () {
+            var $preloader = $('#page-preloader'),
+                $spinner   = $preloader.find('.spinner');
+            $spinner.fadeOut();
+            $preloader.delay(250).fadeOut('slow');
+        });
+    </script>
 </head>
 
 <body>
+<!-- PRELOADER -->
+<div id="page-preloader"><span class="spinner"></span></div>
 <!-- WRAPPER -->
 <div id="wrapper">
     <!-- NAVBAR -->

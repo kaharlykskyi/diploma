@@ -19,9 +19,29 @@
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="76x76" href="/template/assets/img/apple-icon.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="/template/assets/img/favicon.png">
+    <style type="text/css">
+        #page-preloader {
+            position: fixed;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            background: #FFF;
+            z-index: 100500;
+        }
+        #page-preloader .spinner {
+            width: 120px;
+            height: 120px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            background: url('/template/assets/img/ring.gif') no-repeat 50% 50%;
+            margin: -60px 0 0 -60px;
+    </style>
 </head>
 
 <body>
+<div id="page-preloader"><span class="spinner"></span></div>
 	<!-- WRAPPER -->
 	<div id="wrapper">
 		<div class="vertical-align-wrap">
@@ -71,5 +91,15 @@
 	</div>
 	<!-- END WRAPPER -->
 </body>
+<script src="/template/assets/vendor/jquery/jquery.min.js"></script>
+<script src="/template/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script>
+    $(window).on('load', function () {
+        var $preloader = $('#page-preloader'),
+            $spinner   = $preloader.find('.spinner');
+        $spinner.fadeOut();
+        $preloader.delay(250).fadeOut('slow');
+    });
+</script>
 
 </html>

@@ -199,11 +199,12 @@
 	</div>
 	<!-- END WRAPPER -->
 	<!-- Javascript -->
-	<script src="../../template/assets/vendor/jquery/jquery.min.js"></script>
-	<script src="../../template/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="../../template/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="../../template/assets/scripts/klorofil-common.js"></script>
+
+	<script src="/template/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="/template/assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="/template/assets/scripts/klorofil-common.js"></script>
     <script>
+
         $(document).ready(function(){
             $('div.rn_full img').each(function () {
                 var href = 'https://www.livesport.ru';
