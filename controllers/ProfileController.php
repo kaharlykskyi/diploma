@@ -11,6 +11,7 @@ class ProfileController
         $userId = User::checkLogged();
         $user = User::getUserById($userId);
         $user_info = User::getUserInfoById($userId); //получаем доп. инфу о пользователе
+        $flag_url = Profile::get_flag_href();
         $football_news = Profile::getNews(Profile::getCurl('https://www.livesport.ru/news/football/'));
         $tennis_news = Profile::getNews(Profile::getCurl('https://www.livesport.ru/news/tennis/'));
         $hockey_news = Profile::getNews(Profile::getCurl('https://www.livesport.ru/news/hockey/'));
@@ -34,6 +35,7 @@ class ProfileController
         $countries = Profile::getCountries();
         $small_avatar_url = Profile::get_gravatar($user['email'], 26);
         $medium_avatar_url = Profile::get_gravatar($user['email'], 100);
+
 
         if (isset($_POST['submit'])) {
             $name = $_POST['name'];

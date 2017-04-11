@@ -85,4 +85,17 @@ class Profile
         return $url;
     }
 
+    public static function get_flag_href()
+    {
+        $userId = User::checkLogged();
+        $user_info = User::getUserInfoById($userId);
+        $href = '';
+        $country = ['Украина' => 'UA', 'Россия' => 'RU', 'США' => 'US'];
+        if ($user_info['country'] == 'Украина') $href = 'UA';
+        if ($user_info['country'] == 'Россия') $href = 'RU';
+        if ($user_info['country'] == 'США') $href = 'US';
+        return in_array($href, $country) ? "<img class=\"flags\" src=\"/data/flags/24/$href.png\" alt=\"flag\">&nbsp;" : '';
+
+    }
+
 }

@@ -1780,6 +1780,7 @@ ul.activity-timeline > li {
 
 .text-area{
   resize: none;
+  height: 100px;
 }
 
 div.form p{
@@ -1799,16 +1800,17 @@ div.form p{
   .navbar-default #navbar-menu {
     float: none !important;
   }
-}
-
-@media screen and (max-width: 640px) {
   .navbar-btn {
     padding: 0;
   }
 }
+
 @media screen and (max-width: 767px){
   #wrapper #sidebar-nav, #wrapper .main {
     padding-top: 50px;
+  }
+  .navbar-nav {
+    padding-top: 2px;
   }
 }
 
@@ -1835,6 +1837,28 @@ div.form p{
 .edit-img {
   height: 100px;
   margin: 15px 0;
+}
+
+@media screen and (max-width: 640px) {
+  ul.news {
+      font-size: 13px;
+  }
+  .nav > li > a {
+    padding: 7px;
+  }
+}
+
+.helper-text {
+  font-size: 14px;
+  padding-top: 15px;
+}
+
+div.panel-footer button {
+  margin-left: 15px;
+}
+
+div.bottom {
+  margin-top: 5px;
 }
 
 .project-table > tbody > tr > td {

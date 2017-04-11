@@ -47,7 +47,7 @@
                                                 <span>
                                                    <?php
                                                    if ($user_info['bdate'] == '') {
-                                                       echo 'Не указан';
+                                                       echo '<a href="/profile/edit">Не указан</a>';
                                                    } else {
                                                        echo Profile::toDate($user_info['bdate']);
                                                    }
@@ -59,7 +59,7 @@
                                                 <span>
                                                     <?php
                                                         if ($user_info['mobile'] == '') {
-                                                            echo 'Не указан';
+                                                            echo '<a href="/profile/edit">Не указан</a>';
                                                         } else {
                                                             echo $user_info['mobile'];
                                                         }
@@ -71,13 +71,15 @@
                                                 <span>
                                                     <?php
                                                     if ($user_info['country'] == '') {
-                                                        echo 'Не указан';
+                                                        echo '<a href="/profile/edit">Не указан</a>';
                                                     } else {
+                                                        /*$href = '';
+                                                        $country = ['Украина' => 'UA', 'Россия' => 'RU', 'США' => 'US'];
                                                         if ($user_info['country'] == 'Украина') $href = 'UA';
                                                         if ($user_info['country'] == 'Россия') $href = 'RU';
                                                         if ($user_info['country'] == 'США') $href = 'US';
-                                                        echo "<img class=\"flags\" src=\"/data/flags/24/$href.png\" alt=\"flag\">&nbsp;";
-
+                                                        echo in_array($href, $country) ? "<img class=\"flags\" src=\"/data/flags/24/$href.png\" alt=\"flag\">&nbsp;" : '';*/
+                                                        echo $flag_url;
                                                         echo $user_info['country'];
                                                     }
 
@@ -88,7 +90,7 @@
                                                 <span>
                                                     <?php
                                                     if ($user_info['city'] == '') {
-                                                        echo 'Не указан';
+                                                        echo '<a href="/profile/edit">Не указан</a>';
                                                     } else {
                                                         echo $user_info['city'];
                                                     }
@@ -100,7 +102,7 @@
                                                 <span>
                                                     <?php
                                                     if ($user_info['skype'] == '') {
-                                                        echo 'Не указан';
+                                                        echo '<a href="/profile/edit">Не указан</a>';
                                                     } else {
                                                         echo $user_info['skype'];
                                                     }
@@ -169,7 +171,7 @@
                                             <?=in_array("Баскетбол", $interests) ? "<li><a href=\"#tab-bottom-left4\" role=\"tab\" data-toggle=\"tab\">Баскетбол</a></li>" : ""?>
                                             <?=in_array("Бокс", $interests) ? "<li><a href=\"#tab-bottom-left5\" role=\"tab\" data-toggle=\"tab\">Бокс</a></li>" : ""?>
                                         <?php endif; ?>
-                                        <li><a href="#tab-bottom-left6" role="tab" data-toggle="tab">Аналитика</a></li>
+                                        <li><a href="#tab-bottom-left6" role="tab" data-toggle="tab">Анализ</a></li>
 									</ul>
 								</div>
 								<div class="tab-content news">
