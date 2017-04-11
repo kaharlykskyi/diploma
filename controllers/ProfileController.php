@@ -11,12 +11,13 @@ class ProfileController
         $userId = User::checkLogged();
         $user = User::getUserById($userId);
         $user_info = User::getUserInfoById($userId); //получаем доп. инфу о пользователе
-
         $football_news = Profile::getNews(Profile::getCurl('https://www.livesport.ru/news/football/'));
         $tennis_news = Profile::getNews(Profile::getCurl('https://www.livesport.ru/news/tennis/'));
         $hockey_news = Profile::getNews(Profile::getCurl('https://www.livesport.ru/news/hockey/'));
         $basketball_news = Profile::getNews(Profile::getCurl('https://www.livesport.ru/news/basketball/'));
         $boxing_news = Profile::getNews(Profile::getCurl('https://www.livesport.ru/news/boxing/'));
+        $large_avatar_url = Profile::get_gravatar($user['email']);
+        $small_avatar_url = Profile::get_gravatar($user['email'], 26);
 
         require_once(ROOT . '/views/profile/index.php');
         return true;
@@ -31,6 +32,8 @@ class ProfileController
         $user = User::getUserById($userId); //получаем основную инфу о пользователе
         $user_info = User::getUserInfoById($userId); //получаем доп. инфу о пользователе
         $countries = Profile::getCountries();
+        $small_avatar_url = Profile::get_gravatar($user['email'], 26);
+        $medium_avatar_url = Profile::get_gravatar($user['email'], 100);
 
         if (isset($_POST['submit'])) {
             $name = $_POST['name'];

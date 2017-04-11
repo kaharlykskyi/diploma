@@ -12,7 +12,9 @@
 								<div class="profile-header">
 									<div class="overlay"></div>
 									<div class="profile-main">
-										<img src="../../template/assets/img/push.jpg" class="img-circle" alt="Avatar">
+                                        <div class="profile-img">
+                                            <a href="/profile/edit"><img src="<?=$large_avatar_url?>" class="img-circle" alt="Avatar"></a>
+                                        </div>
 										<h3 class="name"><?php echo $user['name'].'&nbsp;'.$user['surname'];?></h3>
 										<span class="online-status status-available">Online</span>
 									</div>

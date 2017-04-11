@@ -45,15 +45,15 @@
             <div id="navbar-menu">
                 <ul class="nav navbar-nav navbar-right">
                     <?php if (User::isGuest()): ?>
-                        <li><a href="/login"><i class="fa fa-lock" aria-hidden="true"></i><span> Войти</span></a></li>
-                        <li><a href="/register"><i class="fa fa-sign-in" aria-hidden="true"></i><span> Регистрация</span></a></li>
+                        <li><a href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i><span> Войти</span></a></li>
+                        <li><a href="/register"><i class="fa fa-lock" aria-hidden="true"></i><span> Регистрация</span></a></li>
                     <?php else: ?>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="/template/assets/img/user.png" class="img-circle" alt="Avatar"> <span><?php echo $user['name']; ?></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<?=$small_avatar_url?>" class="img-circle" alt="Avatar"> <span><?php echo $user['name']; ?></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                         <ul class="dropdown-menu">
                             <li><a href="/profile/"><i class="lnr lnr-user"></i> <span>Профиль</span></a></li>
                             <li><a href="/profile/edit"><i class="lnr lnr-cog"></i> <span>Настройки</span></a></li>
-                            <li><a href="/logout"><i class="lnr lnr-exit"></i> <span>Выйти</span></a></li>
+                            <li><a href="/logout"><i class="fa fa-sign-in"></i> <span>Выйти</span></a></li>
                         </ul>
                     </li>
                     <li class="dropdown">

@@ -92,7 +92,7 @@ footer {
 
 #wrapper #sidebar-nav,
 #wrapper .main {
-  padding-top: 80px; }
+  padding-top: 86px; }
 
 @media screen and (max-width: 767px) {
   #wrapper #sidebar-nav,
@@ -261,7 +261,7 @@ html.fullscreen-bg #wrapper {
     position: relative;
     top: 2px; }
   .navbar-nav > li > a img {
-    width: 22px;
+    width: 26px;
     margin-right: 2px; }
 
 .navbar-nav > li > .dropdown-menu {
@@ -1820,10 +1820,22 @@ div.form p{
   margin: 0 -11px !important;
 }
 
+.profile-img .img-circle {
+  height: 140px;
+}
 
+.subtext {
+  font-size: 14px;
+  color: #8D99A8;
+}
+.subtext a {
+  font-size: 16px;
+}
 
-
-
+.edit-img {
+  height: 100px;
+  margin: 15px 0;
+}
 
 .project-table > tbody > tr > td {
   padding: 12px 8px; }

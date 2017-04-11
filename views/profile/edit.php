@@ -12,6 +12,13 @@
                     <div class="col-md-4">
                         <form method="POST" action="#">
                             <div class="form-group">
+                                <p>Аватар</p>
+                                <div class="edit-img">
+                                   <img src="<?=$medium_avatar_url?>" class="img-circle" alt="Avatar">
+                                </div>
+                                <p class="subtext">Измените ваш аватар используя <a href="http://en.gravatar.com/" target="_blank">Gravatar</a></p>
+                            </div>
+                            <div class="form-group">
                                 <p>Имя</p>
                                 <input type="text" tabindex="1" class="form-control" value="<?=$user['name'];?>" name="name" required>
                             </div>
