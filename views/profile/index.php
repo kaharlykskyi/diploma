@@ -228,9 +228,10 @@
 
             $('ul.news li:first').addClass('active');
             $('div.news div:first').addClass('in active');
+            $('a.lista, a.list, a.list_r, div.pro30').addClass('hidden');
 
             if ($(window).width() < 640) {
-                $('div.rn_full, a.lista, a.list, a.list_r, div.pro30').addClass('hidden');
+                $('div.rn_full').addClass('hidden');
             }
 
 

@@ -9,6 +9,9 @@
                     <p class="panel-subtitle">Добавьте больше информации о себе в профиль</p>
                 </div>
                 <div class="panel-body">
+                    <?php
+                    echo "1" + "2";
+                    ?>
                     <div class="col-md-4">
                         <form method="POST" action="#">
                             <div class="form-group">

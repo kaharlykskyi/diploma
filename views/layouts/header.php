@@ -23,6 +23,8 @@
             top: 50%;
             background: url('/template/assets/img/ring.gif') no-repeat 50% 50%;
             margin: -60px 0 0 -60px;
+        }
+
     </style>
     <!-- VENDOR CSS -->
     <link rel="stylesheet" href="/template/assets/vendor/bootstrap/css/bootstrap.min.css">
@@ -32,15 +34,17 @@
     <link rel="stylesheet" href="/template/assets/css/bootstrap-select.css">
 <!--    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.12.2/css/bootstrap-select.min.css">-->
     <!-- MAIN CSS -->
+<!--    <link rel="stylesheet" href="https://stcdn1.luxnet.ua/football24/assets2/css/app.min.css?v2.0b352r4">-->
     <link rel="stylesheet" href="/template/assets/css/main.css">
     <!--NEWS CSS-->
+    <link rel="stylesheet" href="/template/assets/css/flags.css">
     <link rel="stylesheet" href="/template/assets/css/news.css">
+
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="/template/assets/img/apple-icon.png">
     <link rel="icon" type="image/png" sizes="96x96" href="/template/assets/img/favicon.png">
-
     <script src="/template/assets/vendor/jquery/jquery.min.js"></script>
     <script>
         $(window).on('load', function () {

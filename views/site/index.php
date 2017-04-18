@@ -5,10 +5,15 @@
         <div class="main-content">
             <div class="container-fluid">
                 <!-- OVERVIEW -->
-                <div class="panel panel-headline">
-                    <div class="panel-heading test">
-<!--                        <h3 class="panel-title">Пусто</h3>-->
-                    <!--<p class="panel-subtitle">Period: Oct 14, 2016 - Oct 21, 2016</p>-->
+                <div class="panel panel-main">
+                   <div class="profile-left main-page">
+                       <h3 class="heading matches-heading">Матчи сегодня</h3>
+                       <div class="table-responsive">
+                           <?=$matchTable?>
+                       </div>
+
+                   </div>
+                    <div class="profile-right main-page">
 
                     </div>
                 </div>
@@ -34,6 +39,14 @@
         $spinner.fadeOut();
         $preloader.delay(350).fadeOut('slow');
     });
+
+    $('table.calendar-table').each(function () {
+        $( this ).addClass("table table-hover table-condensed");
+        $( this ).find('.tv-channel, .bet-td').remove();
+        $( this ).find('td.score a , td.team a, td.logo').attr('href','/');
+        $( this ).find('tbody td:last-child').after("<td class='analyse'><a href='/'>Анализ</a></td>");
+    });
+
 
     $(function() {
         var data, options;

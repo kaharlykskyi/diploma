@@ -39,7 +39,7 @@ div.test {
 }
 
 th {
-  font-weight: 600; }
+  /*font-weight: 600; */ }
 
 .page-title {
   margin-top: 0;
@@ -635,7 +635,9 @@ fieldset[disabled] .btn {
   -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   background-color: #fff;
-  margin-bottom: 0px; }
+  margin-bottom: 0px;
+  min-height: 880px;
+}
   .panel .panel-heading,
   .panel .panel-body,
   .panel .panel-footer {
@@ -1152,13 +1154,13 @@ img .flags {
   padding-left: 0;
   float: left;
   width: 45%;
-  height: 100%;
   position: absolute;
   background-color: rgba(248, 248, 248, 0.54); }
 
 .profile-right {
   float: right;
   width: 55%;
+  height: 100%;
   padding: 20px 25px; }
   .profile-right .heading {
     margin-top: 0; }
@@ -1667,7 +1669,7 @@ img .flags {
   .youtube-bg:hover, .youtube-bg:focus {
     background-color: #b71d1c !important; }
 .profile-right {
-  min-height: 880px;
+  min-height: 100%;
 }
 
 .profile-right .heading {
@@ -1846,6 +1848,10 @@ div.form p{
   .nav > li > a {
     padding: 7px;
   }
+  .spinner {
+    width: 70px;
+    height: 70px;
+  }
 
 }
 
@@ -1860,6 +1866,307 @@ div.panel-footer button {
 
 div.bottom {
   margin-top: 5px;
+}
+
+div.main-page {
+  background-color: #fff;
+  padding: 20px 30px;
+}
+div.slider {
+  height: 350px;
+  width: 650px;
+  border: 1px solid red;
+}
+
+.robot-table {
+  border-spacing:0;
+  border-collapse:collapse;
+  width:100%;
+  font-size:11px
+}
+.robot-table thead tr:hover {
+  background-color:#fff
+}
+.robot-table thead tr
+th {
+  text-align:center;
+  background-color:#C7D6E9;
+  border-left:1px solid #8D9BAC;
+  border-bottom:1px solid #8D9BAC;
+  color:#39414B
+}
+.robot-table tbody tr
+td {
+  border-bottom:1px solid #E7E7F4;
+  border-left:1px solid #fff
+}
+.robot-table thead tr:first-child th:first-child, .robot-table tbody tr td:first-child {
+  border-left:0
+}
+.robot-table tbody tr td:hover {
+  cursor:pointer
+}
+.robot-table__cell-value
+a {
+  color:#000
+}
+.robot-table__cell-time,.robot-table__cell-result,.robot-table__cell-value,.robot-table__cell-rate {
+  text-align:center
+}
+.robot-table__cell-rate {
+  color:green;
+  font-weight:bold
+}
+.robot-table__cell-match
+a {
+  font-weight:bold
+}
+.robot-table__cell-match a:hover {
+  text-decoration:none
+}
+.robot-table__cell-match
+.wrap_flags {
+  display:inline-block;
+  vertical-align:middle;
+  margin-right:3px
+}
+.robot-table__cell-champ {
+  font-weight:bold;
+  background:#F3F2F2
+}
+.robot-table__cell-match
+.mobo_livecenter {
+  float:right
+}
+.web-robobet-setting {
+  width:100%;
+  margin-bottom:20px
+}
+.web-robobet__col {
+  float:left;
+  width:32%;
+  margin-left:2%;
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box
+}
+.web-robobet__col:first-child {
+  margin-left:0
+}
+.web-robobet__layout {
+  padding:10px
+}
+.web-robobet__text {
+  margin:20px
+  0 10px
+}
+.web-robobet__text-info {
+  color:#2A832B
+}
+.web-robobet__title {
+  font-weight:bold;
+  font-size:17px;
+  margin:20px
+  0 10px
+}
+.game-champ {
+  display:block;
+  padding:5px
+  10px
+}
+.game-champ:hover {
+  text-decoration:none;
+  background:#eee
+}
+.game-champ__info {
+  color:#7B7A7A;
+  font-size:10px
+}
+.game-champ__info
+li {
+  display:inline-block
+}
+.game-champ__name {
+  font-size:12px;
+  margin-bottom:5px
+}
+.game-block .game-block__item {
+  border-top:1px solid #e7e7e7
+}
+.game-block .game-block__item:first-child {
+  border-top:0
+}
+.subss {
+  font-size:13px;
+  color:#757575;
+  padding:6px
+  13px
+}
+.subss
+p {
+  margin-bottom:5px
+}
+.mob_table {
+  border-collapse:collapse;
+  width:100%;
+  text-align:center;
+  line-height:16px;
+  font-size:12px
+}
+.mob_table
+.grey_infoblock {
+  background-color:#f5f5f5;
+  height:20px
+}
+.mob_table tr
+.schet {
+  line-height:18px !important
+}
+.mob_table tr .schet
+a {
+  color:#000;
+  text-decoration:none
+}
+.mob_table tr
+.matchtime {
+  line-height:18px !important;
+  color:#000
+}
+.mob_table tr td
+.squer_green {
+  padding:0
+  ! important
+}
+.squer_win {
+  background-color:#6C6
+}
+.squer_lose {
+  background-color:#F33
+}
+.squer_wait {
+  background-color:#C6E2FF
+}
+.squer_draw {
+  background-color:#F0FFF0
+}
+.mob_table .greystripe, .mob_table .greystripe td, .mob_table .greystripe td:hover {
+  background-color:#fff ! important;
+  height:3px;
+  border:none ! important;
+  padding:0
+  ! important
+}
+.mob_table tr:nth-child(1), .mob_table tr:nth-child(2) {
+  cursor:pointer
+}
+.mob_table .span-title {
+  font-size:10px;
+  color:#8E9092;
+  font-style:italic;
+  text-decoration:none
+}
+.mob_table tr
+td {
+  padding:0
+  4px
+}
+.mob_table tr td:nth-child(1) {
+  width:15%
+}
+.mob_table tr td:nth-child(4) {
+  width:8%
+}
+.mob_table .grey_infoblock td
+img {
+  max-width:60px
+}
+.mob_table .noline_down
+td {
+  border-top:1px solid #bdbdbd;
+  border-left:1px solid #bdbdbd;
+  border-right:1px solid #bdbdbd
+}
+.mob_table .grey_infoblock
+td {
+  border-bottom:1px solid #bdbdbd;
+  border-left:1px solid #bdbdbd;
+  border-right:1px solid #bdbdbd
+}
+.mob_table tr td .avtor_prognos:hover, .mob_table tr td .avtor_prognos:active {
+  color:#0f56aa!important;
+  text-decoration:underline!important;
+  cursor:pointer
+}
+.greenstav {
+  color:green
+}
+
+.date {
+  width: 8%;
+  color: #a1a6a8;
+  font-size: 13px;
+}
+
+.team {
+  width: 22%;
+  font-size: 14px;
+  position: relative;
+}
+td.team a {
+  color: #424242;
+}
+td.time a, td.score a {
+  color: #6aaf5c;
+}
+
+.logos {
+  width: 6%;
+  min-width: 24px;
+}
+table {
+  font-size: 14px;
+  margin-bottom: 40px;
+}
+.matches-heading {
+  margin-bottom: 30px;
+}
+.table-condensed > tbody > tr > td {
+  padding: 6px;
+}
+.score > a {
+  display: inline-block;
+  padding: 0 4px;
+  color: #6aaf5c;
+  font-size: 15px;
+}
+.time > a { font-size: 15px;}
+tr:hover > td.score > a {
+  color: #FFFFFF;
+  background-color: #6aaf5c;
+  border-radius: 4px;
+}
+.analyse > a {
+  display: inline-block;
+  padding: 0 4px;
+  font-size: 14px;
+  border: 1px solid transparent;
+  color: #424242;
+}
+tr:hover > td.analyse > a {
+  color: #6aaf5c;
+  background-color: transparent;
+  border: 1px solid #6aaf5c;
+  border-radius: 3px;
+}
+tr:hover > td > a{
+  color: #6aaf5c;
+}
+
+* {
+  transition: all .2s linear;
+  -o-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -webkit-transition: all .2s linear;
 }
 
 
