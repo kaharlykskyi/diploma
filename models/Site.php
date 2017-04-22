@@ -37,8 +37,9 @@ class Site
     public static function get_match_info()
     {
         $db = Db::getConnection();
+        //$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
         $date = date("d.m.y");
-        $sql = "SELECT id, league_name, match_info FROM sport_db.matches WHERE (league_name LIKE 'Франция%' ".
+        $sql = "SELECT id, league_name, match_info FROM matches WHERE (league_name LIKE 'Франция%' ".
             "OR league_name LIKE 'Германия%' ".
             "OR league_name LIKE 'Украина%' ".
             "OR league_name LIKE 'Англия%' ".

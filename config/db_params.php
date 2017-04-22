@@ -8,5 +8,4 @@ return array (
     'dbname' => 'heroku_fa9666f2d88bafb',
     'user' => 'b5e19923d98b4b',
     'password' => '32c2f5e2'
-
 );
