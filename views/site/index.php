@@ -22,21 +22,21 @@
                                <div class="item active">
                                    <img src="/template/assets/img/slider/stad2.jpg" alt="...">
                                    <div class="carousel-caption">
-                                       <h2>Бавария - Гамбург</h2>
+                                       <h3>Бавария - Гамбург</h3>
                                        <p>Германия, 34 тур</p>
                                    </div>
                                </div>
                                <div class="item">
                                    <img src="/template/assets/img/slider/stad4.jpeg" alt="...">
                                    <div class="carousel-caption">
-                                       <h2>Челси - Арсенал</h2>
+                                       <h3>Челси - Арсенал</h3>
                                        <p>Англия, 33 тур</p>
                                    </div>
                                </div>
                                <div class="item">
                                    <img src="/template/assets/img/slider/stad1.jpg" alt="...">
                                    <div class="carousel-caption">
-                                       <h2>Динамо - Шахтер</h2>
+                                       <h3>Динамо - Шахтер</h3>
                                        <p>Украина, 28 тур</p>
                                    </div>
                                </div>
@@ -105,8 +105,9 @@
 
     $('table.calendar-table').each(function () {
         $( this ).addClass("table table-hover table-condensed");
-        $( this ).find('.tv-channel, .bet-td').remove();
-        $( this ).find('td.score a , td.team a, td.logo').attr('href','/');
+        $( this ).find('.tv-channel').remove();
+        $( this ).find('td.score a , td.team a, td.logo a').attr('href','/');
+        $( this ).find('td.bet-td a').remove();
         //$( this ).find('tbody td:last-child').after("<td class='analyse'><a href='/'>Анализ</a></td>");
     });
 

@@ -1870,7 +1870,7 @@ div.bottom {
 
 div.main-page {
   background-color: #fff;
-  padding: 10px 15px;
+  padding: 0 15px;
 }
 div.slider {
   height: 350px;
@@ -2188,6 +2188,19 @@ table#pr-table > tbody > tr > td {
 
 .profile-right > h3 {
   margin-bottom: 20px;
+}
+
+.live {
+  font-family: 'ProximaNovaCondBold', sans-serif;
+  display: inline;
+  font-size: 12px;
+  color: #ffffff;
+  background-color: #f60;
+  border: 1px solid #f60;
+  padding: 2px 4px;
+}
+.bet-td {
+  width: 8%;
 }
 
 * {
