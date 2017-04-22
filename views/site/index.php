@@ -7,14 +7,77 @@
                 <!-- OVERVIEW -->
                 <div class="panel panel-main">
                    <div class="profile-left main-page">
-                       <h3 class="heading matches-heading">Матчи сегодня</h3>
-                       <div class="table-responsive">
-                           <?=$matchTable?>
-                       </div>
+                       <h3 class="heading matches-heading">Лучшие прогнозы на сегодня</h3>
+                       <!-- Карусель -->
+                       <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                           <!-- Indicators -->
+                           <ol class="carousel-indicators">
+                               <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                               <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                               <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                           </ol>
 
+                           <!-- Wrapper for slides -->
+                           <div class="carousel-inner">
+                               <div class="item active">
+                                   <img src="/template/assets/img/slider/stad2.jpg" alt="...">
+                                   <div class="carousel-caption">
+                                       <h2>Бавария - Гамбург</h2>
+                                       <p>Германия, 34 тур</p>
+                                   </div>
+                               </div>
+                               <div class="item">
+                                   <img src="/template/assets/img/slider/stad4.jpeg" alt="...">
+                                   <div class="carousel-caption">
+                                       <h2>Челси - Арсенал</h2>
+                                       <p>Англия, 33 тур</p>
+                                   </div>
+                               </div>
+                               <div class="item">
+                                   <img src="/template/assets/img/slider/stad1.jpg" alt="...">
+                                   <div class="carousel-caption">
+                                       <h2>Динамо - Шахтер</h2>
+                                       <p>Украина, 28 тур</p>
+                                   </div>
+                               </div>
+                           </div>
+
+                           <!-- Controls -->
+                           <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                               <span class="glyphicon glyphicon-chevron-left"></span>
+                           </a>
+                           <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                               <span class="glyphicon glyphicon-chevron-right"></span>
+                           </a>
+                       </div> <!-- Carousel -->
+                       <h3 class="heading matches-heading">Все прогнозы</h3>
+                   <?php foreach ($info as $tables => $table): ?>
+                        <table id="pr-table" class="calendar-table table table-hover table-condensed">
+                            <thead>
+                                <tr>
+                                    <th colspan="5"><?=$table['league_name']?></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php
+                                    for ($i = 0; $i < count($table['match_info']['homeTeam']); $i++): ?>
+                                        <tr>
+                                            <td class="pr-team text-right"><a href="/match/info?league=<?=$table['id']?>&home=<?=$table['match_info']['homeTeam'][$i]?>&away=<?=$table['match_info']['awayTeam'][$i]?>"><?=$table['match_info']['homeTeam'][$i]?></a></td>
+                                            <td class="logo"><img src="<?=$table['match_info']['homeTeamLogo'][$i]?>" alt="<?=$table['match_info']['homeTeam'][$i]?>"></td>
+                                            <td class="pr-middle text-center analyse"><a href="/match/info?league=<?=$table['id']?>&home=<?=$table['match_info']['homeTeam'][$i]?>&away=<?=$table['match_info']['awayTeam'][$i]?>">Прогноз</a></td>
+                                            <td class="logo"><img src="<?=$table['match_info']['awayTeamLogo'][$i]?>" alt="<?=$table['match_info']['awayTeam'][$i]?>"></td>
+                                            <td class="pr-team text-left"><a href="/match/info?league=<?=$table['id']?>&home=<?=$table['match_info']['homeTeam'][$i]?>&away=<?=$table['match_info']['awayTeam'][$i]?>"><?=$table['match_info']['awayTeam'][$i]?></a></td>
+                                        </tr>
+                                <?php endfor; ?>
+                            </tbody>
+                        </table>
+                   <?php endforeach; ?>
                    </div>
                     <div class="profile-right main-page">
-
+                        <h3 class="heading matches-heading">Live матч-центр </h3>
+                        <div class="table-responsive">
+                            <?=$matchTable?>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -44,11 +107,11 @@
         $( this ).addClass("table table-hover table-condensed");
         $( this ).find('.tv-channel, .bet-td').remove();
         $( this ).find('td.score a , td.team a, td.logo').attr('href','/');
-        $( this ).find('tbody td:last-child').after("<td class='analyse'><a href='/'>Анализ</a></td>");
+        //$( this ).find('tbody td:last-child').after("<td class='analyse'><a href='/'>Анализ</a></td>");
     });
 
 
-    $(function() {
+/*    $(function() {
         var data, options;
 
         // headline charts
@@ -163,7 +226,7 @@
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
 
-    });
+    });*/
 </script>
 </body>
 

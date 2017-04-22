@@ -46,37 +46,6 @@ class Profile
     }
 
 
-    public static function getCurlNew($url, $referer = "https://www.google.ru/")
-    {
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_HEADER, true);
-        //curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36");
-        curl_setopt($ch, CURLOPT_REFERER, $referer);
-        curl_setopt($ch, CURLOPT_COOKIEJAR, 'cookies.txt');
-        curl_setopt($ch, CURLOPT_COOKIEFILE, 'cookies.txt');
-        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-        curl_setopt($ch, CURLOPT_HTTPHEADER, array("Host" =>"ru.whoscored.com",
-            "User-Agent" => "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:52.0) Gecko/20100101 Firefox/52.0",
-            "Accept" => "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-            "Accept-Language" => "en-US,en;q=0.5",
-            "Accept-Encoding" => "gzip, deflate, br",
-            "Referer" => "https://www.google.ru/",
-            "Connection" => "keep-alive",
-            "Upgrade-Insecure-Requests" => "1",
-            "Cache-Control" => "max-age=0",
-            "Cookie" => "visid_incap_774904=KGhl+wlUQhS8Lhy2OackXkW99FgAAAAAQUIPAAAAAAArFjrLhVUWmWXWr11OEY2o; _ga=GA1.2.747721403.1492434250; __gads=ID=40e333be3281ddd3:T=1492434254:S=ALNI_MZoUusdIlYbzayiBODzPu1uC4IYwg; visid_incap_774906=J4WgRqgLSfqEud8v0ncozAC+9FgAAAAAQUIPAAAAAABADFdjcrQH2LIt1euqSqzs; localeEditionShown_ru=true; whoscored.com-agreedtocookies=true; incap_ses_323_774906=HrQneGra7gGN0ffWHYh7BCFM9VgAAAAAuj8pc90td9Ltv189W5mJrg==; incap_ses_323_774904=ZORraY0QoDxU1PfWHYh7BC9M9VgAAAAA28K66zVKdMTmnf6PDZ7pZg==; incap_ses_325_774906=50nqOYKl6UTSTCWBbKKCBK/s9VgAAAAAKdzW2TuJPiq94HBvL/mjPw==; incap_ses_325_774904=EiNLMcfDUxjhaSWBbKKCBPPs9VgAAAAAlbT4f1mH7yle5C6WiFSU5g=="
-            ));
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        $data = curl_exec($ch);
-        if(curl_exec($ch) === false)
-        {
-            echo 'Ошибка curl: ' . curl_error($ch);
-        }
-        curl_close($ch);
-        return $data;
-    }
-
     /**
      * Возвращает div с новостями
      * @param $file

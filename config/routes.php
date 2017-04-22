@@ -8,8 +8,10 @@ return array(
     'register' => 'user/register',
     'profile/edit' => 'profile/edit',
     'profile' => 'profile/index',
-
+    'parser/match' => 'parser/match',
+    'match' => 'match/index',
 
     //main page
     '' => 'site/index',
 );
+
