@@ -31,8 +31,9 @@ a {
     color: #3b98c8;
     text-decoration: none; }
 .img-responsive {
-  height: 30px !important;
-  margin-top: -4px;
+  margin-top: -7px;
+  width: 100%;
+  max-height: 450px;
 }
 div.test {
     min-height: 760px;
@@ -2181,6 +2182,9 @@ tr:hover > td > a{
   padding-left: 10px;
   padding-right: 10px;
 }
+.full-width {
+  padding: 10px !important;
+}
 
 table#pr-table > tbody > tr > td {
   border-top: none;
@@ -2201,6 +2205,11 @@ table#pr-table > tbody > tr > td {
 }
 .bet-td {
   width: 8%;
+}
+
+.container {
+  border: 1px solid red;
+  height: 2000px;
 }
 
 * {

@@ -15,7 +15,6 @@ class SiteController
         $data = Profile::getCurl('https://football24.ua/ru/calendar/'); //вся страница
         $matchTable = Site::getMatchTable($data); //таблица матчей на сегодня
         $info = Site::get_match_info();
-        //$html_table = Site::get_html_matchtable($info);
 
 
         require_once(ROOT.'/views/site/index.php');

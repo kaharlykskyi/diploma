@@ -9,6 +9,7 @@ return array(
     'profile/edit' => 'profile/edit',
     'profile' => 'profile/index',
     'parser/match' => 'parser/match',
+    'parser/stat' => 'parser/stat',
     'match' => 'match/index',
 
     //main page

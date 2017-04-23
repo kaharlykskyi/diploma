@@ -6,7 +6,10 @@
             <div class="container-fluid">
                 <!-- OVERVIEW -->
                 <div class="panel panel-main">
-                    <h3 class="heading matches-heading">Парсинг матчей на сегодня......</h3>
+                   <div class="container full-width">
+                       <?php echo $_GET['home'].' '.$_GET['away']; ?>
+                       <img class="img-responsive" src="/template/assets/img/match_bg.jpg" alt="logo" height="300">
+                   </div>
                 </div>
             </div>
         </div>
@@ -31,15 +34,16 @@
         $preloader.delay(350).fadeOut('slow');
     });
 
-    $('table.calendar-table').each(function () {
+    /*$('table.calendar-table').each(function () {
         $( this ).addClass("table table-hover table-condensed");
-        $( this ).find('.tv-channel, .bet-td').remove();
-        $( this ).find('td.score a , td.team a, td.logo').attr('href','/');
-        $( this ).find('tbody td:last-child').after("<td class='analyse'><a href='/'>Анализ</a></td>");
-    });
+        $( this ).find('.tv-channel').remove();
+        $( this ).find('td.score a , td.team a, td.logo a').attr('href','/');
+        $( this ).find('td.bet-td a').remove();
+        //$( this ).find('tbody td:last-child').after("<td class='analyse'><a href='/'>Анализ</a></td>");
+    });*/
 
 
-    $(function() {
+/*    $(function() {
         var data, options;
 
         // headline charts
@@ -154,7 +158,7 @@
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
 
-    });
+    });*/
 </script>
 </body>
 
