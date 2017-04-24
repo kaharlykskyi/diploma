@@ -33,11 +33,11 @@ class Router
                 $actionName = 'action'.ucfirst(array_shift($segments));
                 $parameters = $segments;
                 $controllerFile = ROOT.'/controllers/'.$controllerName.'.php';
-                if( file_exists($controllerFile)) {
+                if (file_exists($controllerFile)) {
                     include_once($controllerFile);
                 }
                 $controllerObj = new $controllerName;
-                if( method_exists($controllerObj, $actionName)){
+                if (method_exists($controllerObj, $actionName)){
                     $result = call_user_func_array(array($controllerObj, $actionName), $parameters);
                     if( $result != null ) {
                         break;

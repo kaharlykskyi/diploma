@@ -2208,8 +2208,8 @@ table#pr-table > tbody > tr > td {
 }
 
 .container {
-  border: 1px solid red;
-  height: 2000px;
+  border: 1px solid #eee;
+  height: 900px;
 }
 
 * {

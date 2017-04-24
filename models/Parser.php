@@ -72,7 +72,7 @@ class Parser
             $leagueName = $leagueTable->find('thead tr th')->html();
             $leagueName = trim($leagueName);
             $awayTeam = array();
-            $matchDate = array();
+            $matchTime = array();
             $homeTeam = array();
             $homeTeamLogo = array();
             $awayTeamLogo = array();
@@ -81,6 +81,7 @@ class Parser
                 $matchDate[] = $tr->find('td.date')->text();
                 $homeTeam[] = $tr->find('td:nth-child(2) a')->text();
                 $homeTeamLogo[] = $tr->find('td:nth-child(3) a img')->attr('src');
+                $matchTime[] = $tr->find('td:nth-child(4) a')->text();
                 $awayTeamLogo[] = $tr->find('td:nth-child(5) a img')->attr('src');
                 $awayTeam[] = $tr->find('td:nth-child(6) a')->text();
             }
@@ -89,6 +90,7 @@ class Parser
                 'leagueName' => $leagueName,
                 'homeTeam' => $homeTeam,
                 'homeTeamLogo' => $homeTeamLogo,
+                'matchTime' => $matchTime,
                 'awayTeamLogo' => $awayTeamLogo,
                 'awayTeam' => $awayTeam,
             );
@@ -100,8 +102,8 @@ class Parser
     private static function insert_data($leagueName, $matchInfo)
     {
         $db = Db::getConnection();
-        $sql = "INSERT INTO matches(league_name, match_info, date) VALUES(:league_name, :match_info, :date)";
         $date = date("d.m.y");
+        $sql = "INSERT INTO matches(league_name, match_info, date) VALUES(:league_name, :match_info, :date)";
         $db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING );
         $result = $db->prepare($sql);
         $result->bindParam(':league_name', $leagueName, PDO::PARAM_STR);
@@ -116,6 +118,9 @@ class Parser
 
     public static function insert_match_data($data)
     {
+        $db = Db::getConnection();
+        $date = date("d.m.y");
+        $db->query("DELETE FROM matches WHERE date = '$date'");
         foreach ($data as $tables => $info) {
             $leagueName = array_shift($info);
             $matchInfo = serialize($info);

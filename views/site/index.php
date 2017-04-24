@@ -62,11 +62,11 @@
                                 <?php
                                     for ($i = 0; $i < count($table['match_info']['homeTeam']); $i++): ?>
                                         <tr>
-                                            <td class="pr-team text-right"><a href="/match/info?league=<?=$table['id']?>&home=<?=$table['match_info']['homeTeam'][$i]?>&away=<?=$table['match_info']['awayTeam'][$i]?>"><?=$table['match_info']['homeTeam'][$i]?></a></td>
+                                            <td class="pr-team text-right"><a href="/forecast/info?league=<?=$table['id']?>&home=<?=$table['match_info']['homeTeam'][$i]?>&away=<?=$table['match_info']['awayTeam'][$i]?>"><?=$table['match_info']['homeTeam'][$i]?></a></td>
                                             <td class="logo"><img src="<?=$table['match_info']['homeTeamLogo'][$i]?>" alt="<?=$table['match_info']['homeTeam'][$i]?>"></td>
-                                            <td class="pr-middle text-center analyse"><a href="/match/info?league=<?=$table['id']?>&home=<?=$table['match_info']['homeTeam'][$i]?>&away=<?=$table['match_info']['awayTeam'][$i]?>">Прогноз</a></td>
+                                            <td class="pr-middle text-center analyse"><a href="/forecast/info?league=<?=$table['id']?>&home=<?=$table['match_info']['homeTeam'][$i]?>&away=<?=$table['match_info']['awayTeam'][$i]?>">Прогноз</a></td>
                                             <td class="logo"><img src="<?=$table['match_info']['awayTeamLogo'][$i]?>" alt="<?=$table['match_info']['awayTeam'][$i]?>"></td>
-                                            <td class="pr-team text-left"><a href="/match/info?league=<?=$table['id']?>&home=<?=$table['match_info']['homeTeam'][$i]?>&away=<?=$table['match_info']['awayTeam'][$i]?>"><?=$table['match_info']['awayTeam'][$i]?></a></td>
+                                            <td class="pr-team text-left"><a href="/forecast/info?league=<?=$table['id']?>&home=<?=$table['match_info']['homeTeam'][$i]?>&away=<?=$table['match_info']['awayTeam'][$i]?>"><?=$table['match_info']['awayTeam'][$i]?></a></td>
                                         </tr>
                                 <?php endfor; ?>
                             </tbody>
@@ -106,7 +106,7 @@
     $('table.calendar-table').each(function () {
         $( this ).addClass("table table-hover table-condensed");
         $( this ).find('.tv-channel').remove();
-        $( this ).find('td.score a , td.team a, td.logo a').attr('href','/');
+        $( this ).find('td.score a , td.team a, td.logo a, td.time a').attr('href','/');
         $( this ).find('td.bet-td a').remove();
         //$( this ).find('tbody td:last-child').after("<td class='analyse'><a href='/'>Анализ</a></td>");
     });

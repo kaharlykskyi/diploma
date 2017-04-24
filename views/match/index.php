@@ -7,8 +7,16 @@
                 <!-- OVERVIEW -->
                 <div class="panel panel-main">
                    <div class="container full-width">
-                       <?php echo $_GET['home'].' '.$_GET['away']; ?>
-                       <img class="img-responsive" src="/template/assets/img/match_bg.jpg" alt="logo" height="300">
+                       <h2>Тестовая инфа</h2>
+                       <hr>
+                       <p><b>Домашняя команда:</b> <?=$_GET['home']?></p>
+                       <p><b>Гостевая команда:</b> <?=$_GET['away']?></p>
+                       <p><b>Лига: </b><?=$league;?></p>
+                       <pre>
+                           <?php print_r($statistic); ?>
+                       </pre>
+
+<!--                       <img class="img-responsive" src="/template/assets/img/match_bg.jpg" alt="logo" height="300">-->
                    </div>
                 </div>
             </div>
