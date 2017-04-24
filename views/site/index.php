@@ -51,27 +51,29 @@
                            </a>
                        </div> <!-- Carousel -->
                        <h3 class="heading matches-heading">Все прогнозы</h3>
-                   <?php foreach ($info as $tables => $table): ?>
-                        <table id="pr-table" class="calendar-table table table-hover table-condensed">
-                            <thead>
-                                <tr>
-                                    <th colspan="5"><?=$table['league_name']?></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                    for ($i = 0; $i < count($table['match_info']['homeTeam']); $i++): ?>
-                                        <tr>
-                                            <td class="pr-team text-right"><a href="/forecast/info?league=<?=$table['id']?>&home=<?=$table['match_info']['homeTeam'][$i]?>&away=<?=$table['match_info']['awayTeam'][$i]?>"><?=$table['match_info']['homeTeam'][$i]?></a></td>
-                                            <td class="logo"><img src="<?=$table['match_info']['homeTeamLogo'][$i]?>" alt="<?=$table['match_info']['homeTeam'][$i]?>"></td>
-                                            <td class="pr-middle text-center analyse"><a href="/forecast/info?league=<?=$table['id']?>&home=<?=$table['match_info']['homeTeam'][$i]?>&away=<?=$table['match_info']['awayTeam'][$i]?>">Прогноз</a></td>
-                                            <td class="logo"><img src="<?=$table['match_info']['awayTeamLogo'][$i]?>" alt="<?=$table['match_info']['awayTeam'][$i]?>"></td>
-                                            <td class="pr-team text-left"><a href="/forecast/info?league=<?=$table['id']?>&home=<?=$table['match_info']['homeTeam'][$i]?>&away=<?=$table['match_info']['awayTeam'][$i]?>"><?=$table['match_info']['awayTeam'][$i]?></a></td>
-                                        </tr>
-                                <?php endfor; ?>
-                            </tbody>
-                        </table>
-                   <?php endforeach; ?>
+                       <div class="table-responsive">
+                       <?php foreach ($info as $tables => $table): ?>
+                            <table id="pr-table" class="calendar-table table table-hover table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th colspan="5"><?=$table['league_name']?></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                        for ($i = 0; $i < count($table['match_info']['homeTeam']); $i++): ?>
+                                            <tr>
+                                                <td class="pr-team text-right"><a href="/forecast/info?league=<?=$table['id']?>&home=<?=$table['match_info']['homeTeam'][$i]?>&away=<?=$table['match_info']['awayTeam'][$i]?>"><?=$table['match_info']['homeTeam'][$i]?></a></td>
+                                                <td class="logo"><img src="<?=$table['match_info']['homeTeamLogo'][$i]?>" alt="<?=$table['match_info']['homeTeam'][$i]?>"></td>
+                                                <td class="pr-middle text-center analyse"><a href="/forecast/info?league=<?=$table['id']?>&home=<?=$table['match_info']['homeTeam'][$i]?>&away=<?=$table['match_info']['awayTeam'][$i]?>">Прогноз</a></td>
+                                                <td class="logo"><img src="<?=$table['match_info']['awayTeamLogo'][$i]?>" alt="<?=$table['match_info']['awayTeam'][$i]?>"></td>
+                                                <td class="pr-team text-left"><a href="/forecast/info?league=<?=$table['id']?>&home=<?=$table['match_info']['homeTeam'][$i]?>&away=<?=$table['match_info']['awayTeam'][$i]?>"><?=$table['match_info']['awayTeam'][$i]?></a></td>
+                                            </tr>
+                                    <?php endfor; ?>
+                                </tbody>
+                            </table>
+                       <?php endforeach; ?>
+                       </div>
                    </div>
                     <div class="profile-right main-page">
                         <h3 class="heading matches-heading">Live матч-центр </h3>
@@ -108,6 +110,7 @@
         $( this ).find('.tv-channel').remove();
         $( this ).find('td.score a , td.team a, td.logo a, td.time a').attr('href','/');
         $( this ).find('td.bet-td a').remove();
+        $( this ).find('td.time, td.score').addClass('text-center pr-middle');
         //$( this ).find('tbody td:last-child').after("<td class='analyse'><a href='/'>Анализ</a></td>");
     });
 

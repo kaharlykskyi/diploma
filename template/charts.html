@@ -195,12 +195,12 @@
 
 		// line chart
 		options = {
-			height: "300px",
-			showPoint: true,
+			height: "500px",
+			showPoint: false,
 			axisX: {
-				showGrid: false
+				showGrid: true
 			},
-			lineSmooth: false,
+			lineSmooth: true,
 		};
 
 		new Chartist.Line('#demo-line-chart', data, options);

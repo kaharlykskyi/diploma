@@ -9,12 +9,62 @@
                    <div class="container full-width">
                        <h2>Тестовая инфа</h2>
                        <hr>
-                       <p><b>Домашняя команда:</b> <?=$_GET['home']?></p>
-                       <p><b>Гостевая команда:</b> <?=$_GET['away']?></p>
+                       <p class="home"><b>Домашняя команда: </b><span><?=$_GET['home']?></span></p>
+                       <p class="away"><b>Гостевая команда: </b><span><?=$_GET['away']?></span></p>
                        <p><b>Лига: </b><?=$league;?></p>
-                       <pre>
-                           <?php print_r($statistic); ?>
-                       </pre>
+                       <p><b>Рейтинг: </b><br><?php
+                           foreach ($forecast as $team => $val) {
+                               echo $team.' '.$val['rating'].'<br>';
+                           }
+                           ?></p>
+                       <p class="rate"><b>Шанс: </b><br><?php
+                           $i = 0;
+                           foreach ($forecast as $team => $val) {
+                               $i++;
+                               echo "<span id='team".$i."'>".$team.'</span> '."<span id='".$i."'>".$val['victory_chance'].'</span> %<br>';
+                           }
+                           ?></p>
+                       <div class="table-responsive">
+                           <table class="table table-bordered">
+                               <thead>
+                               <tr>
+                                   <th>№</th>
+                                   <th>Команда</th>
+                                   <th>Лого</th>
+                                   <th>И</th>
+                                   <th>В</th>
+                                   <th>Н</th>
+                                   <th>П</th>
+                                   <th>ЗМ</th>
+                                   <th>ПМ</th>
+                                   <th>О</th>
+                                   <th>Форма</th>
+                               </tr>
+                               </thead>
+                               <tbody>
+                               <?php
+                               foreach ($statistic as $team) {
+                                    echo "<tr><td>".$team['id']."</td>".
+                                        "<td class='teams'>".$team['team']."</td>".
+                                        "<td><img src='".$team['team_logo']."'></td>".
+                                        "<td>".$team['all_games']."</td>".
+                                        "<td>".$team['win_games']."</td>".
+                                        "<td>".$team['draw_games']."</td>".
+                                        "<td>".$team['lose_games']."</td>".
+                                        "<td>".$team['s_goals']."</td>".
+                                        "<td>".$team['m_goals']."</td>".
+                                        "<td>".$team['points']."</td>".
+                                        "<td>".$team['form_points']."</td></tr>";
+                               }
+                               ?>
+                               </tbody>
+                           </table>
+                       </div>
+                       <div class="ct-chart"></div>
+                       <!--<p>Дебаг: </p>
+                        <pre>
+                            <?php /*//print_r($forecast) */?>
+                        </pre>-->
 
 <!--                       <img class="img-responsive" src="/template/assets/img/match_bg.jpg" alt="logo" height="300">-->
                    </div>
@@ -42,131 +92,74 @@
         $preloader.delay(350).fadeOut('slow');
     });
 
-    /*$('table.calendar-table').each(function () {
-        $( this ).addClass("table table-hover table-condensed");
-        $( this ).find('.tv-channel').remove();
-        $( this ).find('td.score a , td.team a, td.logo a').attr('href','/');
-        $( this ).find('td.bet-td a').remove();
-        //$( this ).find('tbody td:last-child').after("<td class='analyse'><a href='/'>Анализ</a></td>");
-    });*/
+    var home = $('p.rate span#team1').text();
+    var away = $('p.rate span#team2').text();
+    var homePer = $('p.rate span#1').text();
+    var awayPer = $('p.rate span#2').text();
 
+    if (homePer > awayPer) {
+        $('span#1').addClass('text-success');
+    } else {
+        $('span#2').addClass('text-success');
+    }
+    //home += ' ('+homePer+'%)';
+    //away += ' ('+awayPer+'%)';
+    var chart = new Chartist.Pie('.ct-chart', {
+        labels: [home, away],
+        series: [homePer, awayPer]
+    }, {
+        donut: true,
+        showLabel: true,
+        donutWidth: 60
+    });
 
-/*    $(function() {
-        var data, options;
+    chart.on('draw', function(data) {
+        if(data.type === 'slice') {
+            // Get the total path length in order to use for dash array animation
+            var pathLength = data.element._node.getTotalLength();
 
-        // headline charts
-        data = {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-            series: [
-                [23, 29, 24, 40, 25, 24, 35],
-                [14, 25, 18, 34, 29, 38, 44],
-            ]
-        };
+            // Set a dasharray that matches the path length as prerequisite to animate dashoffset
+            data.element.attr({
+                'stroke-dasharray': pathLength + 'px ' + pathLength + 'px'
+            });
 
-        options = {
-            height: 300,
-            showArea: true,
-            showLine: false,
-            showPoint: false,
-            fullWidth: true,
-            axisX: {
-                showGrid: false
-            },
-            lineSmooth: false,
-        };
+            // Create animation definition while also assigning an ID to the animation for later sync usage
+            var animationDefinition = {
+                'stroke-dashoffset': {
+                    id: 'anim' + data.index,
+                    dur: 2500,
+                    from: -pathLength + 'px',
+                    to:  '0px',
+                    easing: Chartist.Svg.Easing.easeOutQuint,
+                    // We need to use `fill: 'freeze'` otherwise our animation will fall back to initial (not visible)
+                    fill: 'freeze'
+                }
+            };
 
-        new Chartist.Line('#headline-chart', data, options);
-
-
-        // visits trend charts
-        data = {
-            labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-            series: [{
-                name: 'series-real',
-                data: [200, 380, 350, 320, 410, 450, 570, 400, 555, 620, 750, 900],
-            }, {
-                name: 'series-projection',
-                data: [240, 350, 360, 380, 400, 450, 480, 523, 555, 600, 700, 800],
-            }]
-        };
-
-        options = {
-            fullWidth: true,
-            lineSmooth: false,
-            height: "270px",
-            low: 0,
-            high: 'auto',
-            series: {
-                'series-projection': {
-                    showArea: true,
-                    showPoint: false,
-                    showLine: false
-                },
-            },
-            axisX: {
-                showGrid: false,
-
-            },
-            axisY: {
-                showGrid: false,
-                onlyInteger: true,
-                offset: 0,
-            },
-            chartPadding: {
-                left: 20,
-                right: 20
+            // If this was not the first slice, we need to time the animation so that it uses the end sync event of the previous animation
+            if(data.index !== 0) {
+                animationDefinition['stroke-dashoffset'].begin = 'anim' + (data.index - 1) + '.end';
             }
-        };
 
-        new Chartist.Line('#visits-trends-chart', data, options);
+            // We need to set an initial value before the animation starts as we are not in guided mode which would do that for us
+            data.element.attr({
+                'stroke-dashoffset': -pathLength + 'px'
+            });
 
-
-        // visits chart
-        data = {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-            series: [
-                [6384, 6342, 5437, 2764, 3958, 5068, 7654]
-            ]
-        };
-
-        options = {
-            height: 300,
-            axisX: {
-                showGrid: false
-            },
-        };
-
-        new Chartist.Bar('#visits-chart', data, options);
-
-
-        // real-time pie chart
-        var sysLoad = $('#system-load').easyPieChart({
-            size: 130,
-            barColor: function(percent) {
-                return "rgb(" + Math.round(200 * percent / 100) + ", " + Math.round(200 * (1.1 - percent / 100)) + ", 0)";
-            },
-            trackColor: 'rgba(245, 245, 245, 0.8)',
-            scaleColor: false,
-            lineWidth: 5,
-            lineCap: "square",
-            animate: 800
-        });
-
-        var updateInterval = 3000; // in milliseconds
-
-        setInterval(function() {
-            var randomVal;
-            randomVal = getRandomInt(0, 100);
-
-            sysLoad.data('easyPieChart').update(randomVal);
-            sysLoad.find('.percent').text(randomVal);
-        }, updateInterval);
-
-        function getRandomInt(min, max) {
-            return Math.floor(Math.random() * (max - min + 1)) + min;
+            // We can't use guided mode as the animations need to rely on setting begin manually
+            // See http://gionkunz.github.io/chartist-js/api-documentation.html#chartistsvg-function-animate
+            data.element.animate(animationDefinition, false);
         }
+    });
 
-    });*/
+    // For the sake of the example we update the chart every time it's created with a delay of 8 seconds
+    chart.on('created', function() {
+        if(window.__anim21278907124) {
+            clearTimeout(window.__anim21278907124);
+            window.__anim21278907124 = null;
+        }
+        window.__anim21278907124 = setTimeout(chart.update.bind(chart), 15000);
+    });
 </script>
 </body>
 
