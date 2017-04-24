@@ -2140,14 +2140,22 @@ table#pr-table > tbody > tr > td {
 
 .container {
   border: 1px solid #eee;
-  height: 900px;
+  /*height: 900px;*/
 }
 .ct-chart {
   width: 300px;
   height: 300px;
 }
+.ct-chart-sec {
+  width: 300px;
+  height: 300px;
+}
+.ct-chart-th {
+  width: 300px;
+  height: 300px;
+}
 .ct-label {
-  font-size: 14px;
+  font-size: 12px;
   color: #fff;
   fill: #0a3866 !important;
 }

@@ -39,12 +39,13 @@ class Site
         $db = Db::getConnection();
         //$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
         $date = date("d.m.y");
-        $sql = "SELECT id, league_name, match_info FROM matches WHERE (league_name LIKE 'Франция%' ".
-            "OR league_name LIKE 'Германия%' ".
-            "OR league_name LIKE 'Украина%' ".
-            "OR league_name LIKE 'Англия%' ".
-            "OR league_name LIKE 'Испания%' ".
-            "OR league_name LIKE 'Италия%')".
+        $sql = "SELECT id, league_name, match_info FROM matches WHERE (league_name LIKE '%Франци%' ".
+            "OR league_name LIKE '%Германи%' ".
+            "OR league_name LIKE '%Украин%' ".
+            "OR league_name LIKE '%Англи%' ".
+            "OR league_name LIKE '%Испани%' ".
+            "OR league_name LIKE '%Турци%' ".
+            "OR league_name LIKE '%Итали%')".
             "AND date = :date;";
         $result = $db->prepare($sql);
         $result->bindParam(':date', $date, PDO::PARAM_STR);

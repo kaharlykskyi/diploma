@@ -54,6 +54,24 @@ class Forecast
             case "Украина":
                 $table_name = 'ukraine';
                 break;
+            case "Турция":
+                $table_name = 'turkey';
+                break;
+            case "Кубок Германии":
+                $table_name = 'germany';
+                break;
+            case "Кубок Франции":
+                $table_name = 'france';
+                break;
+            case "Кубок Испании":
+                $table_name = 'spain';
+                break;
+            case "Кубок Италии":
+                $table_name = 'italy';
+                break;
+            case "Кубок Англии":
+                $table_name = 'england';
+                break;
         }
 
         $db = Db::getConnection();

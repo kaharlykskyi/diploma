@@ -30,7 +30,6 @@
                                <tr>
                                    <th>№</th>
                                    <th>Команда</th>
-                                   <th>Лого</th>
                                    <th>И</th>
                                    <th>В</th>
                                    <th>Н</th>
@@ -45,8 +44,7 @@
                                <?php
                                foreach ($statistic as $team) {
                                     echo "<tr><td>".$team['id']."</td>".
-                                        "<td class='teams'>".$team['team']."</td>".
-                                        "<td><img src='".$team['team_logo']."'></td>".
+                                        "<td class='teams'><img src='".$team['team_logo']."'>".'  '.$team['team']."</td>".
                                         "<td>".$team['all_games']."</td>".
                                         "<td>".$team['win_games']."</td>".
                                         "<td>".$team['draw_games']."</td>".
@@ -60,7 +58,22 @@
                                </tbody>
                            </table>
                        </div>
-                       <div class="ct-chart"></div>
+                       <div class="container">
+                           <div class="col-md-4">
+                               <h3>Вероятность победы</h3>
+                               <div class="ct-chart"></div>
+                           </div>
+                           <div class="col-md-4">
+                               <h3>Забито мячей</h3>
+                               <div class="ct-chart-sec"></div>
+                           </div>
+                           <div class="col-md-4">
+                               <h3>Пропущено мячей</h3>
+                               <div class="ct-chart-th"></div>
+                           </div>
+                       </div>
+
+
                        <!--<p>Дебаг: </p>
                         <pre>
                             <?php /*//print_r($forecast) */?>
@@ -91,6 +104,8 @@
         $spinner.fadeOut();
         $preloader.delay(350).fadeOut('slow');
     });
+
+    //Graph 1
 
     var home = $('p.rate span#team1').text();
     var away = $('p.rate span#team2').text();
@@ -127,7 +142,7 @@
             var animationDefinition = {
                 'stroke-dashoffset': {
                     id: 'anim' + data.index,
-                    dur: 2500,
+                    dur: 1500,
                     from: -pathLength + 'px',
                     to:  '0px',
                     easing: Chartist.Svg.Easing.easeOutQuint,
@@ -153,13 +168,66 @@
     });
 
     // For the sake of the example we update the chart every time it's created with a delay of 8 seconds
-    chart.on('created', function() {
+    /*chart.on('created', function() {
         if(window.__anim21278907124) {
             clearTimeout(window.__anim21278907124);
             window.__anim21278907124 = null;
         }
-        window.__anim21278907124 = setTimeout(chart.update.bind(chart), 15000);
-    });
+        window.__anim21278907124 = setTimeout(chart.update.bind(chart), 30000);
+    });*/
+
+    //Graph 2
+    var homeGoals = $('tr:nth-child(1) td:eq(8)').text();
+    var awayGoals = $('tr:nth-child(2) td:eq(8)').text();
+    home = $('tr:nth-child(1) td.teams').text();
+    away = $('tr:nth-child(2) td.teams').text();
+    var data = {
+        labels: [home, away],
+        series: [homeGoals, awayGoals]
+    };
+
+    options = {
+        donut: true,
+        donutWidth: 60,
+        donutSolid: true,
+        showLabel: true
+    };
+
+    new Chartist.Pie('.ct-chart-sec', data, options);
+
+    //Graph 3
+     homeGoals = $('tr:nth-child(1) td:eq(9)').text();
+     awayGoals = $('tr:nth-child(2) td:eq(9)').text();
+     console.log(homeGoals+' '+awayGoals);
+     data = {
+        labels: [home, away],
+        series: [homeGoals, awayGoals]
+    };
+
+     options = {
+         donut: true,
+         donutWidth: 60,
+         donutSolid: true,
+         showLabel: true
+    };
+
+     /*responsiveOptions = [
+        ['screen and (min-width: 640px)', {
+            chartPadding: 30,
+            labelOffset: 100,
+            labelDirection: 'explode',
+            labelInterpolationFnc: function(value) {
+                return value;
+            }
+        }],
+        ['screen and (min-width: 1024px)', {
+            labelOffset: 80,
+            chartPadding: 20
+        }]
+    ];*/
+
+    new Chartist.Pie('.ct-chart-th', data, options);
+
 </script>
 </body>
 
