@@ -18,4 +18,5 @@ class MatchController
         require_once(ROOT.'/views/match/index.php');
         return true;
     }
+
 }

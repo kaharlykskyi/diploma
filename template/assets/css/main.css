@@ -39,8 +39,7 @@ div.test {
     min-height: 760px;
 }
 
-th {
-  /*font-weight: 600; */ }
+
 
 .page-title {
   margin-top: 0;
@@ -344,7 +343,7 @@ ul.notifications > li {
     padding-bottom: 12px;
     text-align: center;
     text-decoration: underline;
-    font-weight: 600; }
+    /*font-weight: 600;*/ }
     ul.notifications > li > .more:hover, ul.notifications > li > .more:focus {
       text-decoration: none; }
 
@@ -972,7 +971,7 @@ ul.activity-list > li {
     .easy-pie-chart .percent:after {
       content: '%';
       margin-left: 0.1em;
-      font-size: .8em; }
+      /*font-size: .8em;*/ }
   .easy-pie-chart#system-load {
     width: 130px; }
     .easy-pie-chart#system-load .percent {
@@ -2142,29 +2141,13 @@ table#pr-table > tbody > tr > td {
   border: 1px solid #eee;
   /*height: 900px;*/
 }
-.ct-chart {
-  width: 300px;
-  height: 300px;
-}
-.ct-chart-sec {
-  width: 300px;
-  height: 300px;
-}
-.ct-chart-th {
-  width: 300px;
-  height: 300px;
-}
-.ct-label {
-  font-size: 12px;
-  color: #fff;
-  fill: #0a3866 !important;
-}
-* {
+
+/** {
   transition: all .2s linear;
   -o-transition: all .2s linear;
   -moz-transition: all .2s linear;
   -webkit-transition: all .2s linear;
-}
+}*/
 
 
 .project-table > tbody > tr > td {

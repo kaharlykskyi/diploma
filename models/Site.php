@@ -41,7 +41,7 @@ class Site
         $date = date("d.m.y");
         $sql = "SELECT id, league_name, match_info FROM matches WHERE (league_name LIKE '%Франци%' ".
             "OR league_name LIKE '%Германи%' ".
-            "OR league_name LIKE '%Украин%' ".
+            "OR league_name LIKE 'Украины%' ".
             "OR league_name LIKE '%Англи%' ".
             "OR league_name LIKE '%Испани%' ".
             "OR league_name LIKE '%Турци%' ".

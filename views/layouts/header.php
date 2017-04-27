@@ -27,6 +27,8 @@
 
     </style>
     <!-- VENDOR CSS -->
+
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.css">
     <link rel="stylesheet" href="/template/assets/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="/template/assets/vendor/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="/template/assets/vendor/linearicons/style.css">
@@ -37,7 +39,7 @@
 <!--    <link rel="stylesheet" href="https://stcdn1.luxnet.ua/football24/assets2/css/app.min.css?v2.0b352r4">-->
     <link rel="stylesheet" href="/template/assets/css/main.css">
     <!--NEWS CSS-->
-    <link rel="stylesheet" href="/template/assets/css/flags.css">
+    <!--<link rel="stylesheet" href="/template/assets/css/flags.css">-->
     <link rel="stylesheet" href="/template/assets/css/news.css">
 
     <!-- GOOGLE FONTS -->
@@ -129,14 +131,7 @@
                 <ul class="nav">
 
                     <li><a href="/" class="active"><i class="lnr lnr-home"></i><span>Главная</span></a></li>
-                    <li>
-                        <a href="#subEvents" data-toggle="collapse" class="collapsed"><i class="fa fa-futbol-o" aria-hidden="true"></i><span>События</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                        <div id="subEvents" class="collapse ">
-                            <ul class="nav">
-                                <li><a href="#" class="">Футбол</a></li>
-                                <li><a href="#" class="">Теннис</a></li>
-                            </ul>
-                        </div>
+                    <li><a href="/statistic"><i class="fa fa-futbol-o"></i><span>Статистика</span></a>
                     </li>
                     <li>
                         <a href="#subAnalysis" data-toggle="collapse" class="collapsed"><i class="fa fa-pie-chart" aria-hidden="true"></i><span>Аналитика</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
