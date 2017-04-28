@@ -69,7 +69,7 @@ class Parser
             $leagueTable = pq($leagueTable);
             $leagueTable->find('.tv-channel, .bet-td')->remove();
             $leagueTable->html();
-            $leagueName = $leagueTable->find('thead tr th')->html();
+            $leagueName = $leagueTable->find('thead tr th a')->text();
             $leagueName = trim($leagueName);
             $awayTeam = array();
             $matchTime = array();

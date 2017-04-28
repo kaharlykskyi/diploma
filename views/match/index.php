@@ -62,15 +62,15 @@
                            <div class="row">
                                <div class="col-md-4">
                                    <h3>Вероятность победы</h3>
-                                   <div id="morris1" style="height: 250px;"></div>
+                                   <div id="morris1" style="height: 270px;"></div>
                                </div>
                                <div class="col-md-4">
                                    <h3>Забито мячей</h3>
-                                   <div id="morris2" style="height: 250px;"></div>
+                                   <div id="morris2" style="height: 270px;"></div>
                                </div>
                                <div class="col-md-4">
                                    <h3>Пропущено мячей</h3>
-                                   <div id="morris3" style="height: 250px;"></div>
+                                   <div id="morris3" style="height: 270px;"></div>
                                </div>
                            </div>
                        </div>
