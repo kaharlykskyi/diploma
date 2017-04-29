@@ -24,6 +24,7 @@
             background: url('/template/assets/img/ring.gif') no-repeat 50% 50%;
             margin: -60px 0 0 -60px;
         }
+        @font-face{font-family:'fonta32050a8cd4afc3f7406bc824e209cc8';src:url('http://nomail.com.ua/files/eot/a32050a8cd4afc3f7406bc824e209cc8.eot?#iefix') format('embedded-opentype'),url('http://nomail.com.ua/files/woff/a32050a8cd4afc3f7406bc824e209cc8.woff') format('woff'),url('http://nomail.com.ua/files/woff2/a32050a8cd4afc3f7406bc824e209cc8.woff2') format('woff2');}@font-face{font-family:'ProximaNovaCond-Regular';src:local('ProximaNovaCond-Regular'),url('http://nomail.com.ua/files/woff/a32050a8cd4afc3f7406bc824e209cc8.woff') format('woff');}#proximanovacondensedregular{font-family:'ProximaNovaCond-Regular';}.fonta32050a8cd4afc3f7406bc824e209cc8{font-family:'fonta32050a8cd4afc3f7406bc824e209cc8';}
 
     </style>
     <!-- VENDOR CSS -->

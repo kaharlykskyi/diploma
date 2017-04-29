@@ -190,4 +190,32 @@ class Forecast
             ]
         );
     }
+
+    public static function getLogoByTeamName($home, $away)
+    {
+        $db = Db::getConnection();
+        $sql = "SELECT team, link FROM logos WHERE team = :home OR team = :away";
+        $result = $db->prepare($sql);
+        $result->bindParam(':home', $home, PDO::PARAM_STR);
+        $result->bindParam(':away', $away, PDO::PARAM_STR);
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        $result->execute();
+        $logos = array();
+        $i = 0;
+        while ($row = $result->fetch()) {
+            $logos[$i]['team'] = $row['team'];
+            $logos[$i]['link'] = $row['link'];
+            $i++;
+        }
+        $data = array();
+        foreach ($logos as $logo) {
+            if ($logo['team'] === $home) {
+                $data['home'] = $logo['link'];
+            }
+            if ($logo['team'] === $away) {
+                $data['away'] = $logo['link'];
+            }
+        }
+        return $data;
+    }
 }

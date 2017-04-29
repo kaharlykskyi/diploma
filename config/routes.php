@@ -7,11 +7,11 @@ return array(
     'profile/edit' => 'profile/edit',
     'profile' => 'profile/index',
 
-    //parser stat and match info
-    'parser/match' => 'parser/match',
-
     //forecasting
     'forecast' => 'match/index',
+
+    //parser stat and match info
+    //'parser/match' => 'parser/match',
 
     //main page
     '' => 'site/index',

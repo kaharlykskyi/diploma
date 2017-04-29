@@ -2112,9 +2112,6 @@ tr:hover > td > a{
   padding-left: 10px;
   padding-right: 10px;
 }
-.full-width {
-  padding: 10px !important;
-}
 
 table#pr-table > tbody > tr > td {
   border-top: none;
@@ -2137,10 +2134,7 @@ table#pr-table > tbody > tr > td {
   width: 8%;
 }
 
-.container {
-  border: 1px solid #eee;
-  /*height: 900px;*/
-}
+
 
 /** {
   transition: all .2s linear;
@@ -2148,7 +2142,162 @@ table#pr-table > tbody > tr > td {
   -moz-transition: all .2s linear;
   -webkit-transition: all .2s linear;
 }*/
+.me {
+  height: 150px;
+  width: 150px;
+}
 
+div.game-block {
+  height: 450px;
+  position: relative;
+  width: 100%;
+  background: url("/template/assets/img/image1.jpg") center center no-repeat;
+  background-size: cover;
+  font-family: 'ProximaNovaCondRegular', sans-serif;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.game-block .info {
+  padding: 8px 0;
+  color: #ffffff;
+  border-bottom: 1px solid rgba(255,255,255,0.6);
+}
+.game-block .info a {
+  color: #ffffff;
+  border-bottom: 1px solid transparent;
+  line-height: inherit;
+  text-decoration: none;
+
+}
+.game-block .info a:hover {
+  border-bottom: 1px solid #ccc;
+  -o-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -webkit-transition: all .2s linear;
+}
+
+.game-block .game-time {
+  font-family: 'ProximaNovaCondRegular', sans-serif !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  display: inline-block !important;
+  line-height: 1.4;
+  font-style: normal;
+  font-weight: normal;
+  margin-bottom: .5rem;
+  margin-top: .2rem;
+  text-rendering: optimizeLegibility;
+}
+
+.info > a {
+  font-size: 14px !important;
+}
+
+.game-block .teams-wrapper {
+  color: #ffffff;
+  padding: 20px 0;
+  margin: 90px 0;
+}
+
+.game-block .teams-wrapper .team {
+  position: relative;
+  display: inline-block;
+  width: 40%;
+  text-align: center;
+  vertical-align: top;
+}
+
+.game-block .teams-wrapper .team .logo {
+  display: block;
+  margin: auto;
+  width: 150px;
+  height: 150px;
+  background: center center no-repeat;
+  background-size: contain;
+}
+.game-block .teams-wrapper .team .team-name {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 0 10px;
+  font-size: 32px;
+  font-family: 'ProximaNovaCondBold', sans-serif;
+  border: 1px solid transparent;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.game-block .teams-wrapper .center-col {
+  display: inline-block;
+  width: 18%;
+  vertical-align: top;
+}
+
+.game-block .teams-wrapper .center-col .remain-time {
+  display: inline-block;
+  padding: 0 8px 2px;
+  margin-bottom: 20px;
+  border: 1px solid #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  background-color: #000a22;
+}
+.game-block .teams-wrapper .center-col .remain-time .remain-time-txt {
+  margin: 0 -8px;
+  padding: 0 4px;
+  font-size: 13px;
+  color: #424242;
+  background-color: #ffffff;
+  -webkit-border-radius: 3px 3px 0 0;
+  -moz-border-radius: 3px 3px 0 0;
+  -ms-border-radius: 3px 3px 0 0;
+  border-radius: 3px 3px 0 0;
+}
+.game-block .teams-wrapper .center-col .remain-time .time {
+  font-family: 'ProximaNovaBold', sans-serif;
+  display: inline-block;
+  font-size: 30px;
+}
+.game-block .teams-wrapper .center-col .remain-time .divider {
+  font-family: 'ProximaNovaBold', sans-serif;
+  font-size: 24px;
+  vertical-align: top;
+  display: inline-block;
+}
+.game-block .teams-wrapper .center-col .remain-time .txt {
+  font-family: 'ProximaNovaRegular', sans-serif;
+  font-size: 14px;
+  margin-top: -10px;
+}
+.game-block .teams-wrapper .center-col .bet-wrapper .make-bet {
+  display: block;
+  margin: auto;
+  font-family: 'ProximaNovaCondRegular', sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  border: 1px solid #ffffff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  border-radius: 5px;
+  padding: 5px 15px 5px;
+  margin-bottom: 10px;
+  background-color: transparent;
+}
+.game-block .teams-wrapper .center-col .bet-wrapper .make-bet:hover {
+  background-color: #000a22;
+  -o-transition: all .2s linear;
+  -moz-transition: all .2s linear;
+  -webkit-transition: all .2s linear;
+}
+
+html input[type="button"] {
+  cursor: pointer;
+}
 
 .project-table > tbody > tr > td {
   padding: 12px 8px; }
