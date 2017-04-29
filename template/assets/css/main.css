@@ -2203,7 +2203,7 @@ div.game-block {
 .game-block .teams-wrapper .team {
   position: relative;
   display: inline-block;
-  width: 40%;
+  width: 35%;
   text-align: center;
   vertical-align: top;
 }
@@ -2231,7 +2231,7 @@ div.game-block {
 
 .game-block .teams-wrapper .center-col {
   display: inline-block;
-  width: 18%;
+  width: 25%;
   vertical-align: top;
 }
 
@@ -2273,8 +2273,11 @@ div.game-block {
   font-size: 14px;
   margin-top: -10px;
 }
+.game-block .teams-wrapper .center-col .bet-wrapper .bet-txt {
+  font-size: 17px;
+}
 .game-block .teams-wrapper .center-col .bet-wrapper .make-bet {
-  display: block;
+  display: inline-block;
   margin: auto;
   font-family: 'ProximaNovaCondRegular', sans-serif;
   text-transform: uppercase;
@@ -2290,14 +2293,19 @@ div.game-block {
 }
 .game-block .teams-wrapper .center-col .bet-wrapper .make-bet:hover {
   background-color: #000a22;
-  -o-transition: all .2s linear;
-  -moz-transition: all .2s linear;
-  -webkit-transition: all .2s linear;
+  opacity: 0.9;
+  -o-transition: all .3s linear;
+  -moz-transition: all .3s linear;
+  -webkit-transition: all .3s linear;
 }
 
 html input[type="button"] {
   cursor: pointer;
 }
+.container .custom-tabs-line {
+  margin-top: 20px;
+}
+
 
 .project-table > tbody > tr > td {
   padding: 12px 8px; }

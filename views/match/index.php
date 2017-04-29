@@ -40,14 +40,17 @@
                                 <div class="center-col">
                                     <div class="remain-time">
                                         <div class="remain-time-txt">до матча</div>
-                                        <div class="time">3<div class="txt">час</div></div>
+                                        <div class="time">4<div class="txt">час</div></div>
                                         <div class="divider">:</div>
-                                        <div class="time">55<div class="txt">мин</div></div>
+                                        <div class="time">23<div class="txt">мин</div></div>
                                     </div>
                                     <div class="bet-wrapper">
-                                        <input type="button" class="make-bet" value="Победа <?=$_GET['home']?>">
-                                        <input type="button" class="make-bet" value="Ничья">
-                                        <input type="button" class="make-bet" value="Победа <?=$_GET['away']?>">
+                                        <form action="#" id="bets" method="">
+                                            <p class="bet-txt text-center">Кто победит в матче?</p>
+                                            <input type="button" class="make-bet" value="<?=$_GET['home']?>">
+                                            <input type="button" class="make-bet" value="Ничья">
+                                            <input type="button" class="make-bet" value="<?=$_GET['away']?>">
+                                        </form>
                                     </div>
                                 </div>
                                 <div class="team">
@@ -55,89 +58,108 @@
                                     <span class="team-name"><?=$_GET['away']?></span>
                                 </div>
                             </div>
-                        </div><!--
-                        <h2 class="text-center">Прогноз системы</h2><hr>-->
-                        <div class="container">
-                            <div class="row">
-                                <h4 class="text-center">Наиболее вероятный исход матча: <span class="label label-success">Победа первой</span></h4>
-                            </div>
-                            <br>
-                            <div class="row">
-                                <div class="progress">
-                                    <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" style="width:<?=$homeVal?>%">
-                                        Победа <?=$_GET['home']?> (<?=$homeVal?>%)
-                                    </div>
-                                    <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" style="width:<?=$awayVal?>%">
-                                        Победа <?=$_GET['away']?> (<?=$awayVal?>%)
-                                    </div>
-                                </div>
-                            </div>
                         </div>
-                       </div>
-                    <br>
+                   </div>
                        <div class="container">
-                           <div class="table-responsive">
-                               <table class="table table-bordered table-hover">
-                                   <thead>
-                                   <tr>
-                                       <th>Команда</th>
-                                       <th class="text-center" title="Игр всего">И</th>
-                                       <th class="text-center" title="Игр выиграно">В</th>
-                                       <th class="text-center" title="Ничей">Н</th>
-                                       <th class="text-center" title="Игр проиграно">П</th>
-                                       <th class="text-center" title="Забито мячей">ЗМ</th>
-                                       <th class="text-center" title="Пропущено мячей">ПМ</th>
-                                       <th class="text-center" title="Всего очков">О</th>
-                                       <th class="text-center" title="Очков за последние 5 игр">Форма</th>
-                                   </tr>
-                                   </thead>
-                                   <eam) >
-                                   <?php
-                                   foreach ($statistic as $team) {
-                                       echo "<tr>".
-                                           "<td><img src='".$team['team_logo']."'>&nbsp;".$team['id'].". <span class='teams'>".$team['team']."</span></td>".
-                                           "<td class=\"text-center\">".$team['all_games']."</td>".
-                                           "<td class=\"text-center\">".$team['win_games']."</td>".
-                                           "<td class=\"text-center\">".$team['draw_games']."</td>".
-                                           "<td class=\"text-center\">".$team['lose_games']."</td>".
-                                           "<td class=\"text-center\">".$team['s_goals']."</td>".
-                                           "<td class=\"text-center\">".$team['m_goals']."</td>".
-                                           "<td class=\"text-center\">".$team['points']."</td>".
-                                           "<td class=\"text-center\">".$team['form_points']."</td></tr>";
-                                   }
-                                   ?>
-                                   </tbody>
-                               </table>
-                       </div>
-                       <hr>
+                           <div class="custom-tabs-line tabs-line-bottom">
+                               <ul class="nav news" role="tablist">
+                                   <li class="active"><a href="#tab-bottom-left1" role="tab" data-toggle="tab">Анализ</a></li>
+                                   <li><a href="#tab-bottom-left2" role="tab" data-toggle="tab">Таблица</a></li>
+                                   <li><a href="#tab-bottom-left3" role="tab" data-toggle="tab">Новости</a></li>
+                                   <li><a href="#tab-bottom-left4" role="tab" data-toggle="tab">Комментарии</a></li>
+                               </ul>
+                           </div>
+                           <div class="tab-content news">
+                               <div class="tab-pane fade in active" id="tab-bottom-left1">
+                                   <div class="container">
+                                       <div class="row">
+                                           <h4 class="text-center">Наиболее вероятный исход матча:
+                                               <span class="text-success">
+                                                   Победа первой
+                                               </span>
+                                           </h4>
+                                       </div>
+                                       <br>
+                                       <div class="row">
+                                           <div class="progress">
+                                               <div class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" style="width:<?=$homeVal?>%">
+                                                   Победа <?=$_GET['home']?> (<?=$homeVal?>%)
+                                               </div>
+                                               <div class="progress-bar progress-bar-info progress-bar-striped active" role="progressbar" style="width:<?=$awayVal?>%">
+                                                   Победа <?=$_GET['away']?> (<?=$awayVal?>%)
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
+                                   <br>
+                                   <div class="container">
+                                       <div class="table-responsive">
+                                           <table class="table table-bordered table-hover">
+                                               <thead>
+                                               <tr>
+                                                   <th>Команда</th>
+                                                   <th class="text-center" title="Игр всего">И</th>
+                                                   <th class="text-center" title="Игр выиграно">В</th>
+                                                   <th class="text-center" title="Ничей">Н</th>
+                                                   <th class="text-center" title="Игр проиграно">П</th>
+                                                   <th class="text-center" title="Забито мячей">ЗМ</th>
+                                                   <th class="text-center" title="Пропущено мячей">ПМ</th>
+                                                   <th class="text-center" title="Всего очков">О</th>
+                                                   <th class="text-center" title="Очков за последние 5 игр">Форма</th>
+                                               </tr>
+                                               </thead>
+                                               <eam) >
+                                               <?php
+                                               foreach ($statistic as $team) {
+                                                   echo "<tr>".
+                                                       "<td><img src='".$team['team_logo']."'>&nbsp;".$team['id'].". <span class='teams'>".$team['team']."</span></td>".
+                                                       "<td class=\"text-center\">".$team['all_games']."</td>".
+                                                       "<td class=\"text-center\">".$team['win_games']."</td>".
+                                                       "<td class=\"text-center\">".$team['draw_games']."</td>".
+                                                       "<td class=\"text-center\">".$team['lose_games']."</td>".
+                                                       "<td class=\"text-center\">".$team['s_goals']."</td>".
+                                                       "<td class=\"text-center\">".$team['m_goals']."</td>".
+                                                       "<td class=\"text-center\">".$team['points']."</td>".
+                                                       "<td class=\"text-center\">".$team['form_points']."</td></tr>";
+                                               }
+                                               ?>
+                                               </tbody>
+                                           </table>
+                                       </div>
+                                       <hr>
 
-                       <div class="container">
-                           <div class="row">
-                               <div class="col-md-4">
-                                   <h3 class="text-center">Вероятность победы</h3>
-                                   <div id="morris1" style="height: 270px;"></div>
+                                       <div class="container">
+                                           <div class="row">
+                                               <div class="col-md-4">
+                                                   <h3 class="text-center">Вероятность победы</h3>
+                                                   <div id="morris1" style="height: 270px;"></div>
+                                               </div>
+                                               <div class="col-md-4">
+                                                   <h3 class="text-center">Забито мячей</h3>
+                                                   <div id="morris2" style="height: 270px;"></div>
+                                               </div>
+                                               <div class="col-md-4">
+                                                   <h3 class="text-center">Пропущено мячей</h3>
+                                                   <div id="morris3" style="height: 270px;"></div>
+                                               </div>
+                                           </div>
+                                       </div>
+
+                                   </div>
                                </div>
-                               <div class="col-md-4">
-                                   <h3 class="text-center">Забито мячей</h3>
-                                   <div id="morris2" style="height: 270px;"></div>
+                               <div class="tab-pane fade" id="tab-bottom-left2">
+                                   <p>В разработке :)</p>
+                                   <?php '<pre>'.print_r($forecast, true).'</pre>';?>
                                </div>
-                               <div class="col-md-4">
-                                   <h3 class="text-center">Пропущено мячей</h3>
-                                   <div id="morris3" style="height: 270px;"></div>
+                               <div class="tab-pane fade" id="tab-bottom-left3">
+                                   <p>В разработке :)</p>
+                               </div>
+                               <div class="tab-pane fade" id="tab-bottom-left4">
+                                   <p>В разработке :)</p>
                                </div>
                            </div>
-
-
                        </div>
 
-
-                       <!--<p>Дебаг: </p>
-                        <pre>
-                            <?php /*//print_r($forecast) */?>
-                        </pre>-->
-
-<!--                       <img class="img-responsive" src="/template/assets/img/match_bg.jpg" alt="logo" height="300">-->
-                   </div>
                 </div>
             </div>
         </div>

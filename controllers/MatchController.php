@@ -12,6 +12,7 @@ class MatchController
         list($league, $else) = explode(",", $tmp);
         $statistic = Forecast::getStatTableByLeagueName($league, $_GET['home'], $_GET['away']);
         $forecast = Forecast::getForecast($statistic, $_GET['home'], $_GET['away']);
+
         $logo = Forecast::getLogoByTeamName($_GET['home'], $_GET['away']);
 
 
