@@ -775,7 +775,7 @@ ul.activity-list > li {
 .progress {
   -webkit-border-radius: 2px;
   -moz-border-radius: 2px;
-  border-radius: 2px;
+  border-radius: 5px;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
@@ -2304,6 +2304,9 @@ html input[type="button"] {
 }
 .container .custom-tabs-line {
   margin-top: 20px;
+}
+.progress-bar {
+  font-size: 14px !important;
 }
 
 

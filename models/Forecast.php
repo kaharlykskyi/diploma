@@ -26,6 +26,79 @@ class Forecast
     }
 
     /**
+     * Возвращает турнирную таблицу указанной лиги
+     * @param $league_name
+     * @return array
+     */
+    public static function getStatFullTableByLeagueName($league_name)
+    {
+        $table_name = '';
+        switch ($league_name) {
+            case "Англия":
+                $table_name = 'england';
+                break;
+            case "Испания":
+                $table_name = 'spain';
+                break;
+            case "Италия":
+                $table_name = 'italy';
+                break;
+            case "Франция":
+                $table_name = 'france';
+                break;
+            case "Германия":
+                $table_name = 'germany';
+                break;
+            case "Украина":
+                $table_name = 'ukraine';
+                break;
+            case "Турция":
+                $table_name = 'turkey';
+                break;
+            case "Кубок Германии":
+                $table_name = 'germany';
+                break;
+            case "Кубок Франции":
+                $table_name = 'france';
+                break;
+            case "Кубок Испании":
+                $table_name = 'spain';
+                break;
+            case "Кубок Италии":
+                $table_name = 'italy';
+                break;
+            case "Кубок Англии":
+                $table_name = 'england';
+                break;
+        }
+
+        $db = Db::getConnection();
+        $sql = "SELECT * FROM $table_name";
+        $result = $db->prepare($sql);
+        $result->bindParam(':home', $home, PDO::PARAM_STR);
+        $result->bindParam(':away', $away, PDO::PARAM_STR);
+        $result->setFetchMode(PDO::FETCH_ASSOC);
+        $result->execute();
+        $league_table = array();
+        $i = 0;
+        while ($row = $result->fetch()) {
+            $league_table[$i]['id'] = $row['id'];
+            $league_table[$i]['team'] = $row['team'];
+            $league_table[$i]['team_logo'] = $row['team_logo'];
+            $league_table[$i]['all_games'] = $row['all_games'];
+            $league_table[$i]['win_games'] = $row['win_games'];
+            $league_table[$i]['draw_games'] = $row['draw_games'];
+            $league_table[$i]['lose_games'] = $row['lose_games'];
+            $league_table[$i]['s_goals'] = $row['s_goals'];
+            $league_table[$i]['m_goals'] = $row['m_goals'];
+            $league_table[$i]['points'] = $row['points'];
+            $league_table[$i]['form_points'] = $row['form_points'];
+            $i++;
+        }
+        return $league_table;
+    }
+
+    /**
      * Возвращает статистические данные для указанных команд в их лиге
      * @param $league_name
      * @param $home
@@ -161,6 +234,19 @@ class Forecast
         $victory_chance_ft = ($rating_ft / ($rating_ft + $rating_st)) * 100;
         $victory_chance_st = 100 - $victory_chance_ft;
 
+        if ($victory_chance_ft >= 75) {
+            $result_ft = 'Победа '.$statistic[0]['team'];
+        } else if ($victory_chance_ft >= 50 && $victory_chance_ft < 75) {
+            $result_ft = "Победа ".$statistic[0]['team']." или ничья";
+        } else {$result_ft = '';}
+
+        if ($victory_chance_st >= 75) {
+            $result_st = 'Победа '.$statistic[1]['team'];
+        } else if ($victory_chance_st >= 50 && $victory_chance_st < 75) {
+            $result_st = "Победа ".$statistic[1]['team']." или ничья";
+        } else {$result_st = '';}
+
+
         return $data = array(
             $statistic[0]['team'] => [
                 'place' => round($tbp_ft, 2),
@@ -173,7 +259,8 @@ class Forecast
                 'home_arena' => $home_stadium_ft,
                 'rating' => round($rating_ft, 2),
                 'stadium' => $home_stadium_ft,
-                'victory_chance' => round($victory_chance_ft, 2)
+                'victory_chance' => round($victory_chance_ft, 2),
+                'result' => $result_ft
             ],
             $statistic[1]['team'] => [
                 'place' => round($tbp_st, 2),
@@ -186,7 +273,8 @@ class Forecast
                 'home_arena' => $home_stadium_st,
                 'rating' => round($rating_st, 2),
                 'stadium' => $home_stadium_st,
-                'victory_chance' => round($victory_chance_st, 2)
+                'victory_chance' => round($victory_chance_st, 2),
+                'result' => $result_st
             ]
         );
     }
@@ -218,4 +306,18 @@ class Forecast
         }
         return $data;
     }
+
+    public static function getRemainTime($date)
+    {
+        $data = array();
+        $check_time = strtotime($date) - time();
+        if($check_time <= 0){
+            return false;
+        }
+        $hours = floor(($check_time%86400)/3600);
+        $minutes = floor(($check_time%3600)/60);
+        $data = [$hours, $minutes];
+        return $data;
+    }
+
 }

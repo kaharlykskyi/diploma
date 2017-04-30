@@ -184,6 +184,7 @@
                                     <?php endif; ?>
                                     <div class="tab-pane fade" id="tab-bottom-left6">
                                             <p>В разработке :)</p>
+
                                     </div>
 								</div>
 								<!-- END TABBED CONTENT -->

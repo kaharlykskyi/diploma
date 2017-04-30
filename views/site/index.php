@@ -111,6 +111,15 @@
         $( this ).find('td.score a , td.team a, td.logo a, td.time a').attr('href','/');
         $( this ).find('td.bet-td a').remove();
         $( this ).find('td.time, td.score').addClass('text-center pr-middle');
+
+        if ($( this ).is('thead tr th a')) {
+            var league = $( this ).find('thead tr th a').text();
+        } else {
+            league = $( this ).find('thead tr th').text();
+        }
+
+        $( this ).find('thead tr th a').remove(":empty");
+        $( this ).find('thead tr th').text(league);
         //$( this ).find('tbody td:last-child').after("<td class='analyse'><a href='/'>Анализ</a></td>");
     });
 
