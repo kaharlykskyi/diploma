@@ -26,6 +26,8 @@ class ParserController
         Parser::insert_stat_table($turkey_table, 'turkey');
 
 
+
+
         require_once(ROOT.'/views/site/parser.php');
         return true;
     }

@@ -1841,6 +1841,13 @@ div.form p{
   margin: 15px 0;
 }
 
+@media screen and (min-width: 1150px) {
+  .container {
+    width: 970px !important;
+  }
+}
+
+
 @media screen and (max-width: 640px) {
   ul.news {
       font-size: 13px;
@@ -2316,4 +2323,5 @@ html input[type="button"] {
     width: 22px;
     border: 1px solid #CCC; }
 
-/*# sourceMappingURL=main.css.map */
+/*League news */
+

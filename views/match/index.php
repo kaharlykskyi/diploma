@@ -48,7 +48,7 @@
                         <div class="game-block text-center">
                             <div class="info">
                                 <a href="#"><?=$league;?></a>
-                                <h1 class="game-time">• <?=$_GET['home']?> - <?=$_GET['away']?>: <?php setlocale(LC_ALL, 'ru_RU.UTF-8'); echo str_replace("Апрель", "Апреля" ,$date_match = strftime("%A %e %B %Y"))?></h1>
+                                <h1 class="game-time">• <?=$_GET['home']?> - <?=$_GET['away']?>: <?php setlocale(LC_ALL, 'ru_RU.UTF-8'); echo str_replace("Май", "Мая" ,$date_match = strftime("%A %e %B %Y"))?></h1>
                             </div>
                             <div class="teams-wrapper">
                                 <div class="team">
@@ -64,10 +64,9 @@
                                     </div>
                                     <div class="bet-wrapper">
                                         <form action="#" id="bets" method="">
-                                            <p class="bet-txt text-center">Кто победит в матче?</p>
-                                            <input type="button" class="make-bet" value="<?=$_GET['home']?>">
-                                            <input type="button" class="make-bet" value="Ничья">
-                                            <input type="button" class="make-bet" value="<?=$_GET['away']?>">
+                                            <p class="bet-txt text-center">Согласны с прогнозом?</p>
+                                            <input type="button" class="make-bet" value="Да">
+                                            <input type="button" class="make-bet" value="Нет">
                                         </form>
                                     </div>
                                 </div>
@@ -100,10 +99,10 @@
                                        <br>
                                        <div class="row">
                                            <div class="progress">
-                                               <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" style="width:<?=$homeVal?>%">
+                                               <div class="progress-bar progress-bar-success" role="progressbar" style="width:<?=$homeVal?>%">
                                                    Победа <?=$_GET['home']?> (<?=$homeVal?>%)
                                                </div>
-                                               <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" style="width:<?=$awayVal?>%">
+                                               <div class="progress-bar progress-bar-default" role="progressbar" style="width:<?=$awayVal?>%">
                                                    Победа <?=$_GET['away']?> (<?=$awayVal?>%)
                                                </div>
                                            </div>
@@ -205,13 +204,44 @@
                                    </div>
                                </div>
                                <div class="tab-pane fade" id="tab-bottom-left3">
-                                   <p>В разработке :)</p>
+                                   <?=$football_news?>
                                </div>
                                <div class="tab-pane fade" id="tab-bottom-left4">
-                                   <p>В разработке :)</p>
-                                   <?php
-                                   echo '<pre>'.print_r($date, true).'</pre>';
-                                   ?>
+                                   <div class="well">
+                                       <div class="row">
+                                           <div class="col-md-12">
+                                               <span class="lead"><strong>Анастасия</strong></span>
+                                               <span class="pull-right">4 мая 15:13</span>
+                                               <div style="clear:both;"></div><br>
+                                               <div class="alert alert-info" role="alert">Хороший прогноз</div><hr>
+                                           </div>
+                                       </div>
+                                       <h4>Напишите ваше мнение о прогнозе</h4>
+                                       <br>
+                                       <form class="form-horizontal" method="post" action="index.php?view=insert_comment&id=1">
+                                           <fieldset>
+                                               <!-- Prepended text-->
+                                               <div class="form-group">
+                                                   <div class="col-md-4">
+                                                       <div class="input-group">
+                                                           <span class="input-group-addon">Имя</span>
+                                                           <input id="prependedtext" name="name" class="form-control" placeholder="" type="text" required="">
+                                                       </div>
+                                                   </div>
+                                               </div>
+
+                                               <!-- Textarea -->
+                                               <div class="form-group">
+                                                   <div class="col-md-12">
+                                                       <textarea class="form-control" id="textarea" name="message" placeholder="Ваше сообщение" rows="6" required=""></textarea>
+                                                   </div>
+                                               </div>
+                                           </fieldset>
+                                           <div class="text-left">
+                                               <input type="submit" class="btn btn-success" name="insert_comment" value="Написать отзыв"></input>
+                                           </div>
+                                       </form>
+                                   </div>
                                </div>
                            </div>
                        </div>
@@ -240,6 +270,42 @@
 
         if ($('.time span').text() == '') {
               $('.remain-time').remove();
+        }
+        $('div.rn_full img').each(function () {
+            var href = 'https://www.livesport.ru';
+            href += $( this ).attr("src");
+            $( this ).attr("src", href);
+        });
+
+        $('div.rn_lenta a').each(function () {
+            var href = 'https://www.livesport.ru';
+            href += $( this ).attr("href");
+            $( this ).attr("href", href);
+            $( this ).attr("target", "_blank");
+        });
+
+        $('div.rn_full a').each(function () {
+            var href = 'https://www.livesport.ru';
+            href += $( this ).attr("href");
+            $( this ).attr("href", href);
+            $( this ).attr("target", "_blank");
+        });
+
+        $('ul.news li:first').addClass('active');
+        $('div.news div:first').addClass('in active');
+        $('a.lista, a.list, a.list_r, div.pro30').addClass('hidden');
+
+        if ($(window).width() < 640) {
+            $('div.rn_full').addClass('hidden');
+        }
+
+
+        if ($(window).width() < 380) {
+            $('div.rn_lenta a').addClass('small_font');
+            $('div.panel-profile').addClass('fixedmr');
+        } else {
+            $('div.rn_lenta a').removeClass('small_font');
+            $('div.panel-profile').removeClass('fixedmr');
         }
     });
 

@@ -15,7 +15,7 @@ class MatchController
         $logo = Forecast::getLogoByTeamName($_GET['home'], $_GET['away']);
         $info = Site::get_match_info();
         $leagueTable = Forecast::getStatFullTableByLeagueName($league);
-        $leagueTableText = 'Чемпионат '.substr_replace($league,' ',-1);
+        $football_news = Profile::getNews(Profile::getCurl('https://www.livesport.ru/news/football/'));
 
 
 

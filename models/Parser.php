@@ -174,4 +174,14 @@ class Parser
     }
 
 
+    public static function getLeagueNews($file)
+    {
+        require_once (ROOT.'/template/assets/libs/phpQuery.php');
+        $doc = phpQuery::newDocument($file);
+        $news = $doc->find('div#news-list-block');
+        //$news = @iconv('Windows-1251', 'UTF-8//TRANSLIT//IGNORE', $news);
+        return $news;
+    }
+
+
 }
