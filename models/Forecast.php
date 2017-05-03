@@ -25,6 +25,7 @@ class Forecast
         return $match_info;
     }
 
+
     /**
      * Возвращает турнирную таблицу указанной лиги
      * @param $league_name
@@ -75,8 +76,6 @@ class Forecast
         $db = Db::getConnection();
         $sql = "SELECT * FROM $table_name";
         $result = $db->prepare($sql);
-        $result->bindParam(':home', $home, PDO::PARAM_STR);
-        $result->bindParam(':away', $away, PDO::PARAM_STR);
         $result->setFetchMode(PDO::FETCH_ASSOC);
         $result->execute();
         $league_table = array();

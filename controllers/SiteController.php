@@ -17,6 +17,7 @@ class SiteController
         $info = Site::get_match_info();
 
 
+
         require_once(ROOT.'/views/site/index.php');
         return true;
     }

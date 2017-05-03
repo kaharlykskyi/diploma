@@ -6,7 +6,9 @@
             <div class="container-fluid">
                 <!-- OVERVIEW -->
                 <div class="panel panel-main">
-                    <h3 class="heading matches-heading">Парсинг матчей на сегодня......</h3>
+                    <div class="container">
+                        <h3 class="heading matches-heading">Статистика успешно обновлена</h3>
+                    </div>
                 </div>
             </div>
         </div>

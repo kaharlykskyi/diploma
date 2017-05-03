@@ -79,11 +79,10 @@
                    </div>
                        <div class="container">
                            <div class="custom-tabs-line tabs-line-bottom">
-                               <ul class="nav news" role="tablist">
+                               <ul class="nav news match-forecast" role="tablist">
                                    <li class="active"><a href="#tab-bottom-left1" role="tab" data-toggle="tab">Анализ</a></li>
                                    <li><a href="#tab-bottom-left2" role="tab" data-toggle="tab">Таблица</a></li>
                                    <li><a href="#tab-bottom-left3" role="tab" data-toggle="tab">Новости</a></li>
-                                   <li><a href="#tab-bottom-left4" role="tab" data-toggle="tab">Комментарии</a></li>
                                </ul>
                            </div>
                            <div class="tab-content news">
@@ -206,43 +205,7 @@
                                <div class="tab-pane fade" id="tab-bottom-left3">
                                    <?=$football_news?>
                                </div>
-                               <div class="tab-pane fade" id="tab-bottom-left4">
-                                   <div class="well">
-                                       <div class="row">
-                                           <div class="col-md-12">
-                                               <span class="lead"><strong>Анастасия</strong></span>
-                                               <span class="pull-right">4 мая 15:13</span>
-                                               <div style="clear:both;"></div><br>
-                                               <div class="alert alert-info" role="alert">Хороший прогноз</div><hr>
-                                           </div>
-                                       </div>
-                                       <h4>Напишите ваше мнение о прогнозе</h4>
-                                       <br>
-                                       <form class="form-horizontal" method="post" action="index.php?view=insert_comment&id=1">
-                                           <fieldset>
-                                               <!-- Prepended text-->
-                                               <div class="form-group">
-                                                   <div class="col-md-4">
-                                                       <div class="input-group">
-                                                           <span class="input-group-addon">Имя</span>
-                                                           <input id="prependedtext" name="name" class="form-control" placeholder="" type="text" required="">
-                                                       </div>
-                                                   </div>
-                                               </div>
 
-                                               <!-- Textarea -->
-                                               <div class="form-group">
-                                                   <div class="col-md-12">
-                                                       <textarea class="form-control" id="textarea" name="message" placeholder="Ваше сообщение" rows="6" required=""></textarea>
-                                                   </div>
-                                               </div>
-                                           </fieldset>
-                                           <div class="text-left">
-                                               <input type="submit" class="btn btn-success" name="insert_comment" value="Написать отзыв"></input>
-                                           </div>
-                                       </form>
-                                   </div>
-                               </div>
                            </div>
                        </div>
 

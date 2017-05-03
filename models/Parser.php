@@ -3,6 +3,42 @@
 class Parser
 {
     /**
+     * Возвращает таблицу бомбардиров указанной лиги
+     * @param $file
+     * @return array
+     */
+    public static function getScorersTable($file)
+    {
+        require_once (ROOT.'/template/assets/libs/phpQuery.php');
+        $doc = phpQuery::newDocument($file);
+        $doc = $doc->find('.teams-table tbody');
+        $data = array();
+
+        foreach ($doc->find('tr') as $tr) {
+            $tr = pq($tr);
+            $place = trim($tr->find('td:nth-child(1)')->text());
+            $playerLogo = trim($tr->find('td:nth-child(2) a img.player-ava')->attr('src'));
+            $str = trim($tr->find('td:nth-child(3) a')->text());
+            $playerName =  preg_replace('/ {2,}/',' ', $str);
+            $playerTeam = trim($tr->find('td:nth-child(4) a.player-team')->text());
+            $goals = trim($tr->find('td:nth-child(5)')->text());
+            $penalties = trim($tr->find('td:nth-child(6)')->text());
+            $games = trim($tr->find('td:nth-child(7)')->text());
+
+            $data[] = array(
+                'place' => $place,
+                'playerLogo' => $playerLogo,
+                'playerName' => $playerName,
+                'playerTeam' => $playerTeam,
+                'goals' => $goals,
+                'penalties' => $penalties,
+                'games' => $games
+            );
+        }
+        return $data;
+    }
+
+    /**
      * Возвращает турнирную таблицу указанной лиги
      * @param $file
      * @return array
@@ -130,7 +166,7 @@ class Parser
     }
 
     /**
-     * Метод удаляем существующую таблицу с статистиков лиги и создает новую таблицу
+     * Метод удаляет существующую таблицу с статистиков лиги и создает новую таблицу
      * @param $league
      * @return bool
      */
@@ -139,6 +175,19 @@ class Parser
         $db = Db::getConnection();
         $db->query("DROP TABLE IF EXISTS $league;");
         $db->query("CREATE TABLE $league (id INT(11) PRIMARY KEY, team VARCHAR(255), team_logo VARCHAR(255), all_games INT, win_games INT, draw_games INT, lose_games INT, s_goals INT, m_goals INT, points INT, form_points INT, date VARCHAR(55));");
+        return true;
+    }
+
+    /**
+     * Метод удаляет существующую таблицу с бомбардирами лиги и создает новую таблицу
+     * @param $league
+     * @return bool
+     */
+    private static function dropScorersTable($league)
+    {
+        $db = Db::getConnection();
+        $db->query("DROP TABLE IF EXISTS scorers_".$league.";");
+        $db->query("CREATE TABLE scorers_".$league." (id INT(11) PRIMARY KEY, playerLogo VARCHAR(255), playerName VARCHAR(255), playerTeam VARCHAR(255), goals INT, penalties INT, games INT, date VARCHAR(55));");
         return true;
     }
 
@@ -153,7 +202,7 @@ class Parser
         self::drop_stat_table($league); //вызываем метод удаления старой таблицы и создание новой
         foreach ($table as $tables => $info) {
             $db = Db::getConnection();
-            $date = date("d.m.y H:i:s");
+            $date = date("d.m.y H:i");
             $sql = "INSERT INTO $league VALUES(:id, :team, :teamLogo, :allGames, :winGames, :drawGames, :loseGames, :sGoals, :mGoals, :points, :formPoints, :date)";
             $result = $db->prepare($sql);
             $result->bindParam(':id', $info['place'], PDO::PARAM_INT);
@@ -173,6 +222,32 @@ class Parser
         return true;
     }
 
+    /**
+     * Вставляет новую таблицу с бомбардирами дял нужной лиги
+     * @param $table
+     * @param $league
+     * @return bool
+     */
+    public static function insertScorersTable($table, $league)
+    {
+        self::dropScorersTable($league);
+        foreach ($table as $tables => $info) {
+            $db = Db::getConnection();
+            $date = date("d.m.y H:i:s");
+            $sql = "INSERT INTO scorers_".$league." VALUES(:id, :playerLogo, :playerName, :playerTeam, :goals, :penalties, :games, :date);";
+            $result = $db->prepare($sql);
+            $result->bindParam(':id', $info['place'], PDO::PARAM_INT);
+            $result->bindParam(':playerLogo', $info['playerLogo'], PDO::PARAM_STR);
+            $result->bindParam(':playerName', $info['playerName'], PDO::PARAM_STR);
+            $result->bindParam(':playerTeam', $info['playerTeam'], PDO::PARAM_STR);
+            $result->bindParam(':goals', $info['goals'], PDO::PARAM_INT);
+            $result->bindParam(':penalties', $info['penalties'], PDO::PARAM_INT);
+            $result->bindParam(':games', $info['games'], PDO::PARAM_INT);
+            $result->bindParam(':date', $date, PDO::PARAM_STR);
+            $result->execute();
+        }
+        return true;
+    }
 
     public static function getLeagueNews($file)
     {

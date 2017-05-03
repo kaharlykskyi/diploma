@@ -134,7 +134,7 @@
                     <li><a href="/" class="active"><i class="lnr lnr-home"></i><span>Главная</span></a></li>
                     <li><a href="/statistic"><i class="fa fa-futbol-o"></i><span>Статистика</span></a>
                     </li>
-                    <li>
+                    <!--<li>
                         <a href="#subAnalysis" data-toggle="collapse" class="collapsed"><i class="fa fa-pie-chart" aria-hidden="true"></i><span>Аналитика</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                         <div id="subAnalysis" class="collapse ">
                             <ul class="nav">
@@ -142,7 +142,7 @@
                                 <li><a href="#" class="">Теннис</a></li>
                             </ul>
                         </div>
-                    </li>
+                    </li>-->
                     <?php if (!User::isGuest()): ?>
                     <li>
                         <a href="#subCabinet" data-toggle="collapse" class="collapsed"><i class="fa fa-user-circle" aria-hidden="true"></i><span>Личный кабинет</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>

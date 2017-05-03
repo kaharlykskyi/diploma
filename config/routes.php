@@ -12,6 +12,10 @@ return array(
 
     //parser stat and match info
     //'parser/match' => 'parser/match',
+    //'parser/stat' => 'parser/stat',
+
+    //stat
+    'statistic' => 'statistic/index',
 
     //main page
     '' => 'site/index',
