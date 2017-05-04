@@ -1841,47 +1841,7 @@ div.form p{
   margin: 15px 0;
 }
 
-@media screen and (min-width: 1150px) {
-  .container {
-    width: 970px !important;
-  }
-}
 
-
-@media screen and (max-width: 640px) {
-  ul.news {
-      font-size: 13px;
-  }
-  .nav > li > a {
-    padding: 7px;
-  }
-  .spinner {
-    width: 70px;
-    height: 70px;
-  }
-  div.main-page {
-    padding: 0 !important;
-  }
-  .heading {
-    font-size: 21px !important;
-  }
-  #pr-table, .analyse > a, .calendar-table, .calendar-table td.team, .calendar-table td.time a {
-    font-size: 12px !important;
-  }
-  .table-condensed > tbody > tr > td {
-    padding-left: 0;
-    padding-bottom: 0;
-    padding-right: 0;
-    padding-top: 10px;
-  }
-  .matches-heading {
-    margin-bottom: 10px !important;
-  }
-  .calendar-table td.date {
-    display: none;
-  }
-
-}
 
 .helper-text {
   font-size: 14px;
@@ -2081,7 +2041,7 @@ table {
   margin-left: 10px;
 }
 .table-condensed > tbody > tr > td {
-  padding: 6px;
+  padding: 5px;
 }
 .score > a {
   display: inline-block;
@@ -2353,5 +2313,55 @@ ul.match-forecast li {
 }
 .scorers {
   margin-left: 25px;
+}
+@media screen and (min-width: 1150px) {
+  .container {
+    width: 970px !important;
+  }
+  table.table {
+    font-size: 13px;
+  }
+  .team {
+    font-size: 13px;
+  }
+  .team-logo {
+    width: 20px;
+  }
+}
+
+
+@media screen and (max-width: 640px) {
+  ul.news {
+    font-size: 13px;
+  }
+  .nav > li > a {
+    padding: 7px;
+  }
+  .spinner {
+    width: 70px;
+    height: 70px;
+  }
+  div.main-page {
+    padding: 0 !important;
+  }
+  .heading {
+    font-size: 21px !important;
+  }
+  #pr-table, .analyse > a, .calendar-table, .calendar-table td.team, .calendar-table td.time a {
+    font-size: 12px !important;
+  }
+  .table-condensed > tbody > tr > td {
+    padding-left: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    padding-top: 10px;
+  }
+  .matches-heading {
+    margin-bottom: 10px !important;
+  }
+  .calendar-table td.date {
+    display: none;
+  }
+
 }
 

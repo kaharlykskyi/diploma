@@ -46,7 +46,7 @@
                                                 foreach ($leagueTableEngland as $team) {
                                                     echo "<tr>".
                                                         "<td>".$team['id']."</td>".
-                                                        "<td>&nbsp;&nbsp;<img src='".$team['team_logo']."'>&nbsp;&nbsp;&nbsp;&nbsp;".$team['team']."</td>".
+                                                        "<td>&nbsp;&nbsp;<img class='team-logo' src='".$team['team_logo']."'>&nbsp;&nbsp;&nbsp;&nbsp;".$team['team']."</td>".
                                                         "<td class=\"text-center\">".$team['all_games']."</td>".
                                                         "<td class=\"text-center\">".$team['win_games']."</td>".
                                                         "<td class=\"text-center\">".$team['draw_games']."</td>".
@@ -121,7 +121,7 @@
                                             foreach ($leagueTableUkraine as $team) {
                                                 echo "<tr>".
                                                     "<td>".$team['id']."</td>".
-                                                    "<td>&nbsp;&nbsp;<img src='".$team['team_logo']."'>&nbsp;&nbsp;&nbsp;&nbsp;".$team['team']."</td>".
+                                                    "<td>&nbsp;&nbsp;<img class='team-logo' src='".$team['team_logo']."'>&nbsp;&nbsp;&nbsp;&nbsp;".$team['team']."</td>".
                                                     "<td class=\"text-center\">".$team['all_games']."</td>".
                                                     "<td class=\"text-center\">".$team['win_games']."</td>".
                                                     "<td class=\"text-center\">".$team['draw_games']."</td>".
@@ -196,7 +196,7 @@
                                             foreach ($leagueTableSpain as $team) {
                                                 echo "<tr>".
                                                     "<td>".$team['id']."</td>".
-                                                    "<td>&nbsp;&nbsp;<img src='".$team['team_logo']."'>&nbsp;&nbsp;&nbsp;&nbsp;".$team['team']."</td>".
+                                                    "<td>&nbsp;&nbsp;<img class='team-logo' src='".$team['team_logo']."'>&nbsp;&nbsp;&nbsp;&nbsp;".$team['team']."</td>".
                                                     "<td class=\"text-center\">".$team['all_games']."</td>".
                                                     "<td class=\"text-center\">".$team['win_games']."</td>".
                                                     "<td class=\"text-center\">".$team['draw_games']."</td>".
@@ -271,7 +271,7 @@
                                             foreach ($leagueTableItaly as $team) {
                                                 echo "<tr>".
                                                     "<td>".$team['id']."</td>".
-                                                    "<td>&nbsp;&nbsp;<img src='".$team['team_logo']."'>&nbsp;&nbsp;&nbsp;&nbsp;".$team['team']."</td>".
+                                                    "<td>&nbsp;&nbsp;<img class='team-logo' src='".$team['team_logo']."'>&nbsp;&nbsp;&nbsp;&nbsp;".$team['team']."</td>".
                                                     "<td class=\"text-center\">".$team['all_games']."</td>".
                                                     "<td class=\"text-center\">".$team['win_games']."</td>".
                                                     "<td class=\"text-center\">".$team['draw_games']."</td>".
@@ -346,7 +346,7 @@
                                             foreach ($leagueTableGermany as $team) {
                                                 echo "<tr>".
                                                     "<td>".$team['id']."</td>".
-                                                    "<td>&nbsp;&nbsp;<img src='".$team['team_logo']."'>&nbsp;&nbsp;&nbsp;&nbsp;".$team['team']."</td>".
+                                                    "<td>&nbsp;&nbsp;<img class='team-logo' src='".$team['team_logo']."'>&nbsp;&nbsp;&nbsp;&nbsp;".$team['team']."</td>".
                                                     "<td class=\"text-center\">".$team['all_games']."</td>".
                                                     "<td class=\"text-center\">".$team['win_games']."</td>".
                                                     "<td class=\"text-center\">".$team['draw_games']."</td>".
@@ -421,7 +421,7 @@
                                             foreach ($leagueTableFrance as $team) {
                                                 echo "<tr>".
                                                     "<td>".$team['id']."</td>".
-                                                    "<td>&nbsp;&nbsp;<img src='".$team['team_logo']."'>&nbsp;&nbsp;&nbsp;&nbsp;".$team['team']."</td>".
+                                                    "<td>&nbsp;&nbsp;<img class='team-logo' src='".$team['team_logo']."'>&nbsp;&nbsp;&nbsp;&nbsp;".$team['team']."</td>".
                                                     "<td class=\"text-center\">".$team['all_games']."</td>".
                                                     "<td class=\"text-center\">".$team['win_games']."</td>".
                                                     "<td class=\"text-center\">".$team['draw_games']."</td>".
@@ -465,7 +465,7 @@
                                             foreach ($leagueTableTurkey as $team) {
                                                 echo "<tr>".
                                                     "<td>".$team['id']."</td>".
-                                                    "<td>&nbsp;&nbsp;<img src='".$team['team_logo']."'>&nbsp;&nbsp;&nbsp;&nbsp;".$team['team']."</td>".
+                                                    "<td>&nbsp;&nbsp;<img class='team-logo' src='".$team['team_logo']."'>&nbsp;&nbsp;&nbsp;&nbsp;".$team['team']."</td>".
                                                     "<td class=\"text-center\">".$team['all_games']."</td>".
                                                     "<td class=\"text-center\">".$team['win_games']."</td>".
                                                     "<td class=\"text-center\">".$team['draw_games']."</td>".
@@ -481,7 +481,16 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="profile-right main-page"></div>
+                            <div class="profile-right main-page">
+                                <?php
+                                    /*$hello = 'Hello!';
+                                    for ($i = 0; $i <= strlen($hello); $i++)
+                                    {
+                                        echo substr($hello, $i, 1);
+                                    }*/
+
+                                ?>
+                            </div>
                         </div>
                     </div>
                 </div>
