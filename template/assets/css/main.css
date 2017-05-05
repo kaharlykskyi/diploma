@@ -2455,6 +2455,7 @@ table.players {
   }
   #alerts {
     top: 60px !important;
+    right: 0 !important;
   }
 }
 
