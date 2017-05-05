@@ -6,6 +6,8 @@ class ParserController
     {
         $userId = User::checkUsernameMain();
         $user = User::getUserById($userId);
+        $notificationCounter = User::getNotificationCounter($userId);
+        $menu = '';
         $file = Profile::getCurl('https://football24.ua/ru/calendar/'); //вся страница
         $data = Parser::get_today_match_data($file); //массив с данными о матчах
         Parser::insert_match_data($data); //всталяем инфу в БД

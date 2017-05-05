@@ -6,7 +6,8 @@ class StatisticController
     {
         $userId = User::checkUsernameMain();
         $user = User::getUserById($userId);
-        $menu = 'stat';
+        $notificationCounter = User::getNotificationCounter($userId);
+        $menu = 'Статистика';
         $small_avatar_url = Profile::get_gravatar($user['email'], 26);
 
         $leagueTableEngland = Forecast::getStatFullTableByLeagueName('Англия');

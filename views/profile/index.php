@@ -46,6 +46,7 @@
 											<li>Дата рождения
                                                 <span>
                                                    <?php
+                                                   $notificationsCounter = 0;
                                                    if ($user_info['bdate'] == '') {
                                                        echo '<a href="/profile/edit">Не указан</a>';
                                                    } else {
@@ -73,12 +74,6 @@
                                                     if ($user_info['country'] == '') {
                                                         echo '<a href="/profile/edit">Не указан</a>';
                                                     } else {
-                                                        /*$href = '';
-                                                        $country = ['Украина' => 'UA', 'Россия' => 'RU', 'США' => 'US'];
-                                                        if ($user_info['country'] == 'Украина') $href = 'UA';
-                                                        if ($user_info['country'] == 'Россия') $href = 'RU';
-                                                        if ($user_info['country'] == 'США') $href = 'US';
-                                                        echo in_array($href, $country) ? "<img class=\"flags\" src=\"/data/flags/24/$href.png\" alt=\"flag\">&nbsp;" : '';*/
                                                         echo $flag_url;
                                                         echo $user_info['country'];
                                                     }
@@ -128,9 +123,9 @@
                                                 if (!$user_info['google'] == '') {
                                                     echo "<li><a href=".$user_info['google']." target='_blank' class=\"google-plus-bg\"><i class=\"fa fa-google-plus\"></i></a></li>";
                                                 }
-                                            if ($user_info['vk'] == '' && $user_info['fb'] == '' && $user_info['twitter'] == '' && $user_info['google'] == '') {
-                                                echo "&nbsp;<i class=\"fa fa-plus\" aria-hidden=\"true\"></i>&nbsp;<a href='/profile/edit/#about'>Добавить социальные сети</a>";
-                                            }
+                                                if ($user_info['vk'] == '' && $user_info['fb'] == '' && $user_info['twitter'] == '' && $user_info['google'] == '') {
+                                                    echo "&nbsp;<i class=\"fa fa-plus\" aria-hidden=\"true\"></i>&nbsp;<a href='/profile/edit/#about'>Добавить социальные сети</a>";
+                                                }
                                             ?>
 										</ul>
 									</div>

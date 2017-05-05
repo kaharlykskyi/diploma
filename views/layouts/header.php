@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Sport info</title>
+    <title><?=$menu?></title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -46,8 +46,7 @@
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!-- ICONS -->
-    <link rel="apple-touch-icon" sizes="76x76" href="/template/assets/img/apple-icon.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="/template/assets/img/favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/template/assets/img/logo.ico">
     <script src="/template/assets/vendor/jquery/jquery.min.js"></script>
     <script>
         $(window).on('load', function () {
@@ -102,11 +101,13 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
                             <i class="lnr lnr-alarm"></i>
-                            <span class="badge bg-success">2</span>
+                            <span class="badge bg-success"><?php if ($notificationCounter > 3) {echo '2';} else echo '1';?></span>
                         </a>
                         <ul class="dropdown-menu notifications">
                             <li><a href="/" class="notification-item"><span class="dot bg-success"></span>Все матчи<span class="hidden match"></span> на <?=date("d.m")?> проанализированы</a></li>
-                            <li><a href="/profile/edit" class="notification-item"><span class="dot bg-warning"></span><?php echo $user['name']; ?>, заполните информацию о себе</a></li>
+                            <?php
+                                if ($notificationCounter > 3) echo "<li><a href='/profile/edit' class='notification-item'><span class='dot bg-warning'></span>".$user['name'].", заполните информацию о себе (".$notificationCounter." из 9)</a></li>";
+                            ?>
                         </ul>
                     </li>
                     <?php endif; ?>
@@ -121,12 +122,12 @@
             <nav>
                 <ul class="nav">
 
-                    <li><a href="/" <?php if($menu == 'main') echo "class='active'"; ?>><i class="lnr lnr-home"></i><span>Главная</span></a></li>
-                    <li><a href="/statistic" <?php if($menu == 'stat') echo "class='active'"; ?>><i class="fa fa-futbol-o"></i><span>Статистика</span></a>
+                    <li><a href="/" <?php if($menu == 'Sport info') echo "class='active'"; ?>><i class="lnr lnr-home"></i><span>Главная</span></a></li>
+                    <li><a href="/statistic" <?php if($menu == 'Статистика') echo "class='active'"; ?>><i class="fa fa-futbol-o"></i><span>Статистика</span></a>
                     </li>
                     <?php if (!User::isGuest()): ?>
                     <li>
-                        <a href="#subCabinet" data-toggle="collapse" class="<?php if($menu == 'profile') echo "active "; ?>collapsed"><i class="fa fa-user-circle" aria-hidden="true"></i><span>Личный кабинет</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                        <a href="#subCabinet" data-toggle="collapse" class="<?php if($menu == 'Профиль' || $menu == 'Редактировать профиль') echo "active "; ?>collapsed"><i class="fa fa-user-circle" aria-hidden="true"></i><span>Личный кабинет</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                         <div id="subCabinet" class="collapse">
                             <ul class="nav">
                                 <li><a href="/profile/" class="">Профиль</a></li>

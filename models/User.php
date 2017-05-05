@@ -193,7 +193,7 @@ class User
     public static function getUserInfoById($userId)
     {
         $userId = intval($userId);
-        if($userId) {
+        if ($userId) {
             $db = Db::getConnection();
             $sql = "SELECT * FROM user_info WHERE user_id = :id";
             $result = $db->prepare($sql);
@@ -202,6 +202,32 @@ class User
             $result->execute();
             return $result->fetch();
         }
+    }
+
+    public static function getNotificationCounter($userId)
+    {
+        $notificationCounter = 9;
+        $userId = intval($userId);
+            $db = Db::getConnection();
+            $sql = "SELECT * FROM user_info WHERE user_id = :id";
+            $result = $db->prepare($sql);
+            $result->bindParam(':id', $userId, PDO::PARAM_INT);
+            $result->setFetchMode(PDO::FETCH_ASSOC);
+            $result->execute();
+            $i = 0;
+            while ($row = $result->fetch()) {
+                if (!$row['city'] == '') $notificationCounter--;
+                if (!$row['mobile'] == '') $notificationCounter--;
+                if (!$row['country'] == '') $notificationCounter--;
+                if (!$row['vk'] == '') $notificationCounter--;
+                if (!$row['fb'] == '') $notificationCounter--;
+                if (!$row['google'] == '') $notificationCounter--;
+                if (!$row['twitter'] == '') $notificationCounter--;
+                if (!$row['bdate'] == '') $notificationCounter--;
+                if (!$row['skype'] == '') $notificationCounter--;
+                $i++;
+            }
+            return $notificationCounter;
     }
 
 }
