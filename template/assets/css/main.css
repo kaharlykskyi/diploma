@@ -2451,3 +2451,9 @@ table.players {
     margin-left: 0px;
   }
 }
+
+@media screen and (min-width: 1500px) {
+  .game-block {
+    height: 400px;
+  }
+}

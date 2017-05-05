@@ -225,12 +225,15 @@
 <script src="//cdnjs.cloudflare.com/ajax/libs/morris.js/0.5.1/morris.min.js"></script>
 <script src="/template/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 <script src="/template/assets/scripts/klorofil-common.js"></script>
+
+
 <script>
     $(window).on('load', function () {
         var $preloader = $('#page-preloader'),
             $spinner   = $preloader.find('.spinner');
         $spinner.fadeOut();
         $preloader.delay(350).fadeOut('slow');
+
 
         if ($('.time span').text() == '') {
               $('.remain-time').remove();

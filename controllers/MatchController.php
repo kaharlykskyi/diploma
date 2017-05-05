@@ -20,9 +20,6 @@ class MatchController
         $football_news = Profile::getNews(Profile::getCurl('https://www.livesport.ru/news/football/'));
 
 
-
-
-
         require_once(ROOT.'/views/match/index.php');
         return true;
     }

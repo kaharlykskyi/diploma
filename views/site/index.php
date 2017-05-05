@@ -22,22 +22,22 @@
                                <div class="item active">
                                    <img src="/template/assets/img/slider/stad2.jpg" alt="...">
                                    <div class="carousel-caption">
-                                       <h3>Бавария - Гамбург</h3>
-                                       <p>Германия, 34 тур</p>
+                                       <h3 class="slider-teams1">Бавария - Гамбург</h3>
+                                       <p class="slider-league1">Германия, 34 тур</p>
                                    </div>
                                </div>
                                <div class="item">
                                    <img src="/template/assets/img/slider/stad4.jpeg" alt="...">
                                    <div class="carousel-caption">
-                                       <h3>Челси - Арсенал</h3>
-                                       <p>Англия, 33 тур</p>
+                                       <h3 class="slider-teams2">Челси - Арсенал</h3>
+                                       <p class="slider-league2">Англия, 33 тур</p>
                                    </div>
                                </div>
                                <div class="item">
                                    <img src="/template/assets/img/slider/stad1.jpg" alt="...">
                                    <div class="carousel-caption">
-                                       <h3>Динамо - Шахтер</h3>
-                                       <p>Украина, 28 тур</p>
+                                       <h3 class="slider-teams3">Динамо - Шахтер</h3>
+                                       <p class="slider-league3">Украина, 28 тур</p>
                                    </div>
                                </div>
                            </div>
@@ -107,6 +107,14 @@
             $spinner   = $preloader.find('.spinner');
         $spinner.fadeOut();
         $preloader.delay(350).fadeOut('slow');
+
+        $('.slider-league1').text($('#pr-table:nth-child(1) thead tr th').text());
+        $('.slider-league2').text($('#pr-table:nth-child(2) thead tr th').text());
+        $('.slider-league3').text($('#pr-table:nth-child(4) thead tr th').text());
+        $('.slider-teams1').text($('#pr-table:nth-child(1) tbody tr:nth-child(1) td:nth-child(1)').text() + ' - ' + $('#pr-table:nth-child(1) tbody tr:nth-child(1) td:nth-child(5)').text());
+        $('.slider-teams2').text($('#pr-table:nth-child(2) tbody tr:nth-child(1) td:nth-child(1)').text() + ' - ' + $('#pr-table:nth-child(2) tbody tr:nth-child(1) td:nth-child(5)').text());
+        $('.slider-teams3').text($('#pr-table:nth-child(4) tbody tr:nth-child(1) td:nth-child(1)').text() + ' - ' + $('#pr-table:nth-child(4) tbody tr:nth-child(1) td:nth-child(5)').text());
+
     });
 
     $('table.calendar-table').each(function () {
