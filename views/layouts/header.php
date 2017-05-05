@@ -101,12 +101,12 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
                             <i class="lnr lnr-alarm"></i>
-                            <span class="badge bg-success"><?php if ($notificationCounter > 3) {echo '2';} else echo '1';?></span>
+                            <span class="badge bg-success"><?php if ($notificationCounter >= 3) {echo '2';} else echo '1';?></span>
                         </a>
                         <ul class="dropdown-menu notifications">
                             <li><a href="/" class="notification-item"><span class="dot bg-success"></span>Все матчи<span class="hidden match"></span> на <?=date("d.m")?> проанализированы</a></li>
                             <?php
-                                if ($notificationCounter > 3) echo "<li><a href='/profile/edit' class='notification-item'><span class='dot bg-warning'></span>".$user['name'].", заполните информацию о себе (".$notificationCounter." из 9)</a></li>";
+                                if ($notificationCounter >= 3) echo "<li><a href='/profile/edit' class='notification-item'><span class='dot bg-warning'></span>".$user['name'].", заполните информацию о себе (".$notificationCounter." из 9)</a></li>";
                             ?>
                         </ul>
                     </li>

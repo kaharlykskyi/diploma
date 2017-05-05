@@ -186,6 +186,25 @@ class User
     }
 
     /**
+     * Возвращает дату регистрации пользователя
+     * @param $userId
+     * @return mixed
+     */
+    public static function getRegisterDate($userId)
+    {
+        $userId = intval($userId);
+        if($userId) {
+            $db = Db::getConnection();
+            $sql = "SELECT register_date FROM user WHERE id = :id";
+            $result = $db->prepare($sql);
+            $result->bindParam(':id', $userId, PDO::PARAM_INT);
+            $result->setFetchMode(PDO::FETCH_ASSOC);
+            $result->execute();
+            return $result->fetch();
+        }
+    }
+
+    /**
      * Возвращает дополнительную информацию о пользователе по его id с таблицы user_info
      * @param $userId
      * @return array

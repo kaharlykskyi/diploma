@@ -20,11 +20,8 @@
 									</div>
 									<div class="profile-stat">
 										<div class="row">
-											<div class="col-md-6 stat-item">
-												<b>12</b> <span>Комментариев</span>
-											</div>
-											<div class="col-md-6 stat-item">
-												<b>8</b> <span>Прогнозов</span>
+											<div class="col-md-12 stat-item">
+												<span class="text-center">На сайте <b><?=$reg_date;?></b> дней</span>
 											</div>
 										</div>
 									</div>

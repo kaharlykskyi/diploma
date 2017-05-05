@@ -11,6 +11,8 @@ class ProfileController
         $userId = User::checkLogged();
         $user = User::getUserById($userId);
         $notificationCounter = User::getNotificationCounter($userId);
+        $data = User::getRegisterDate($userId);
+        $reg_date = Profile::getRegisterDays($data['register_date']);
         $menu = 'Профиль';
         $user_info = User::getUserInfoById($userId); //получаем доп. инфу о пользователе
         $flag_url = Profile::get_flag_href();

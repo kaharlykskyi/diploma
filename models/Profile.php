@@ -97,4 +97,18 @@ class Profile
 
     }
 
+    /**
+     * Возвращает кол. дней от указанной даты
+     * @param $date
+     * @return bool|float
+     */
+    public static function getRegisterDays($date)
+    {
+        $check_time = time() - strtotime($date);
+        if($check_time <= 0){
+            return false;
+        }
+        return floor($check_time/86400);
+    }
+
 }
