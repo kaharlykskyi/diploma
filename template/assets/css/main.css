@@ -2450,10 +2450,24 @@ table.players {
   table.players {
     margin-left: 0px;
   }
+  .alert-info strong, .alert-info span {
+    font-size: 11px !important;
+  }
+  #alerts {
+    top: 60px !important;
+  }
 }
 
 @media screen and (min-width: 1500px) {
   .game-block {
     height: 400px;
   }
+}
+.alert-info strong, .alert-info span {
+  font-size: 14px;
+}
+#alerts {
+  position: fixed;
+  top: 90px;
+  right: 10px;
 }
