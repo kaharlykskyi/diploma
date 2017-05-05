@@ -10,6 +10,7 @@ class ProfileController
     {
         $userId = User::checkLogged();
         $user = User::getUserById($userId);
+        $menu = 'profile';
         $user_info = User::getUserInfoById($userId); //получаем доп. инфу о пользователе
         $flag_url = Profile::get_flag_href();
         $football_news = Profile::getNews(Profile::getCurl('https://www.livesport.ru/news/football/'));
@@ -31,6 +32,7 @@ class ProfileController
     {
         $userId = User::checkLogged(); //получаем id пользователя
         $user = User::getUserById($userId); //получаем основную инфу о пользователе
+        $menu = 'profile';
         $user_info = User::getUserInfoById($userId); //получаем доп. инфу о пользователе
         $countries = Profile::getCountries();
         $small_avatar_url = Profile::get_gravatar($user['email'], 26);

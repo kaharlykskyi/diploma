@@ -6,6 +6,7 @@ class SiteController
     {
         $userId = User::checkUsernameMain();
         $user = User::getUserById($userId);
+        $menu = 'main';
         $football_news = Profile::getNews(Profile::getCurl('https://www.livesport.ru/news/football/'));
         $tennis_news = Profile::getNews(Profile::getCurl('https://www.livesport.ru/news/tennis/'));
         $hockey_news = Profile::getNews(Profile::getCurl('https://www.livesport.ru/news/hockey/'));

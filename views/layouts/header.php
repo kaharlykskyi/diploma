@@ -55,6 +55,12 @@
                 $spinner   = $preloader.find('.spinner');
             $spinner.fadeOut();
             $preloader.delay(250).fadeOut('slow');
+            var matches = 0;
+            $('table#pr-table tbody tr ').each(function () {
+                 matches++;
+            });
+            if (matches > 0) { $('.match').removeClass('hidden'); }
+            $('.match').text('('+matches+')');
         });
     </script>
 </head>
@@ -96,30 +102,14 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
                             <i class="lnr lnr-alarm"></i>
-                            <span class="badge bg-danger">5</span>
+                            <span class="badge bg-success">2</span>
                         </a>
                         <ul class="dropdown-menu notifications">
-                            <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>System space is almost full</a></li>
-                            <li><a href="#" class="notification-item"><span class="dot bg-danger"></span>You have 9 unfinished tasks</a></li>
-                            <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Monthly report is available</a></li>
-                            <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>Weekly meeting in 1 hour</a></li>
-                            <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your request has been approved</a></li>
-                            <li><a href="#" class="more">See all notifications</a></li>
+                            <li><a href="/" class="notification-item"><span class="dot bg-success"></span>Все матчи<span class="hidden match"></span> на <?=date("d.m")?> проанализированы</a></li>
+                            <li><a href="/profile/edit" class="notification-item"><span class="dot bg-warning"></span><?php echo $user['name']; ?>, заполните информацию о себе</a></li>
                         </ul>
                     </li>
                     <?php endif; ?>
-                    <!-- <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-question-circle"></i> <span>Help</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Basic Use</a></li>
-                            <li><a href="#">Working With Data</a></li>
-                            <li><a href="#">Security</a></li>
-                            <li><a href="#">Troubleshooting</a></li>
-                        </ul>
-                    </li> -->
-                    <!-- <li>
-                        <a class="update-pro" href="https://www.themeineed.com/downloads/klorofil-pro-bootstrap-admin-dashboard-template/?utm_source=klorofil&utm_medium=template&utm_campaign=KlorofilPro" title="Upgrade to Pro" target="_blank"><i class="fa fa-rocket"></i> <span>UPGRADE TO PRO</span></a>
-                    </li> -->
                 </ul>
             </div>
         </div>
@@ -131,37 +121,22 @@
             <nav>
                 <ul class="nav">
 
-                    <li><a href="/" class="active"><i class="lnr lnr-home"></i><span>Главная</span></a></li>
-                    <li><a href="/statistic"><i class="fa fa-futbol-o"></i><span>Статистика</span></a>
+                    <li><a href="/" <?php if($menu == 'main') echo "class='active'"; ?>><i class="lnr lnr-home"></i><span>Главная</span></a></li>
+                    <li><a href="/statistic" <?php if($menu == 'stat') echo "class='active'"; ?>><i class="fa fa-futbol-o"></i><span>Статистика</span></a>
                     </li>
-                    <!--<li>
-                        <a href="#subAnalysis" data-toggle="collapse" class="collapsed"><i class="fa fa-pie-chart" aria-hidden="true"></i><span>Аналитика</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                        <div id="subAnalysis" class="collapse ">
-                            <ul class="nav">
-                                <li><a href="#" class="">Футбол</a></li>
-                                <li><a href="#" class="">Теннис</a></li>
-                            </ul>
-                        </div>
-                    </li>-->
                     <?php if (!User::isGuest()): ?>
                     <li>
-                        <a href="#subCabinet" data-toggle="collapse" class="collapsed"><i class="fa fa-user-circle" aria-hidden="true"></i><span>Личный кабинет</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                        <div id="subCabinet" class="collapse ">
+                        <a href="#subCabinet" data-toggle="collapse" class="<?php if($menu == 'profile') echo "active "; ?>collapsed"><i class="fa fa-user-circle" aria-hidden="true"></i><span>Личный кабинет</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                        <div id="subCabinet" class="collapse">
                             <ul class="nav">
                                 <li><a href="/profile/" class="">Профиль</a></li>
                                 <li><a href="/profile/edit" class="">Настройки</a></li>
-                                <li><a href="#" class="">Выйти</a></li>
+                                <li><a href="/logout" class="">Выйти</a></li>
                             </ul>
                         </div>
                     </li>
                     <?php endif; ?>
                     <li><a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i><span>О сервисе</span></a></li>
-
-                    <!-- <li><a href="panels.html" class=""><i class="lnr lnr-cog"></i> <span>Panels</span></a></li>
-                    <li><a href="notifications.html" class=""><i class="lnr lnr-alarm"></i> <span>Notifications</span></a></li>
-                    <li><a href="tables.html" class=""><i class="lnr lnr-dice"></i> <span>Tables</span></a></li>
-                    <li><a href="typography.html" class=""><i class="lnr lnr-text-format"></i> <span>Typography</span></a></li>
-                    <li><a href="icons.html" class=""><i class="lnr lnr-linearicons"></i> <span>Icons</span></a></li> -->
                 </ul>
             </nav>
         </div>

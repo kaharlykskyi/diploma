@@ -391,7 +391,7 @@ ul.notifications > li {
       transition: all 0.2s ease-out;
       float: right;
       position: relative;
-      top: 5px;
+      top: 2px;
       font-size: 12px;
       line-height: 1.1;
       -moz-transform: rotate(-90deg);
@@ -631,12 +631,11 @@ fieldset[disabled] .btn {
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  -moz-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   background-color: #fff;
   margin-bottom: 0px;
   min-height: 880px;
+  border: none;
+  box-shadow: none;
 }
   .panel .panel-heading,
   .panel .panel-body,
@@ -2114,8 +2113,8 @@ table#pr-table > tbody > tr > td {
   width: 150px;
 }
 
-div.game-block {
-  height: 450px;
+div.game-block {/*
+  height: 450px;*/
   position: relative;
   width: 100%;
   background: url("/template/assets/img/image1.jpg") center center no-repeat;
@@ -2288,7 +2287,7 @@ textarea {
   min-height: 150px;
   max-height: 400px;
 }
-.input-group-addon {
+/*.input-group-addon {
   border: 1px solid #bce8f1 !important;
 }
 .input-group-addon {
@@ -2296,7 +2295,7 @@ textarea {
 }
 .form-control {
   border-color: #bce8f1;
-}
+}*/
 ul.match-forecast li {
   margin-left: 15px;
 }
@@ -2314,20 +2313,7 @@ ul.match-forecast li {
 .scorers {
   margin-left: 25px;
 }
-@media screen and (min-width: 1150px) {
-  .container {
-    width: 970px !important;
-  }
-  table.table {
-    font-size: 13px;
-  }
-  .team {
-    font-size: 13px;
-  }
-  .team-logo {
-    width: 20px;
-  }
-}
+
 
 
 @media screen and (max-width: 640px) {
@@ -2364,4 +2350,104 @@ ul.match-forecast li {
   }
 
 }
+.center-col {
+  padding-top: 40px;
+}
+.game-block .teams-wrapper {
+  margin: 40px 0;
+}
+body {
+  background-color: #fff;
+}
+table.players {
+  margin-left: 15px;
+}
+@media screen and (max-width: 1400px) {
+  .game-block .teams-wrapper {
+    margin-bottom: 25px;
+  }
+  body {
+    font-size: 14px !important;
+  }
+  .container {
+    width: 970px !important;
+  }
+  table.table {
+    font-size: 12px;
+  }
+  .team {
+    font-size: 13px;
+  }
+  .team-logo, .player-ava {
+    width: 20px !important;
+  }
+  .stat-text, .scorers, .heading {
+    font-size: 21px !important;
+  }
+  .rn_lenta > DIV:nth-child(1) a:link, .rn_lenta > DIV:nth-child(1) a:visited {
+    font-size: 15px !important;
+  }
+  .rn_full > DIV:nth-child(1) A SPAN:nth-child(2) {
+    font-size: 14px !important;
+  }
+  .rn_full > DIV:nth-child(1) A SPAN:nth-child(1) {
+    font-size: 21px !important;
+  }
+}
 
+@media screen and (max-width: 640px) {
+  i.fa-sign-in, i.fa-lock {
+    padding-top: 7px;
+  }
+  .center-col {
+    padding-top: 0px;
+  }
+  .stat-text, .scorers, .heading {
+    font-size: 16px !important;
+  }
+  .statistic-tabs {
+    margin-left: 0 !important;
+  }
+  td.logo img {
+    width: 20px;
+    margin-left: 5px;
+  }
+  div.info a, .game-time, .game-block .teams-wrapper .center-col .remain-time .time {
+    font-size: 14px !important;
+  }
+  .game-block .teams-wrapper .team .logo {
+    width: 80px;
+    height: 80px;
+  }
+  .game-block .teams-wrapper .team .team-name {
+    font-size: 17px;
+  }
+  .team {
+    padding-left: 0 !important;
+  }
+  .game-block .teams-wrapper .center-col .remain-time .remain-time-txt {
+    font-size: 10px;
+  }
+  .game-block .teams-wrapper .center-col .remain-time .txt {
+    font-size: 9px !important;
+    margin-top: -5px;
+  }
+  div.bet-wrapper {
+    display: none;
+  }
+  .game-block .teams-wrapper .center-col {
+    margin-top: 25px;
+  }
+  .game-block .teams-wrapper {
+    margin: 5px 0;
+  }
+  .divider {
+    font-size: 13px !important;
+  }
+  .progress-bar {
+    font-size: 10px !important;
+  }
+  table.players {
+    margin-left: 0px;
+  }
+}

@@ -233,15 +233,15 @@ class Forecast
         $victory_chance_ft = ($rating_ft / ($rating_ft + $rating_st)) * 100;
         $victory_chance_st = 100 - $victory_chance_ft;
 
-        if ($victory_chance_ft >= 75) {
+        if ($victory_chance_ft >= 70) {
             $result_ft = 'Победа '.$statistic[0]['team'];
-        } else if ($victory_chance_ft >= 50 && $victory_chance_ft < 75) {
+        } else if ($victory_chance_ft >= 55 && $victory_chance_ft < 70) {
             $result_ft = "Победа ".$statistic[0]['team']." или ничья";
-        } else {$result_ft = '';}
+        } else if ($victory_chance_ft >= 50 && $victory_chance_ft < 54){ $result_ft='Ничья';}
 
-        if ($victory_chance_st >= 75) {
+        if ($victory_chance_st >= 70) {
             $result_st = 'Победа '.$statistic[1]['team'];
-        } else if ($victory_chance_st >= 50 && $victory_chance_st < 75) {
+        } else if ($victory_chance_st >= 55 && $victory_chance_st < 70) {
             $result_st = "Победа ".$statistic[1]['team']." или ничья";
         } else {$result_st = '';}
 

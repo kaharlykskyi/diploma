@@ -7,22 +7,25 @@
                 <!-- OVERVIEW -->
                 <div class="panel panel-main">
                     <div class="container-fluid">
-                        <div class="custom-tabs-line tabs-line-bottom statistic-tabs">
-                            <ul class="nav news match-forecast" role="tablist">
-                                <li class="active"><a href="#england" role="tab" data-toggle="tab">Англия</a></li>
-                                <li><a href="#ukraine" role="tab" data-toggle="tab">Украина</a></li>
-                                <li><a href="#spain" role="tab" data-toggle="tab">Испания</a></li>
-                                <li><a href="#italy" role="tab" data-toggle="tab">Италия</a></li>
-                                <li><a href="#germany" role="tab" data-toggle="tab">Германия</a></li>
-                                <li><a href="#france" role="tab" data-toggle="tab">Франция</a></li>
-                                <li><a href="#turkey" role="tab" data-toggle="tab">Турция</a></li>
-                            </ul>
+                        <div class="row">
+                            <div class="custom-tabs-line tabs-line-bottom statistic-tabs">
+                                <ul class="nav news match-forecast" role="tablist">
+                                    <li class="active"><a href="#england" role="tab" data-toggle="tab">Англия</a></li>
+                                    <li><a href="#ukraine" role="tab" data-toggle="tab">Украина</a></li>
+                                    <li><a href="#spain" role="tab" data-toggle="tab">Испания</a></li>
+                                    <li><a href="#italy" role="tab" data-toggle="tab">Италия</a></li>
+                                    <li><a href="#germany" role="tab" data-toggle="tab">Германия</a></li>
+                                    <li><a href="#france" role="tab" data-toggle="tab">Франция</a></li>
+                                    <li><a href="#turkey" role="tab" data-toggle="tab">Турция</a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                     <div class="tab-content news">
                         <div class="tab-pane fade in active" id="england">
                             <div class="profile-left main-page">
-                                    <h3><b>Турнирная таблица Англия</b></h3>
+                                <div class="row">
+                                    <h3 class='stat-text'><b>Турнирная таблица Англия</b></h3>
                                     <hr>
                                     <div class="stat-table">
                                         <div class="table-responsive">
@@ -61,8 +64,10 @@
                                             </table>
                                         </div>
                                     </div>
+                                </div>
                             </div>
                             <div class="profile-right main-page">
+                                <div class="row">
                                     <h3 class="scorers"><b>Бомдардиры Англия</b></h3>
                                     <hr>
                                     <div class="scorers-table">
@@ -94,10 +99,12 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
                         </div>
                         <div class="tab-pane fade" id="ukraine">
                             <div class="profile-left main-page">
-                                <h3><b>Турнирная таблица Украина</b></h3>
+                                <div class="row">
+                                <h3 class='stat-text'><b>Турнирная таблица Украина</b></h3>
                                 <hr>
                                 <div class="stat-table">
                                     <div class="table-responsive">
@@ -136,9 +143,11 @@
                                         </table>
                                     </div>
                                 </div>
+                                </div>
                             </div>
                             <div class="profile-right main-page">
-                                <h3><b>Бомдардиры Украина</b></h3>
+                                <div class="row">
+                                <h3 class='scorers'><b>Бомдардиры Украина</b></h3>
                                 <hr>
                                 <div class="scorers-table">
                                     <div class="table-responsive">
@@ -168,11 +177,13 @@
                                         </table>
                                     </div>
                                 </div>
+                                </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="spain">
                             <div class="profile-left main-page">
-                                <h3><b>Турнирная таблица Испания</b></h3>
+                                <div class="row">
+                                <h3 class='stat-text'><b>Турнирная таблица Испания</b></h3>
                                 <hr>
                                 <div class="stat-table">
                                     <div class="table-responsive">
@@ -211,9 +222,11 @@
                                         </table>
                                     </div>
                                 </div>
+                                </div>
                             </div>
                             <div class="profile-right main-page">
-                                <h3><b>Бомдардиры Испания</b></h3>
+                                <div class="row">
+                                <h3 class='scorers'><b>Бомдардиры Испания</b></h3>
                                 <hr>
                                 <div class="scorers-table">
                                     <div class="table-responsive">
@@ -243,11 +256,13 @@
                                         </table>
                                     </div>
                                 </div>
+                                </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="italy">
                             <div class="profile-left main-page">
-                                <h3><b>Турнирная таблица Италия</b></h3>
+                                <div class="row">
+                                <h3 class='stat-text'><b>Турнирная таблица Италия</b></h3>
                                 <hr>
                                 <div class="stat-table">
                                     <div class="table-responsive">
@@ -286,9 +301,11 @@
                                         </table>
                                     </div>
                                 </div>
+                                </div>
                             </div>
                             <div class="profile-right main-page">
-                                <h3><b>Бомдардиры Италия</b></h3>
+                                <div class="row">
+                                <h3 class='scorers'><b>Бомдардиры Италия</b></h3>
                                 <hr>
                                 <div class="scorers-table">
                                     <div class="table-responsive">
@@ -318,11 +335,13 @@
                                         </table>
                                     </div>
                                 </div>
+                                </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="germany">
                             <div class="profile-left main-page">
-                                <h3><b>Турнирная таблица Германия</b></h3>
+                                <div class="row">
+                                <h3 class='stat-text'><b>Турнирная таблица Германия</b></h3>
                                 <hr>
                                 <div class="stat-table">
                                     <div class="table-responsive">
@@ -361,9 +380,11 @@
                                         </table>
                                     </div>
                                 </div>
+                                </div>
                             </div>
                             <div class="profile-right main-page">
-                                <h3><b>Бомдардиры Германия</b></h3>
+                                <div class="row">
+                                <h3 class='scorers'><b>Бомдардиры Германия</b></h3>
                                 <hr>
                                 <div class="scorers-table">
                                     <div class="table-responsive">
@@ -393,11 +414,13 @@
                                         </table>
                                     </div>
                                 </div>
+                                </div>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="france">
                             <div class="profile-left main-page">
-                                <h3><b>Турнирная таблица Франция</b></h3>
+                                <div class="row">
+                                <h3 class='stat-text'><b>Турнирная таблица Франция</b></h3>
                                 <hr>
                                 <div class="stat-table">
                                     <div class="table-responsive">
@@ -436,12 +459,14 @@
                                         </table>
                                     </div>
                                 </div>
+                                </div>
                             </div>
                             <div class="profile-right main-page"></div>
                         </div>
                         <div class="tab-pane fade" id="turkey">
                             <div class="profile-left main-page">
-                                <h3><b>Турнирная таблица Турция</b></h3>
+                                <div class="row">
+                                <h3 class='stat-text'><b>Турнирная таблица Турция</b></h3>
                                 <hr>
                                 <div class="stat-table">
                                     <div class="table-responsive">
@@ -479,6 +504,7 @@
                                             </tbody>
                                         </table>
                                     </div>
+                                </div>
                                 </div>
                             </div>
                             <div class="profile-right main-page">

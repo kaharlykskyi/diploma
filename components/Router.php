@@ -43,7 +43,8 @@ class Router
                         break;
                     }
                 } else {
-                    //404
+                    include_once(ROOT.'/views/site/404.html');
+                    return true;
                 }
             }
         }

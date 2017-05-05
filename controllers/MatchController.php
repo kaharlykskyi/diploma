@@ -6,6 +6,7 @@ class MatchController
     {
         $userId = User::checkUsernameMain();
         $user = User::getUserById($userId);
+        $menu = '';
         $small_avatar_url = Profile::get_gravatar($user['email'], 26);
         $match_info = Forecast::getLeagueNameById($_GET['league']);
         $tmp = $match_info[0]['league_name'];
