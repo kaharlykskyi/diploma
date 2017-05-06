@@ -237,7 +237,7 @@ class Forecast
             $result_ft = 'Победа '.$statistic[0]['team'];
         } else if ($victory_chance_ft >= 55 && $victory_chance_ft < 70) {
             $result_ft = "Победа ".$statistic[0]['team']." или ничья";
-        } else if ($victory_chance_ft >= 50 && $victory_chance_ft < 54){ $result_ft='Ничья';}
+        } else if ($victory_chance_ft >= 50 && $victory_chance_ft < 55){ $result_ft='Ничья';}
 
         if ($victory_chance_st >= 70) {
             $result_st = 'Победа '.$statistic[1]['team'];
