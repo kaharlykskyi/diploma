@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>PHP</ID>
+  <OriginalElement>\MatchController</OriginalElement>
+  <nodes>
+    <node x="763.4360189573458" y="659.2101105845181">\StatisticController</node>
+    <node x="313.218009478673" y="362.5450236966825">\Forecast</node>
+    <node x="663.1390205371248" y="280.8341232227488">\Site</node>
+    <node x="326.086887835703" y="554.2290679304898">\ParserController</node>
+    <node x="579.0" y="0.0">\Parser</node>
+    <node x="559.0600315955766" y="660.5071090047394">\SiteController</node>
+    <node x="-199.33807266982623" y="333.59557661927334">\Router</node>
+    <node x="677.9747235387047" y="418.04423380726695">\ProfileController</node>
+    <node x="590.1342812006319" y="545.1500789889416">\UserController</node>
+    <node x="366.3570300157978" y="659.2101105845181">\MatchController</node>
+    <node x="2.593996840442344" y="656.6161137440758">\Statistic</node>
+    <node x="0.0" y="382.0">\Profile</node>
+    <node x="0.0" y="0.0">\User</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="0.7710109622411693" x="477.913112164297" y="396.5" />
+  <SelectedNodes>
+    <node>\MatchController</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

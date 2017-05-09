@@ -35,6 +35,8 @@ class ParserController
     {
         $userId = User::checkUsernameMain();
         $user = User::getUserById($userId);
+        $notificationCounter = User::getNotificationCounter($userId);
+        $menu = '';
 
         $england_scorers = Parser::getScorersTable(Profile::getCurl('https://football24.ua/champ/showForwards.do?anglija_201617&tagId=50820&lang=ru'));
         Parser::insertScorersTable($england_scorers, 'england');
