@@ -48,7 +48,7 @@
 					<div class="left">
 						<div class="content">
 							<div class="header">
-								<div class="logo text-center"><img src="/template/assets/img/logo-dark.png" alt="Logo"></div>
+								<div class="logo text-center"><a href='/'><img src="/template/assets/img/logo-dark.png" alt="Logo"></a></div>
 								<p class="lead">Регистрация</p>
 							</div>
 							<form class="form-auth-small" action="#" method="POST">
@@ -65,7 +65,7 @@
 									<input type="email" class="form-control" id="signin-email" value="<?=$email?>" placeholder="Email" name="email" required>
 								</div>
                                 <div class="form-group">
-                                    <input type="date" class="form-control" placeholder="Дата рождения" name="bdate" value="2017-01-01" name="bdate" required>
+                                    <input type="date" class="form-control" placeholder="Дата рождения" name="bdate" value="2000-01-01" title='Дата рождения' name="bdate" required>
                                 </div>
 								<div class="form-group">
 									<label for="signin-password" class="control-label sr-only">Пароль</label>

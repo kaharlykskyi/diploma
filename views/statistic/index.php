@@ -68,7 +68,7 @@
                             </div>
                             <div class="profile-right main-page">
                                 <div class="row">
-                                    <h3 class="scorers"><b>Бомдардиры Англия</b></h3>
+                                    <h3 class="scorers"><b>Статистика игроков</b></h3>
                                     <hr>
                                     <div class="scorers-table">
                                         <div class="table-responsive">
@@ -147,7 +147,7 @@
                             </div>
                             <div class="profile-right main-page">
                                 <div class="row">
-                                <h3 class='scorers'><b>Бомдардиры Украина</b></h3>
+                                <h3 class='scorers'><b>Статистика игроков</b></h3>
                                 <hr>
                                 <div class="scorers-table">
                                     <div class="table-responsive">
@@ -226,7 +226,7 @@
                             </div>
                             <div class="profile-right main-page">
                                 <div class="row">
-                                <h3 class='scorers'><b>Бомдардиры Испания</b></h3>
+                                <h3 class='scorers'><b>Статистика игроков</b></h3>
                                 <hr>
                                 <div class="scorers-table">
                                     <div class="table-responsive">
@@ -305,7 +305,7 @@
                             </div>
                             <div class="profile-right main-page">
                                 <div class="row">
-                                <h3 class='scorers'><b>Бомдардиры Италия</b></h3>
+                                <h3 class='scorers'><b>Статистика игроков</b></h3>
                                 <hr>
                                 <div class="scorers-table">
                                     <div class="table-responsive">
@@ -384,7 +384,7 @@
                             </div>
                             <div class="profile-right main-page">
                                 <div class="row">
-                                <h3 class='scorers'><b>Бомдардиры Германия</b></h3>
+                                <h3 class='scorers'><b>Статистика игроков</b></h3>
                                 <hr>
                                 <div class="scorers-table">
                                     <div class="table-responsive">

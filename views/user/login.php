@@ -50,7 +50,7 @@
 					<div class="left">
 						<div class="content">
 							<div class="header">
-								<div class="logo text-center"><img src="/template/assets/img/logo-dark.png" alt="Logo"></div>
+								<div class="logo text-center"><a href="/"><img src="/template/assets/img/logo-dark.png" alt="Logo"></a></div>
 								<p class="lead">Вход</p>
                                 <?php
                                 if (isset($errors) && is_array($errors)):

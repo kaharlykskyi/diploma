@@ -162,7 +162,7 @@
                                        </div>
                                    </div>
                                    <div class="tab-pane fade" id="tab-bottom-left2">
-                                       <div class="container-fluid">
+                                       <div class="container">
                                            <div class="row">
                                                <div class="table-responsive">
                                                    <table class="table table-bordered table-hover">
