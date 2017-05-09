@@ -203,7 +203,9 @@
                                        </div>
                                    </div>
                                    <div class="tab-pane fade" id="tab-bottom-left3">
-                                       <?=$football_news?>
+                                       <div class="container">
+                                           <?=$football_news?>
+                                       </div>
                                    </div>
 
                                </div>
