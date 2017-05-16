@@ -87,6 +87,8 @@
                     </div>
                 </div>
             </div>
+            <hr>
+            <div class="text-center foot">Разработано:<a href="https://github.com/kaharlykskyi" target="_blank"> Кагарлыкский М.</a>, Гаркуша В. &copy; 2017 </div>
         </div>
         <!-- END MAIN CONTENT -->
     </div>

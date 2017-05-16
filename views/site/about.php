@@ -36,7 +36,11 @@
                     <p><span class="sub-text"><b>Автоматизация</b></span> - ежедневно система автоматически загружает и анализирует все доступные матчи.</p>
                     <p><span class="sub-text"><b>Динамика команд</b></span> - успех команды или неудача на основе текущего выступления и силе.</p>
                 </div>
+                <hr>
+                <div class="text-center foot">Разработано:<a href="https://github.com/kaharlykskyi" target="_blank"> Кагарлыкский М.</a>, Гаркуша В. &copy; 2017 </div>
             </div>
+            <div class="clearfix"></div>
+
         </div>
         <!-- END MAIN CONTENT -->
     </div>

@@ -2530,3 +2530,11 @@ table.players {
 .info-text {
   font-size: 14px;
 }
+.mobiles-wrapper {
+  margin-bottom: 20px;
+}
+.foot {
+  font-size: 13px;
+  padding-right: 20px;
+  color: #828282;
+}
