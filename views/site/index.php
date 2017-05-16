@@ -50,7 +50,7 @@
                                <span class="glyphicon glyphicon-chevron-right"></span>
                            </a>
                        </div> <!-- Carousel -->
-                       <h3 class="heading matches-heading">Все прогнозы</h3>
+                       <!--<h3 class="heading matches-heading">Все прогнозы</h3>-->
                        <div class="table-responsive">
                        <?php
                        if (empty($info)) echo "<div class='alert alert-warning'><h5>К сожалению проанализированых матчей на сегодня нет :(</h5></div>";

@@ -6,6 +6,7 @@ return array(
     'register' => 'user/register',
     'profile/edit' => 'profile/edit',
     'profile' => 'profile/index',
+    'all' => 'forecast/index',
 
     //forecasting
     'forecast' => 'match/index',
@@ -17,6 +18,8 @@ return array(
     //stat
     'statistic' => 'statistic/index',
 
+    //about
+    'about' => 'site/about',
     //main page
     '' => 'site/index',
 );

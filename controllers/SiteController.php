@@ -24,5 +24,17 @@ class SiteController
         return true;
     }
 
+    public function actionAbout()
+    {
+        $userId = User::checkUsernameMain();
+        $user = User::getUserById($userId);
+        $notificationCounter = User::getNotificationCounter($userId);
+        $menu = 'О сервисе';
+        $small_avatar_url = Profile::get_gravatar($user['email'], 26);
+
+        require_once(ROOT.'/views/site/about.php');
+        return true;
+    }
+
 
 }

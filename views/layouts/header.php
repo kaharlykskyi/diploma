@@ -123,6 +123,7 @@
                 <ul class="nav">
 
                     <li><a href="/" <?php if($menu == 'Sport info') echo "class='active'"; ?>><i class="lnr lnr-home"></i><span>Главная</span></a></li>
+                    <li><a href="/all" <?php if($menu == 'Прогнозы') echo "class='active'"; ?>><i class="fa fa-area-chart" aria-hidden="true"></i><span>Прогнозы</span></a></li>
                     <li><a href="/statistic" <?php if($menu == 'Статистика') echo "class='active'"; ?>><i class="fa fa-futbol-o"></i><span>Статистика</span></a>
                     </li>
                     <?php if (!User::isGuest()): ?>
@@ -137,7 +138,7 @@
                         </div>
                     </li>
                     <?php endif; ?>
-                    <li><a href="#"><i class="fa fa-info-circle" aria-hidden="true"></i><span>О сервисе</span></a></li>
+                    <li><a href="/about" <?php if($menu == 'О сервисе') echo "class='active'"; ?>><i class="fa fa-info-circle" aria-hidden="true"></i><span>О сервисе</span></a></li>
                 </ul>
             </nav>
         </div>

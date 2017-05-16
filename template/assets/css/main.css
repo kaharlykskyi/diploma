@@ -2472,3 +2472,61 @@ table.players {
   top: 90px;
   right: 10px;
 }
+
+.main-text {
+  font-size: 18px;
+  color: #038ED4;
+}
+.sub-text {
+  font-size: 15px;
+  color: #038ED4;
+}
+.full-text {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.full-text p {
+  color: #626262;
+}
+.full-text>h1 {
+  color: #038ED4;
+}
+.beaty-text {
+  color: #038ED4;
+}
+.image-about {
+  width: 200px;
+}
+.mobiles-wrapper {
+  padding: 10px 0 2px;
+  text-align: center;
+}
+.login-device {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-right: 116px;
+}
+.img-android {
+  background-image: url(/template/assets/img/about/android_ru.png);
+}
+.img-ios {
+  background-image: url(/template/assets/img/about/ios_ru.png);
+}
+.img-wp {
+  background-image: url(/template/assets/img/about/wp_ru.png);
+}
+.login-device-img {
+  width: 192px;
+  height: 397px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.center-device {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: -462px;
+  margin-right: 156px;
+}
+.info-text {
+  font-size: 14px;
+}
