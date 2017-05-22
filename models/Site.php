@@ -38,8 +38,8 @@ class Site
     {
         $db = Db::getConnection();
         //$db->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-        $date = date("d.m.y");
-        //$date = "08.05.17";
+        //$date = date("d.m.y");
+        $date = "20.05.17";
         $sql = "SELECT id, league_name, match_info FROM matches WHERE (league_name LIKE '%Франци%' ".
             "OR league_name LIKE '%Германи%' ".
             "OR league_name LIKE 'Украина%' ".
