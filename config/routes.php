@@ -12,8 +12,8 @@ return array(
     'forecast' => 'match/index',
 
     //parser stat and match info
-    //'parser/match' => 'parser/match',
-    //'parser/stat' => 'parser/stat',
+    'parser/match' => 'parser/match',
+    'parser/stat' => 'parser/stat',
 
     //stat
     'statistic' => 'statistic/index',
