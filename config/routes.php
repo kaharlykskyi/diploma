@@ -12,7 +12,7 @@ return array(
     'forecast' => 'match/index',
 
     //parser stat and match info
-    //'parser/match' => 'parser/match',
+    'parser/match' => 'parser/match',
     //'parser/stat' => 'parser/stat',
 
     //stat
